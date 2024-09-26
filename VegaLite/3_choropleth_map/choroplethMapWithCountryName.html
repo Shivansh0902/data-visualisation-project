@@ -10,7 +10,7 @@
   <script>
     const spec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "title": "Daily Caloric Supply per Person (2020)",
+      "title": "Caloric Intake Relative to Global Average (2020)",
       "width": 800,
       "height": 400,
       "data": {
@@ -22,11 +22,11 @@
         {
           "transform": [
             {
-              "calculate": "'Data is not available in ' + datum.properties.NAME",
+              "calculate": "'Data is not available for ' + datum.properties.NAME",
               "as": "note"
             }
           ],
-          "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+          "mark": {"type": "geoshape", "fill": "#d3d3d3", "stroke": "black"},
           "encoding": {"tooltip": {"field": "note"}}
         },
         {
@@ -41,23 +41,52 @@
                 "key": "Country",
                 "fields": ["Value"]
               }
+            },
+            {
+              "calculate": "datum['Value'] - 2800",  // Subtracting global average of 2800 calories
+              "as": "Calorie Deviation"
+            },
+            {
+              "calculate": "datum['Value'] > 3500 ? 'High' : datum['Value'] < 2000 ? 'Low' : 'Average'",
+              "as": "Calorie Category"
             }
           ],
           "mark": {"type": "geoshape", "stroke": "white"},
           "encoding": {
             "color": {
-              "field": "Value",
+              "field": "Calorie Deviation",
               "type": "quantitative",
               "scale": {
-                "type": "threshold",
-                "domain": [2000, 2500, 3000, 3500],
-                "range": ["#fee8c8", "#fdbb84", "#e34a33", "#b30000"]
+                "type": "diverging",
+                "domain": [-1000, 0, 1000],  // Showing deviation from average
+                "range": ["#d73027", "#ffffbf", "#1a9850"]
+              },
+              "legend": {
+                "title": "Deviation from Global Average",
+                "orient": "bottom-right"
               }
             },
             "tooltip": [
               {"field": "properties.NAME", "type": "nominal", "title": "Country"},
               {"field": "Value", "type": "quantitative", "title": "Calories per Person"},
-              {"field": "note", "type": "nominal", "title": "Note"}  // Debugging line to show notes
+              {"field": "Calorie Category", "type": "nominal", "title": "Calorie Category"},
+              {"field": "Calorie Deviation", "type": "quantitative", "title": "Deviation from Average"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum['Value'] > 3500"
+            }
+          ],
+          "mark": {"type": "point", "shape": "star", "size": 100, "color": "gold", "stroke": "black", "strokeWidth": 1},
+          "encoding": {
+            "longitude": {"field": "properties.longitude", "type": "quantitative"},
+            "latitude": {"field": "properties.latitude", "type": "quantitative"},
+            "tooltip": [
+              {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+              {"field": "Value", "type": "quantitative", "title": "Calories per Person"}
             ]
           }
         }

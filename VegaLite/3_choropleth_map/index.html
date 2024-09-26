@@ -6,22 +6,54 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
   
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
-
+  <!-- CSS file for styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .link-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .link-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
+  <h1>Data Visualization Index</h1>
+  <p>Select a visualization to view:</p>
   
-<div id="choropleth_map"></div>
+  <div class="links">
+    <a href="emptyCountries.html" class="link-button">Basic Countries Map</a>
+    <a href="choroplethMapWithOcean.html" class="link-button">Choropleth Map with Oceans</a>
+    <a href="choroplethMapWithCountryName.html" class="link-button">Choropleth Map with Country Names</a>
+  </div>
 
-<script type="text/javascript">
+  <!-- Placeholder for embedding a graph -->
+  <div id="choropleth_map"></div>
 
-  var spec2 = "js/choropleth_map.vg.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
-
+  <script type="text/javascript">
+    var spec2 = "choroplethMapWithCountryName.html";  // Change to desired graph if you want to embed it
+    vegaEmbed('#choropleth_map', spec2).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 </body>
 </html>

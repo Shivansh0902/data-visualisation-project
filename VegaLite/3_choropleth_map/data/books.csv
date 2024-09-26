@@ -1,7 +1,6 @@
 Country,Code,Year,Value
 Afghanistan,AFG,2020,2265.9998
 Africa,,2020,2579.5566
-Central African Rep.,2020,2580
 Albania,ALB,2020,3349
 Algeria,DZA,2020,3506.0002
 Americas (FAO),2020,3365,
@@ -35,7 +34,7 @@ Cameroon,CMR,2020,2812
 Canada,CAN,2020,3624.0007
 Cape Verde,CPV,2020,2652.9727
 Caribbean (FAO),2020,2856,
-Central African Republic,CAF,2020,1821.9987
+Central African Rep.,CAF,2020,1821.9987
 Central America (FAO),2020,3122,
 Central Asia (FAO),2020,3143,
 Chad,TCD,2020,2256.999
