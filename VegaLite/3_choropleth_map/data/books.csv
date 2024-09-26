@@ -1,7 +1,7 @@
 Country,Code,Year,Value
 Afghanistan,AFG,2020,2265.9998
 Africa,,2020,2579.5566
-Central African Rep.,,2020,2580
+Central African Rep.,2020,2580
 Albania,ALB,2020,3349
 Algeria,DZA,2020,3506.0002
 Americas (FAO),2020,3365,
@@ -187,10 +187,11 @@ Small Island Developing States (FAO),2020,2710,
 Solomon Islands,SLB,2020,2351.973
 South Africa,ZAF,2020,2817
 South America,2020,3078.6125,
+Somalia,SOM,2020,2096.9993
 South America (FAO),2020,3079,
 South Korea,KOR,2020,3378.0002
 Sudan,SSD,2020,2376.0015
-S. Sudan,SSD,2020,2376.0015
+S. Sudan,SUD,2020,2226.0015
 South-eastern Asia (FAO),2020,2896,
 Southern Africa (FAO),2020,2760,
 Southern Asia (FAO),2020,2564,
