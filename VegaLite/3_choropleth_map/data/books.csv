@@ -44,6 +44,7 @@ China,CHN,2020,3322
 China (FAO),,2020,3314
 Colombia,COL,2020,3086.0002
 Comoros,COM,2020,2482.006
+Dem. Rep. Congo,COG,2020,2009.995
 Congo,COG,2020,2179.995
 Costa Rica,CRI,2020,3024.9958
 Cote d'Ivoire,CIV,2020,2885.9998
@@ -188,7 +189,8 @@ South Africa,ZAF,2020,2817
 South America,2020,3078.6125,
 South America (FAO),2020,3079,
 South Korea,KOR,2020,3378.0002
-South Sudan,SSD,2020,2376.0015
+Sudan,SSD,2020,2376.0015
+S.Sudan,SSD,2020,2376.0015
 South-eastern Asia (FAO),2020,2896,
 Southern Africa (FAO),2020,2760,
 Southern Asia (FAO),2020,2564,
@@ -213,7 +215,7 @@ Uganda,UGA,2020,2159
 Ukraine,UKR,2020,2926.0005
 United Arab Emirates,ARE,2020,3300.0015
 United Kingdom,GBR,2020,3373.9998
-United States,USA,2020,3891.9998
+United States of America,USA,2020,3891.9998
 Upper-middle-income countries,2020,3213.1875,
 Uruguay,URY,2020,3261.003
 Uzbekistan,UZB,2020,3245.9998
