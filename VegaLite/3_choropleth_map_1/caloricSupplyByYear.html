@@ -15,6 +15,7 @@
     fetch('https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv')
       .then(response => response.text())
       .then(csv => {
+        // Extract unique country names from the CSV
         const countries = new Set(csv.split('\n').map(line => line.split(',')[0]).slice(1));
         const select = document.getElementById('countrySelect');
         countries.forEach(country => {
@@ -25,6 +26,7 @@
             select.appendChild(option);
           }
         });
+        // Render visualization for the first country by default
         select.onchange = () => renderViz(select.value);
         renderViz(select.value);
       });
@@ -40,7 +42,9 @@
           "format": {"type": "csv"}
         },
         "transform": [
-          {"filter": `datum.Entity == '${selectedCountry}'`}
+          {"filter": `datum.Country == '${selectedCountry}'`},
+          {"calculate": "toNumber(datum.Year)", "as": "Year"},  // Explicitly convert Year to number
+          {"calculate": "toNumber(datum.Value)", "as": "Value"}  // Explicitly convert Value to number
         ],
         "mark": "line",
         "encoding": {
@@ -48,7 +52,7 @@
           "y": {"field": "Value", "type": "quantitative", "title": "Calories per Person"}
         }
       };
-      vegaEmbed('#visualization', spec);
+      vegaEmbed('#visualization', spec).catch(console.error);
     }
   </script>
 </body>
