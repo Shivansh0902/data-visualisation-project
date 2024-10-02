@@ -47,7 +47,7 @@
           "lookup": "Entity",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map/data/testing.csv",
+              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv",
               "format": {"type": "csv"}
             },
             "key": "Entity",
