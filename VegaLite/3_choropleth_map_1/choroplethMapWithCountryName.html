@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "title": "Caloric Intake Relative to Global Average (2020)",
+      "width": 800,
+      "height": 400,
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "projection": {"type": "equalEarth"},
+      "layer": [
+        {
+          "transform": [
+            {
+              "calculate": "'Data is not available for ' + datum.properties.NAME",
+              "as": "note"
+            }
+          ],
+          "mark": {"type": "geoshape", "fill": "#d3d3d3", "stroke": "black"},
+          "encoding": {"tooltip": {"field": "note"}}
+        },
+        {
+          "transform": [
+            {
+              "lookup": "properties.NAME",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map/data/books.csv",
+                  "format": {"type": "csv"}
+                },
+                "key": "Country",
+                "fields": ["Value"]
+              }
+            },
+            {
+              "calculate": "datum['Value'] - 2800",  // Subtracting global average of 2800 calories
+              "as": "Calorie Deviation"
+            },
+            {
+              "calculate": "datum['Value'] > 3500 ? 'High' : datum['Value'] < 2000 ? 'Low' : 'Average'",
+              "as": "Calorie Category"
+            }
+          ],
+          "mark": {"type": "geoshape", "stroke": "white"},
+          "encoding": {
+            "color": {
+              "field": "Calorie Deviation",
+              "type": "quantitative",
+              "scale": {
+                "type": "diverging",
+                "domain": [-1000, 0, 1000],  // Showing deviation from average
+                "range": ["#d73027", "#ffffbf", "#1a9850"]
+              },
+              "legend": {
+                "title": "Deviation from Global Average",
+                "orient": "bottom-right"
+              }
+            },
+            "tooltip": [
+              {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+              {"field": "Value", "type": "quantitative", "title": "Calories per Person"},
+              {"field": "Calorie Category", "type": "nominal", "title": "Calorie Category"},
+              {"field": "Calorie Deviation", "type": "quantitative", "title": "Deviation from Average"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum['Value'] > 3500"
+            }
+          ],
+          "mark": {"type": "point", "shape": "star", "size": 100, "color": "gold", "stroke": "black", "strokeWidth": 1},
+          "encoding": {
+            "longitude": {"field": "properties.longitude", "type": "quantitative"},
+            "latitude": {"field": "properties.latitude", "type": "quantitative"},
+            "tooltip": [
+              {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+              {"field": "Value", "type": "quantitative", "title": "Calories per Person"}
+            ]
+          }
+        }
+      ],
+      "config": {}
+    };
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .link-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .link-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Data Visualization Index</h1>
+  <p>Select a visualization to view:</p>
+  
+  <div class="links">
+    <a href="emptyCountries.html" class="link-button">Basic Countries Map</a>
+    <a href="choroplethMapWithOcean.html" class="link-button">Choropleth Map with Oceans</a>
+    <a href="choroplethMapWithCountryName.html" class="link-button">Choropleth Map with Country Names</a>
+    <a href="caloricSupplyByYear.html" class="link-button">Caloric Supply Map by Year</a>
+  </div>
+</body>
+</html>

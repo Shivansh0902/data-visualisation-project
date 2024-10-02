@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+</head>
+<body>
+  <h1>Daily Caloric Supply per Person by Year</h1>
+  <div id="caloric_supply_map"></div>
+  
+  <script type="text/javascript">
+    var spec = "js/year.vg.json";  // Updated path to the new JSON file
+    vegaEmbed('#caloric_supply_map', spec).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+  </script>
+</body>
+</html>
