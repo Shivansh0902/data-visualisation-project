@@ -10,7 +10,7 @@
   <label for="countrySelect">Select Country:</label>
   <select id="countrySelect"></select>
   <div id="visualization"></div>
-
+  
   <script type="text/javascript">
     fetch('https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv')
       .then(response => response.text())
@@ -45,36 +45,11 @@
           {"filter": `datum.Country == '${selectedCountry}'`},
           {"calculate": "toNumber(datum.Value)", "as": "Value"}  // Explicitly convert Value to number
         ],
-        "params": [
-          {
-            "name": "brush",
-            "select": {"type": "interval", "encodings": ["x"]}  // Define brush interval selection here
-          }
-        ],
-        "layer": [
-          {
-            "mark": "line",
-            "encoding": {
-              "x": {
-                "field": "Year",
-                "type": "temporal",
-                "title": "Year",
-                "scale": {"domain": {"param": "brush"}}  // Apply the brush to the x-axis
-              },
-              "y": {"field": "Value", "type": "quantitative", "title": "Calories per Person"}
-            }
-          },
-          {
-            "mark": "point",
-            "encoding": {
-              "x": {
-                "field": "Year",
-                "type": "temporal"
-              },
-              "y": {"field": "Value", "type": "quantitative"}
-            }
-          }
-        ]
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal", "title": "Year"},
+          "y": {"field": "Value", "type": "quantitative", "title": "Calories per Person"}
+        }
       };
       vegaEmbed('#visualization', spec).catch(console.error);
     }
