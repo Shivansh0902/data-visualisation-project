@@ -43,7 +43,6 @@
         },
         "transform": [
           {"filter": `datum.Country == '${selectedCountry}'`},
-          {"calculate": "toNumber(datum.Year)", "as": "Year"},  // Explicitly convert Year to number
           {"calculate": "toNumber(datum.Value)", "as": "Value"}  // Explicitly convert Value to number
         ],
         "mark": "line",
