@@ -35,8 +35,12 @@
       const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "title": "Daily Caloric Supply per Person by Country",
-        "width": 1000,
-        "height": 600,
+        "autosize": {
+          "type": "fit", 
+          "contains": "padding"
+        },
+        "width": 1200,  // Set large width
+        "height": 600,  // Set large height
         "data": {
           "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv",
           "format": {"type": "csv"}
@@ -47,6 +51,8 @@
         ],
         "vconcat": [
           {
+            "width": 1200,  // Set width for top chart
+            "height": 400,  // Set height for top chart
             "mark": "line",
             "encoding": {
               "x": {
@@ -63,6 +69,8 @@
             }
           },
           {
+            "width": 1200,  // Set width for brush chart
+            "height": 100,  // Set height for brush chart
             "mark": "line",
             "params": [
               {
@@ -81,8 +89,7 @@
                 "type": "quantitative",
                 "axis": {"tickCount": 3, "grid": false}
               }
-            },
-            "height": 120
+            }
           }
         ]
       };
