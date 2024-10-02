@@ -13,35 +13,47 @@
     h1 {
       color: #333;
     }
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .link-button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    .link-button:hover {
-      background-color: #0056b3;
+    .visualization-container {
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
   <h1>Data Visualization Index</h1>
-  <p>Select a visualization to view:</p>
+  <p>Here are the visualizations:</p>
   
-  <div class="links">
-    <a href="emptyCountries.html" class="link-button">Basic Countries Map</a>
-    <a href="choroplethMapWithOcean.html" class="link-button">Choropleth Map with Oceans</a>
-    <a href="choroplethMapWithCountryName.html" class="link-button">Choropleth Map with Country Names</a>
-    <a href="caloricSupplyByYear.html" class="link-button">Caloric Supply Map by Year</a>
+  <div class="visualization-container">
+    <h2>Basic Countries Map</h2>
+    <div id="basicCountriesMap"></div>
   </div>
+  
+  <div class="visualization-container">
+    <h2>Choropleth Map with Oceans</h2>
+    <div id="choroplethMapWithOcean"></div>
+  </div>
+  
+  <div class="visualization-container">
+    <h2>Choropleth Map with Country Names</h2>
+    <div id="choroplethMapWithCountryName"></div>
+  </div>
+  
+  <div class="visualization-container">
+    <h2>Caloric Supply Map by Year</h2>
+    <div id="caloricSupplyByYear"></div>
+  </div>
+
+  <script type="text/javascript">
+    // Embed Basic Countries Map
+    vegaEmbed('#basicCountriesMap', 'emptyCountries.html').catch(console.error);
+    
+    // Embed Choropleth Map with Oceans
+    vegaEmbed('#choroplethMapWithOcean', 'choroplethMapWithOcean.html').catch(console.error);
+    
+    // Embed Choropleth Map with Country Names
+    vegaEmbed('#choroplethMapWithCountryName', 'choroplethMapWithCountryName.html').catch(console.error);
+    
+    // Embed Caloric Supply Map by Year
+    vegaEmbed('#caloricSupplyByYear', 'caloricSupplyByYear.html').catch(console.error);
+  </script>
 </body>
 </html>
