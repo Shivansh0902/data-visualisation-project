@@ -45,6 +45,12 @@
           {"filter": `datum.Country == '${selectedCountry}'`},
           {"calculate": "toNumber(datum.Value)", "as": "Value"}  // Explicitly convert Value to number
         ],
+        "params": [
+          {
+            "name": "brush",
+            "select": {"type": "interval", "encodings": ["x"]}  // Define brush interval selection here
+          }
+        ],
         "layer": [
           {
             "mark": "line",
@@ -67,12 +73,6 @@
               },
               "y": {"field": "Value", "type": "quantitative"}
             }
-          }
-        ],
-        "params": [
-          {
-            "name": "brush",
-            "select": {"type": "interval", "encodings": ["x"]}  // Enable brushing for zoom
           }
         ]
       };
