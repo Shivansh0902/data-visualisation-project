@@ -10,7 +10,7 @@
       "bind": {
         "input": "range",
         "min": 1961,
-        "max": 2022,
+        "max": 1997,
         "step": 1,
         "name": "Year: "
       }
@@ -44,13 +44,13 @@
       "transform": [
         {"filter": "datum.Year == Year_selection"},
         {
-          "lookup": "Entity",
+          "lookup": "properties.NAME",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv",
               "format": {"type": "csv"}
             },
-            "key": "Entity",
+            "key": "Country",
             "fields": ["Value"]
           }
         }
@@ -60,11 +60,7 @@
         "color": {
           "field": "Value",
           "type": "quantitative",
-          "scale": {
-            "type": "diverging",
-            "domain": [-1000, 0, 1000],
-            "range": ["#d73027", "#ffffbf", "#1a9850"]
-          }
+          "scale": {"scheme": "blues"}
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
