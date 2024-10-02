@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,6 +13,11 @@
     .visualization-container {
       margin: 20px 0;
     }
+    iframe {
+      width: 80%;
+      height: 500px;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -24,36 +26,23 @@
   
   <div class="visualization-container">
     <h2>Basic Countries Map</h2>
-    <div id="basicCountriesMap"></div>
+    <iframe src="emptyCountries.html"></iframe>
   </div>
   
   <div class="visualization-container">
     <h2>Choropleth Map with Oceans</h2>
-    <div id="choroplethMapWithOcean"></div>
+    <iframe src="choroplethMapWithOcean.html"></iframe>
   </div>
   
   <div class="visualization-container">
     <h2>Choropleth Map with Country Names</h2>
-    <div id="choroplethMapWithCountryName"></div>
+    <iframe src="choroplethMapWithCountryName.html"></iframe>
   </div>
   
   <div class="visualization-container">
     <h2>Caloric Supply Map by Year</h2>
-    <div id="caloricSupplyByYear"></div>
+    <iframe src="caloricSupplyByYear.html"></iframe>
   </div>
 
-  <script type="text/javascript">
-    // Embed Basic Countries Map
-    vegaEmbed('#basicCountriesMap', 'js/choropleth_map.vg.json').catch(console.error);
-    
-    // Embed Choropleth Map with Oceans
-    vegaEmbed('#choroplethMapWithOcean', 'js/choropleth_map_with_ocean.vg.json').catch(console.error);
-    
-    // Embed Choropleth Map with Country Names
-    vegaEmbed('#choroplethMapWithCountryName', 'js/choropleth_map_with_country_name.vg.json').catch(console.error);
-    
-    // Embed Caloric Supply Map by Year
-    vegaEmbed('#caloricSupplyByYear', 'js/caloric_supply_by_year.vg.json').catch(console.error);
-  </script>
 </body>
 </html>
