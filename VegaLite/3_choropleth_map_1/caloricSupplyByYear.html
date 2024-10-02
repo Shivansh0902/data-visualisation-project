@@ -2,18 +2,54 @@
 <html>
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
 </head>
 <body>
-  <h1>Daily Caloric Supply per Person by Year</h1>
-  <div id="caloric_supply_map"></div>
+  <h1>Daily Caloric Supply per Person Over Time</h1>
+  <label for="countrySelect">Select Country:</label>
+  <select id="countrySelect"></select>
+  <div id="visualization"></div>
   
   <script type="text/javascript">
-    var spec = "js/year.vg.json";  // Updated path to the new JSON file
-    vegaEmbed('#caloric_supply_map', spec).then(function(result) {
-      // Access the Vega view instance as result.view
-    }).catch(console.error);
+    fetch('https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv')
+      .then(response => response.text())
+      .then(csv => {
+        const countries = new Set(csv.split('\n').map(line => line.split(',')[0]).slice(1));
+        const select = document.getElementById('countrySelect');
+        countries.forEach(country => {
+          if (country) {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            select.appendChild(option);
+          }
+        });
+        select.onchange = () => renderViz(select.value);
+        renderViz(select.value);
+      });
+
+    function renderViz(selectedCountry) {
+      const spec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "title": "Daily Caloric Supply per Person by Country",
+        "width": 800,
+        "height": 400,
+        "data": {
+          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/testing.csv",
+          "format": {"type": "csv"}
+        },
+        "transform": [
+          {"filter": `datum.Entity == '${selectedCountry}'`}
+        ],
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal", "title": "Year"},
+          "y": {"field": "Value", "type": "quantitative", "title": "Calories per Person"}
+        }
+      };
+      vegaEmbed('#visualization', spec);
+    }
   </script>
 </body>
 </html>
