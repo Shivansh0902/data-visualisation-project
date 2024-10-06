@@ -22,7 +22,7 @@
         },
         "transform": [
           {
-            "filter": "datum.City != null && datum.City.trim() !== '' && isFinite(datum.score)"
+            "filter": "datum.City && datum.City !== '' && datum.score !== null && datum.score > 0"
           }
         ],
         "mark": "circle",
