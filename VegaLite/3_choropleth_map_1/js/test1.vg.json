@@ -22,14 +22,13 @@
         },
         "transform": [
           {
-            "filter": "datum.City && datum.City !== '' && datum.score !== null && datum.score > 0"
+            "filter": "datum.City && datum.City !== ''"
           }
         ],
         "mark": "circle",
         "encoding": {
           "longitude": {"field": "longitude_deg", "type": "quantitative"},
           "latitude": {"field": "latitude_deg", "type": "quantitative"},
-          "size": {"field": "score", "type": "quantitative", "scale": {"range": [10, 100]}},
           "color": {"field": "City", "type": "nominal"},
           "tooltip": [
             {"field": "name", "type": "nominal", "title": "Airport Name"},
