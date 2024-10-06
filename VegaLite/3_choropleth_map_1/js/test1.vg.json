@@ -5,7 +5,7 @@
     "height": 500,
     "data": {
       "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/Australian_States.topojson",
-      "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+      "format": {"type": "topojson", "feature": "Australian_States"}
     },
     "projection": {"type": "mercator"},
     "layer": [
