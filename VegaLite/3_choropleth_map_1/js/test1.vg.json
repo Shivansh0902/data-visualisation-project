@@ -20,15 +20,20 @@
           "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/airportslist.csv",
           "format": {"type": "csv"}
         },
+        "transform": [
+          {
+            "filter": "datum.City != null && datum.City != '' && isFinite(datum.score)"
+          }
+        ],
         "mark": "circle",
         "encoding": {
           "longitude": {"field": "longitude_deg", "type": "quantitative"},
           "latitude": {"field": "latitude_deg", "type": "quantitative"},
           "size": {"field": "score", "type": "quantitative", "scale": {"range": [10, 100]}},
-          "color": {"field": "municipality", "type": "nominal"},
+          "color": {"field": "City", "type": "nominal"},
           "tooltip": [
             {"field": "name", "type": "nominal", "title": "Airport Name"},
-            {"field": "municipality", "type": "nominal", "title": "City"},
+            {"field": "City", "type": "nominal", "title": "City"},
             {"field": "type", "type": "nominal", "title": "Type"},
             {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
           ]
