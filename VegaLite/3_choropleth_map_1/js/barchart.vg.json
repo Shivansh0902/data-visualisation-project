@@ -17,27 +17,50 @@
         "sort": [{"field": "Total_Passengers", "order": "descending"}]
       },
       {
-        "filter": "datum.rank <= 10"  
+        "filter": "datum.rank <= 10"
       }
     ],
-    "mark": "bar",
-    "encoding": {
-      "x": {
-        "field": "City1",
-        "type": "nominal",
-        "axis": {"title": "Route (City1 to City2)", "labelAngle": -45},
-        "sort": {"field": "Total_Passengers", "order": "descending"}
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "City1",
+            "type": "nominal",
+            "axis": {"title": "Route (City1 to City2)", "labelAngle": -45},
+            "sort": {"field": "Total_Passengers", "order": "descending"}
+          },
+          "y": {
+            "field": "Total_Passengers",
+            "type": "quantitative",
+            "axis": {"title": "Total Passenger Volume"}
+          },
+          "tooltip": [
+            {"field": "City1", "type": "nominal", "title": "From"},
+            {"field": "City2", "type": "nominal", "title": "To"},
+            {"field": "Total_Passengers", "type": "quantitative", "title": "Passengers"}
+          ]
+        }
       },
-      "y": {
-        "field": "Total_Passengers",
-        "type": "quantitative",
-        "axis": {"title": "Total Passenger Volume"}
+      {
+        "mark": {"type": "rule", "color": "red", "strokeDash": [4, 4]},
+        "encoding": {
+          "y": {
+            "datum": 95000,  
+            "type": "quantitative"
+          }
+        }
       },
-      "tooltip": [
-        {"field": "City1", "type": "nominal", "title": "From"},
-        {"field": "City2", "type": "nominal", "title": "To"},
-        {"field": "Total_Passengers", "type": "quantitative", "title": "Passengers"}
-      ]
-    }
+      {
+        "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5, "fontSize": 12, "color": "red"},
+        "encoding": {
+          "y": {
+            "datum": 95000,  
+            "type": "quantitative"
+          },
+          "text": {"value": "Max Passenger Route"}
+        }
+      }
+    ]
   }
   
