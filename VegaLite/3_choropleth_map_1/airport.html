@@ -10,12 +10,36 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-    <!-- Container for the visualisation -->
-    <div id="vis"></div>
+    <h1>Australian Airports Visualization</h1>
+
+    <!-- Container for the map visualization -->
+    <div id="map_vis"></div>
+
+    <!-- Container for the heatmap visualization -->
+    <div id="barchart_vis"></div>
+
+    <div id="heatmap_vis"></div>
+    <!-- Container for the bubble chart visualization -->
+    <div id="bubblechart_vis"></div>
+
 
     <script type="text/javascript">
-        // Embed the Vega-Lite JSON file
-        vegaEmbed('#vis', 'js/test1.vg.json').then(result => {
+        // Embed the Map visualization (test1.vg.json)
+        vegaEmbed('#map_vis', 'js/test1.vg.json').then(result => {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        // Embed the Heatmap visualization (heatmap.vg.json)
+        vegaEmbed('#barchart_vis', 'js/barchart.vg.json').then(result => {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        // Embed the Heatmap visualization (heatmap.vg.json)
+        vegaEmbed('#heatmap_vis', 'js/heatmap.vg.json').then(result => {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+        // Embed the Bubble Chart visualization (bubblechart.vg.json)
+        vegaEmbed('#bubblechart_vis', 'js/bubblechart.vg.json').then(result => {
             // Access the Vega view instance as result.view
         }).catch(console.error);
     </script>

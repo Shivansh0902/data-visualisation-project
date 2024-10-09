@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Passenger Load Factor vs. Distance (Improved)",
+    "width": 800,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",  
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "calculate": "toNumber(datum.Distance_GC_(km))",
+        "as": "Distance_Num"
+      },
+      {
+        "calculate": "toNumber(datum.Passenger_Load_Factor)",
+        "as": "PLF_Num"
+      },
+      {
+        "filter": "datum.Distance_Num > 0 && datum.Distance_Num < 4000 && datum.PLF_Num > 0 && datum.PLF_Num <= 100"
+      },
+      {
+        "bin": {"step": 200},  
+        "field": "Distance_Num",
+        "as": "Distance_Binned"
+      },
+      {
+        "bin": {"step": 10},  
+        "field": "PLF_Num",
+        "as": "PLF_Binned"
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "Distance_Binned",
+        "type": "ordinal",
+        "axis": {"title": "Distance (km)", "labelAngle": -45}
+      },
+      "y": {
+        "field": "PLF_Binned",
+        "type": "ordinal",
+        "axis": {"title": "Passenger Load Factor (%)"}
+      },
+      "color": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "yellowgreenblue",  
+          "domain": [0, 100]  
+        },
+        "legend": {"title": "Number of Routes"}
+      },
+      "tooltip": [
+        {"field": "Distance_Num", "type": "quantitative", "title": "Distance (km)"},
+        {"field": "PLF_Num", "type": "quantitative", "title": "Passenger Load Factor (%)"},
+        {"aggregate": "count", "type": "quantitative", "title": "Number of Routes"}
+      ]
+    }
+  }
+  

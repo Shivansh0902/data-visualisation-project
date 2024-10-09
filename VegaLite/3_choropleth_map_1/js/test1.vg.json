@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Australian Airports and Routes",
+  "title": "Australian Airports by State",
   "width": 800,
   "height": 500,
   "config": {
@@ -25,81 +25,45 @@
       },
       "transform": [
         {
-          "filter": "datum.municipality && datum.municipality !== ''"
-        },
-        {
-          "calculate": "lower(datum.municipality)",
-          "as": "municipality_lower"
+          "filter": "datum.iso_region && datum.iso_region !== ''"
         }
       ],
+      "selection": {
+        "StateFilter": {
+          "type": "single", 
+          "fields": ["iso_region"],
+          "bind": {
+            "input": "select",
+            "options": [
+              "", 
+              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
+              "AU-NT", "AU-ACT"
+            ],
+            "name": "Select a State"
+          },
+          "empty": "all"
+        }
+      },
       "mark": "circle",
       "encoding": {
         "longitude": {"field": "longitude_deg", "type": "quantitative"},
         "latitude": {"field": "latitude_deg", "type": "quantitative"},
         "size": {"field": "score", "type": "quantitative", "scale": {"range": [10, 100]}},
-        "color": {"field": "municipality", "type": "nominal"},
+        "color": {"value": "steelblue"}, 
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Airport Name"},
           {"field": "municipality", "type": "nominal", "title": "City"},
-          {"field": "type", "type": "nominal", "title": "Type"},
+          {"field": "iso_region", "type": "nominal", "title": "State"},
           {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
         ]
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
-        "format": {"type": "csv"}
       },
       "transform": [
         {
-          "calculate": "lower(datum.City1)",
-          "as": "City1_lower"
-        },
-        {
-          "calculate": "lower(datum.City2)",
-          "as": "City2_lower"
-        },
-        {
-          "lookup": "City1_lower",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "municipality_lower",
-            "fields": ["longitude_deg", "latitude_deg"],
-            "as": ["origin_lon", "origin_lat"]
+          "filter": {
+            "selection": "StateFilter"
           }
-        },
-        {
-          "lookup": "City2_lower",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "municipality_lower",
-            "fields": ["longitude_deg", "latitude_deg"],
-            "as": ["dest_lon", "dest_lat"]
-          }
-        },
-        {
-          "filter": "datum.origin_lon && datum.origin_lat && datum.dest_lon && datum.dest_lat"
         }
-      ],
-      "mark": {"type": "line", "stroke": "red", "strokeWidth": 1.5},
-      "encoding": {
-        "longitude": {"field": "origin_lon", "type": "quantitative"},
-        "latitude": {"field": "origin_lat", "type": "quantitative"},
-        "longitude2": {"field": "dest_lon"},
-        "latitude2": {"field": "dest_lat"},
-        "tooltip": [
-          {"field": "City1", "type": "nominal", "title": "Origin"},
-          {"field": "City2", "type": "nominal", "title": "Destination"},
-          {"field": "Passenger_Trips", "type": "quantitative", "title": "Passengers"}
-        ]
-      }
+      ]
     }
   ]
 }

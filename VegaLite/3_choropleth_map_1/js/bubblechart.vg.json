@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Aircraft Trips vs. Passenger Load Factor",
+    "width": 800,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": {
+      "type": "circle",
+      "opacity": 0.7,
+      "stroke": "black",
+      "strokeWidth": 1
+    },
+    "encoding": {
+      "x": {
+        "field": "Aircraft_Trips",
+        "type": "quantitative",
+        "axis": {"title": "Aircraft Trips"}
+      },
+      "y": {
+        "field": "Passenger_Load_Factor",
+        "type": "quantitative",
+        "axis": {"title": "Passenger Load Factor (%)"}
+      },
+      "size": {
+        "field": "Passenger_Trips",
+        "type": "quantitative",
+        "scale": {"range": [50, 1000]},
+        "legend": {"title": "Passenger Volume"}
+      },
+      "color": {
+        "field": "City1",
+        "type": "nominal",
+        "legend": {"title": "From City"}
+      },
+      "tooltip": [
+        {"field": "City1", "type": "nominal", "title": "From"},
+        {"field": "City2", "type": "nominal", "title": "To"},
+        {"field": "Aircraft_Trips", "type": "quantitative", "title": "Aircraft Trips"},
+        {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
+        {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Volume"}
+      ]
+    }
+  }
+  

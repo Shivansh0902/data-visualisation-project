@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Distance vs. Passenger Load Factor",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv", 
+      "format": {"type": "csv"}
+    },
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Distance_GC_(km)",
+        "type": "quantitative",
+        "axis": {"title": "Distance (km)"}
+      },
+      "y": {
+        "field": "Passenger_Load_Factor",
+        "type": "quantitative",
+        "axis": {"title": "Passenger Load Factor (%)"}
+      },
+      "size": {"field": "Passenger_Trips", "type": "quantitative"},
+      "tooltip": [
+        {"field": "City1", "type": "nominal", "title": "From"},
+        {"field": "City2", "type": "nominal", "title": "To"},
+        {"field": "Distance_GC_(km)", "type": "quantitative", "title": "Distance (km)"},
+        {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
+        {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
+      ]
+    }
+  }
+  
