@@ -4,7 +4,7 @@
   "width": 800,
   "height": 500,
   "config": {
-    "background": "#a6cee3" 
+    "background": "#a6cee3"
   },
   "data": {
     "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
@@ -26,6 +26,10 @@
       "transform": [
         {
           "filter": "datum.municipality && datum.municipality !== ''"
+        },
+        {
+          "calculate": "lower(datum.municipality)",
+          "as": "municipality_lower"
         }
       ],
       "mark": "circle",
@@ -49,25 +53,33 @@
       },
       "transform": [
         {
-          "lookup": "City1",
+          "calculate": "lower(datum.City1)",
+          "as": "City1_lower"
+        },
+        {
+          "calculate": "lower(datum.City2)",
+          "as": "City2_lower"
+        },
+        {
+          "lookup": "City1_lower",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
               "format": {"type": "csv"}
             },
-            "key": "municipality",
+            "key": "municipality_lower",
             "fields": ["longitude_deg", "latitude_deg"],
             "as": ["origin_lon", "origin_lat"]
           }
         },
         {
-          "lookup": "City2",
+          "lookup": "City2_lower",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
               "format": {"type": "csv"}
             },
-            "key": "municipality",
+            "key": "municipality_lower",
             "fields": ["longitude_deg", "latitude_deg"],
             "as": ["dest_lon", "dest_lat"]
           }
