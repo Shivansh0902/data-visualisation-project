@@ -18,6 +18,9 @@
     <!-- Container for the heatmap visualization -->
     <div id="barchart_vis"></div>
 
+    <!-- Container for the heatmap visualization -->
+    <div id="complex_vis"></div>
+
     <div id="heatmap_vis"></div>
     <!-- Container for the bubble chart visualization -->
     <div id="bubblechart_vis"></div>
@@ -31,6 +34,11 @@
 
         // Embed the Heatmap visualization (heatmap.vg.json)
         vegaEmbed('#barchart_vis', 'js/barchart.vg.json').then(result => {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        // Embed the Heatmap visualization (heatmap.vg.json)
+        vegaEmbed('#complex_vis', 'js/complex.vg.json').then(result => {
             // Access the Vega view instance as result.view
         }).catch(console.error);
 

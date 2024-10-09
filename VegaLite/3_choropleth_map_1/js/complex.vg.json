@@ -9,12 +9,25 @@
     },
     "transform": [
       {
-        "calculate": "lower(datum.City1) + '-' + lower(datum.City2)",
-        "as": "route"
+        "calculate": "toNumber(datum.Passenger_Trips)",
+        "as": "Passenger_Trips"
       },
       {
-        "aggregate": [{"op": "sum", "field": "Passenger_Trips", "as": "Total_Passenger_Trips"}],
-        "groupby": ["route", "Year"]
+        "calculate": "toNumber(datum.Year)",
+        "as": "year"
+      },
+      {
+        "filter": "datum.year >= 1984 && datum.year <= 2024"
+      },
+      {
+        "aggregate": [
+          {
+            "op": "sum",
+            "field": "Passenger_Trips",
+            "as": "Total_Passenger_Trips"
+          }
+        ],
+        "groupby": ["year", "Month"]
       }
     ],
     "mark": {
@@ -24,7 +37,7 @@
     },
     "encoding": {
       "x": {
-        "field": "Year",
+        "field": "year",
         "type": "quantitative",
         "axis": {"title": "Year"}
       },
@@ -35,16 +48,22 @@
         "axis": {"title": "Total Passenger Trips"}
       },
       "color": {
-        "field": "route",
+        "field": "Month",
         "type": "nominal",
-        "title": "Route",
-        "legend": {"title": "City Pair"}
+        "legend": {"title": "Month", "symbolLimit": 12}
       },
       "tooltip": [
-        {"field": "route", "type": "nominal", "title": "Route"},
-        {"field": "Year", "type": "quantitative", "title": "Year"},
+        {"field": "year", "type": "quantitative", "title": "Year"},
+        {"field": "Month", "type": "nominal", "title": "Month"},
         {"field": "Total_Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
       ]
+    },
+    "selection": {
+      "year_select": {
+        "type": "interval",
+        "encodings": ["x"],
+        "bind": "scales"
+      }
     }
-}
+  }
   
