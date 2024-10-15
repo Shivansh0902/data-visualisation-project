@@ -1,69 +1,60 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Stream Graph of Passenger Trips Over Time",
-    "width": 800,
-    "height": 500,
-    "data": {
-      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
-      "format": {"type": "csv"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Stream Graph of Passenger Trips Between Smaller Cities Over Time",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "toLower(datum.City1)",
+      "as": "City1_lower"
     },
-    "transform": [
-      {
-        "calculate": "toNumber(datum.Passenger_Trips)",
-        "as": "Passenger_Trips"
-      },
-      {
-        "calculate": "toNumber(datum.Year)",
-        "as": "year"
-      },
-      {
-        "filter": "datum.year >= 1984 && datum.year <= 2024"
-      },
-      {
-        "aggregate": [
-          {
-            "op": "sum",
-            "field": "Passenger_Trips",
-            "as": "Total_Passenger_Trips"
-          }
-        ],
-        "groupby": ["year", "Month"]
-      }
-    ],
-    "mark": {
-      "type": "area",
-      "interpolate": "basis",
-      "line": true
+    {
+      "calculate": "toLower(datum.City2)",
+      "as": "City2_lower"
     },
-    "encoding": {
-      "x": {
-        "field": "year",
-        "type": "quantitative",
-        "axis": {"title": "Year"}
-      },
-      "y": {
-        "field": "Total_Passenger_Trips",
-        "type": "quantitative",
-        "stack": "center",
-        "axis": {"title": "Total Passenger Trips"}
-      },
-      "color": {
-        "field": "Month",
-        "type": "nominal",
-        "legend": {"title": "Month", "symbolLimit": 12}
-      },
-      "tooltip": [
-        {"field": "year", "type": "quantitative", "title": "Year"},
-        {"field": "Month", "type": "nominal", "title": "Month"},
-        {"field": "Total_Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
-      ]
+    {
+      "filter": "indexof(['sydney', 'melbourne', 'brisbane', 'perth', 'adelaide', 'canberra', 'hobart', 'darwin'], datum.City1_lower) === -1 && indexof(['sydney', 'melbourne', 'brisbane', 'perth', 'adelaide', 'canberra', 'hobart', 'darwin'], datum.City2_lower) === -1"
     },
-    "selection": {
-      "year_select": {
-        "type": "interval",
-        "encodings": ["x"],
-        "bind": "scales"
-      }
+    {
+      "calculate": "datum.City1_lower + ' to ' + datum.City2_lower",
+      "as": "route"
+    },
+    {
+      "aggregate": [{"op": "sum", "field": "Passenger_Trips", "as": "Total_Passenger_Trips"}],
+      "groupby": ["route", "Year"]
     }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "basis",
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "axis": {"title": "Year"}
+    },
+    "y": {
+      "field": "Total_Passenger_Trips",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": {"title": "Total Passenger Trips"}
+    },
+    "color": {
+      "field": "route",
+      "type": "nominal",
+      "title": "City Pair",
+      "legend": {"title": "Routes Between Smaller Cities"}
+    },
+    "tooltip": [
+      {"field": "route", "type": "nominal", "title": "Route"},
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {"field": "Total_Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
+    ]
   }
-  
+}
