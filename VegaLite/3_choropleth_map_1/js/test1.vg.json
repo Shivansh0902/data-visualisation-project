@@ -27,56 +27,11 @@
       }
     },
     {
-      "mark": {"type": "rule", "color": "red", "opacity": 0.35},
       "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/Cleaned_Flight_Routes_Data.csv",
         "format": {"type": "csv"}
       },
-      "transform": [
-        {
-          "lookup": "Departing Port",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "name",
-            "fields": ["latitude_deg", "longitude_deg"]
-          },
-          "as": ["dep_lat", "dep_lon"]
-        },
-        {
-          "lookup": "Arriving Port",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "name",
-            "fields": ["latitude_deg", "longitude_deg"]
-          },
-          "as": ["arr_lat", "arr_lon"]
-        }
-      ],
-      "encoding": {
-        "latitude": {"field": "dep_lat", "type": "quantitative"},
-        "longitude": {"field": "dep_lon", "type": "quantitative"},
-        "latitude2": {"field": "arr_lat", "type": "quantitative"},
-        "longitude2": {"field": "arr_lon", "type": "quantitative"},
-        "tooltip": [
-          {"field": "Departing Port", "type": "nominal", "title": "From"},
-          {"field": "Arriving Port", "type": "nominal", "title": "To"},
-          {"field": "Airline", "type": "nominal", "title": "Airline"},
-          {"field": "Sectors Flown", "type": "quantitative", "title": "Sectors Flown"}
-        ]
-      }
-    },
-    {
       "mark": "circle",
-      "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-        "format": {"type": "csv"}
-      },
       "encoding": {
         "longitude": {"field": "longitude_deg", "type": "quantitative"},
         "latitude": {"field": "latitude_deg", "type": "quantitative"},
@@ -94,6 +49,25 @@
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Airport Name"},
           {"field": "municipality", "type": "nominal", "title": "City"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/Cleaned_Flight_Routes_Data.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {"type": "rule", "stroke": "red", "strokeWidth": 1.5, "opacity": 0.7},
+      "encoding": {
+        "longitude": {"field": "dep_longitude", "type": "quantitative"},
+        "latitude": {"field": "dep_latitude", "type": "quantitative"},
+        "longitude2": {"field": "arr_longitude", "type": "quantitative"},
+        "latitude2": {"field": "arr_latitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Departing Port", "type": "nominal", "title": "From"},
+          {"field": "Arriving Port", "type": "nominal", "title": "To"},
+          {"field": "Airline", "type": "nominal", "title": "Airline"},
+          {"field": "Sectors Flown", "type": "quantitative", "title": "Sectors Flown"}
         ]
       }
     }
