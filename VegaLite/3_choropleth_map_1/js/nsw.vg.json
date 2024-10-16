@@ -4,7 +4,7 @@
     "width": 800,
     "height": 500,
     "data": {
-      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nsw.topojson",
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/unsw.topojson",
       "format": {"type": "topojson", "feature": "new_south_wales"}
     },
     "projection": {"type": "mercator"},
