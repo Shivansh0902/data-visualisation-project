@@ -28,22 +28,6 @@
           "filter": "datum.iso_region && datum.iso_region !== ''"
         }
       ],
-      "selection": {
-        "StateFilter": {
-          "type": "single", 
-          "fields": ["iso_region"],
-          "bind": {
-            "input": "select",
-            "options": [
-              "", 
-              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
-              "AU-NT", "AU-ACT"
-            ],
-            "name": "Select a State"
-          },
-          "empty": "all"
-        }
-      },
       "mark": "circle",
       "encoding": {
         "longitude": {"field": "longitude_deg", "type": "quantitative"},
@@ -64,14 +48,7 @@
           {"field": "iso_region", "type": "nominal", "title": "State"},
           {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
         ]
-      },
-      "transform": [
-        {
-          "filter": {
-            "selection": "StateFilter"
-          }
-        }
-      ]
+      }
     }
   ]
 }

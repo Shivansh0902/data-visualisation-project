@@ -16,7 +16,7 @@
       },
       {
         "name": "zoom_level",
-        "expr": "State_selection === 'AU-VIC' ? 7000 : 5000",
+        "expr": "State_selection === 'AU-VIC' ? 7000 : 6000",
         "bind": {
           "input": "range",
           "min": 3000,
@@ -27,12 +27,12 @@
       },
       {
         "name": "center_to",
-        "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : [150.0, -32.5]",
+        "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : [147.0, -33.9]",
         "bind": {
           "input": "select",
           "options": [
             [145, -37.95],  
-            [150.0, -32.5]  
+            [147.0, -33.9]  
           ],
           "labels": ["Victoria", "New South Wales"],
           "name": "Map Center: "
@@ -41,7 +41,7 @@
     ],
     "projection": {
       "type": "mercator",
-      "center": {"expr": "center_to"},  
+      "center": {"expr": "center_to"},
       "scale": {"expr": "zoom_level"}
     },
     "layer": [
@@ -67,8 +67,11 @@
           }
         ],
         "data": {
-          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nsw.topojson",
-          "format": {"type": "topojson", "feature": "new_south_wales"}
+          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/unsw.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "ne_10m_admin_1_states_provinces"
+          }
         },
         "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "white"},
         "encoding": {

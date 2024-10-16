@@ -1,47 +1,77 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Australian Airports",
-    "width": 800,
-    "height": 500,
-    "config": {
-      "background": "#a6cee3" 
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australian Airports by State",
+  "width": 800,
+  "height": 500,
+  "config": {
+    "background": "#a6cee3"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
+    "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+  },
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+      }
     },
-    "data": {
-      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
-      "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
-    },
-    "projection": {"type": "mercator"},
-    "layer": [
-      {
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
-        "encoding": {
-          "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "filter": "datum.iso_region && datum.iso_region !== ''"
+        }
+      ],
+      "selection": {
+        "StateFilter": {
+          "type": "single", 
+          "fields": ["iso_region"],
+          "bind": {
+            "input": "select",
+            "options": [
+              "", 
+              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
+              "AU-NT", "AU-ACT"
+            ],
+            "name": "Select a State"
+          },
+          "empty": "all"
         }
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-          "format": {"type": "csv"}
-        },
-        "transform": [
-          {
-            "filter": "datum.municipality && datum.municipality !== ''"
+      "mark": "circle",
+      "encoding": {
+        "longitude": {"field": "longitude_deg", "type": "quantitative"},
+        "latitude": {"field": "latitude_deg", "type": "quantitative"},
+        "size": {
+          "field": "score",
+          "type": "quantitative",
+          "scale": {
+            "type": "log",  
+            "domain": [1, 1000000],  
+            "range": [10, 100]  
           }
-        ],
-        "mark": "circle",
-        "encoding": {
-          "longitude": {"field": "longitude_deg", "type": "quantitative"},
-          "latitude": {"field": "latitude_deg", "type": "quantitative"},
-          "size": {"field": "score", "type": "quantitative", "scale": {"range": [10, 100]}},
-          "color": {"field": "municipality", "type": "nominal"},
-          "tooltip": [
-            {"field": "name", "type": "nominal", "title": "Airport Name"},
-            {"field": "municipality", "type": "nominal", "title": "City"},
-            {"field": "type", "type": "nominal", "title": "Type"},
-            {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
-          ]
+        },
+        "color": {"value": "steelblue"}, 
+        "tooltip": [
+          {"field": "name", "type": "nominal", "title": "Airport Name"},
+          {"field": "municipality", "type": "nominal", "title": "City"},
+          {"field": "iso_region", "type": "nominal", "title": "State"},
+          {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
+        ]
+      },
+      "transform": [
+        {
+          "filter": {
+            "selection": "StateFilter"
+          }
         }
-      }
-    ]
-  }
-  
+      ]
+    }
+  ]
+}
