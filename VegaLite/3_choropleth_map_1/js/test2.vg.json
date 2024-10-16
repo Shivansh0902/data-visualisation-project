@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Airports in Victoria and New South Wales",
-    "width": "container",
+    "width": 900,
     "height": 500,
     "params": [
       {
@@ -16,7 +16,7 @@
       },
       {
         "name": "zoom_level",
-        "value": 5000,
+        "expr": "State_selection === 'AU-VIC' ? 7000 : 5000",
         "bind": {
           "input": "range",
           "min": 3000,
@@ -27,7 +27,7 @@
       },
       {
         "name": "center_to",
-        "value": [146, -36.5],
+        "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : [150.0, -32.5]",
         "bind": {
           "input": "select",
           "options": [
@@ -82,10 +82,7 @@
         },
         "transform": [
           {
-            "filter": {
-              "param": "State_selection",
-              "field": "iso_region"
-            }
+            "filter": "datum.iso_region === State_selection"
           }
         ],
         "mark": "circle",
