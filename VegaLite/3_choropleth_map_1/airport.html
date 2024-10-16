@@ -18,12 +18,12 @@
     <div id="map_vis_2"></div>
 
     <!-- Container for the heatmap visualization -->
-    <div id="barchart_vis"></div>
+    <div id="stream_vis"></div>
 
     <!-- Container for the heatmap visualization -->
     <div id="complex_vis"></div>
 
-    <div id="heatmap_vis"></div>
+    <div id="stackedbar"></div>
     <!-- Container for the bubble chart visualization -->
     <div id="bubblechart_vis"></div>
 
@@ -34,26 +34,26 @@
             // Access the Vega view instance as result.view
         }).catch(console.error);
 
-        // Embed the Map visualization (test1.vg.json)
-        vegaEmbed('#map_vis_2', 'js/test2.vg.json').then(result => {
+        // // Embed the Map visualization (test1.vg.json)
+        // vegaEmbed('#map_vis_2', 'js/test2.vg.json').then(result => {
+        //     // Access the Vega view instance as result.view
+        // }).catch(console.error);
+
+        // Embed the Heatmap visualization (heatmap.vg.json)
+        vegaEmbed('#stream_vis', 'js/streamgraph.vg.json').then(result => {
             // Access the Vega view instance as result.view
         }).catch(console.error);
 
-        // Embed the Heatmap visualization (heatmap.vg.json)
-        vegaEmbed('#barchart_vis', 'js/barchart.vg.json').then(result => {
-            // Access the Vega view instance as result.view
-        }).catch(console.error);
+        // // Embed the Heatmap visualization (heatmap.vg.json)
+        // vegaEmbed('#complex_vis', 'js/complex.vg.json').then(result => {
+        //     // Access the Vega view instance as result.view
+        // }).catch(console.error);
 
         // Embed the Heatmap visualization (heatmap.vg.json)
-        vegaEmbed('#complex_vis', 'js/complex.vg.json').then(result => {
+        vegaEmbed('#stackedbar', 'js/stacked_barchart.vg.json').then(result => {
             // Access the Vega view instance as result.view
         }).catch(console.error);
-
-        // Embed the Heatmap visualization (heatmap.vg.json)
-        vegaEmbed('#heatmap_vis', 'js/heatmap.vg.json').then(result => {
-            // Access the Vega view instance as result.view
-        }).catch(console.error);
-        // Embed the Bubble Chart visualization (bubblechart.vg.json)
+        // // Embed the Bubble Chart visualization (bubblechart.vg.json)
         vegaEmbed('#bubblechart_vis', 'js/bubblechart.vg.json').then(result => {
             // Access the Vega view instance as result.view
         }).catch(console.error);

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top Cities by Aircraft Trips Over Time",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "lower(datum.City1)", 
+      "as": "city"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "Aircraft_Trips", "as": "Total_Aircraft_Trips"}
+      ],
+      "groupby": ["Year", "city"]
+    },
+    {
+      "window": [
+        {"op": "sum", "field": "Total_Aircraft_Trips", "as": "Total_Trips_All_Years"}
+      ],
+      "groupby": ["city"]
+    },
+    {
+      "window": [
+        {"op": "rank", "as": "Rank"}
+      ],
+      "sort": [{"field": "Total_Trips_All_Years", "order": "descending"}]
+    },
+    {
+      "filter": "datum.Rank <= 150"  
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal", 
+      "axis": {"title": "Year"}
+    },
+    "y": {
+      "field": "Total_Aircraft_Trips",
+      "type": "quantitative",
+      "axis": {"title": "Total Aircraft Trips"}
+    },
+    "color": {
+      "field": "city",
+      "type": "nominal",
+      "legend": {"title": "City"}
+    },
+    "tooltip": [
+      {"field": "city", "type": "nominal", "title": "City"},
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Total_Aircraft_Trips", "type": "quantitative", "title": "Total Aircraft Trips"}
+    ]
+  }
+}

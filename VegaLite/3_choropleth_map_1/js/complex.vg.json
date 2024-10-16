@@ -1,60 +1,129 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Stream Graph of Passenger Trips Between Smaller Cities Over Time",
+  "title": "Australian Airports and Routes by Aircraft Trips",
   "width": 800,
   "height": 500,
+  "config": {
+    "background": "#a6cee3"
+  },
   "data": {
-    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
-    "format": {"type": "csv"}
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
+    "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
   },
-  "transform": [
+  "projection": {"type": "mercator"},
+  "layer": [
     {
-      "calculate": "toLower(datum.City1)",
-      "as": "City1_lower"
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+      }
     },
     {
-      "calculate": "toLower(datum.City2)",
-      "as": "City2_lower"
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "filter": "datum.iso_region && datum.iso_region !== ''"
+        }
+      ],
+      "selection": {
+        "StateFilter": {
+          "type": "single", 
+          "fields": ["iso_region"],
+          "bind": {
+            "input": "select",
+            "options": [
+              "", 
+              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
+              "AU-NT", "AU-ACT"
+            ],
+            "name": "Select a State"
+          },
+          "empty": "all"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "longitude": {"field": "longitude_deg", "type": "quantitative"},
+        "latitude": {"field": "latitude_deg", "type": "quantitative"},
+        "size": {
+          "field": "score",
+          "type": "quantitative",
+          "scale": {
+            "type": "log",  
+            "domain": [1, 1000000],  
+            "range": [10, 100]  
+          }
+        },
+        "color": {"value": "steelblue"}, 
+        "tooltip": [
+          {"field": "name", "type": "nominal", "title": "Airport Name"},
+          {"field": "municipality", "type": "nominal", "title": "City"},
+          {"field": "iso_region", "type": "nominal", "title": "State"},
+          {"field": "indent", "type": "nominal", "title": "IATA Code"}
+        ]
+      },
+      "transform": [
+        {
+          "filter": {
+            "selection": "StateFilter"
+          }
+        }
+      ]
     },
     {
-      "filter": "indexof(['sydney', 'melbourne', 'brisbane', 'perth', 'adelaide', 'canberra', 'hobart', 'darwin'], datum.City1_lower) === -1 && indexof(['sydney', 'melbourne', 'brisbane', 'perth', 'adelaide', 'canberra', 'hobart', 'darwin'], datum.City2_lower) === -1"
-    },
-    {
-      "calculate": "datum.City1_lower + ' to ' + datum.City2_lower",
-      "as": "route"
-    },
-    {
-      "aggregate": [{"op": "sum", "field": "Passenger_Trips", "as": "Total_Passenger_Trips"}],
-      "groupby": ["route", "Year"]
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "lookup": "city1",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "indent",
+            "fields": ["latitude_deg", "longitude_deg"]
+          }
+        },
+        {
+          "lookup": "city2",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "indent",
+            "fields": ["latitude_deg", "longitude_deg"]
+          },
+          "as": ["lat2", "lon2"]
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "black",
+        "opacity": 0.35
+      },
+      "encoding": {
+        "longitude": {"field": "longitude_deg"},
+        "latitude": {"field": "latitude_deg"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"},
+        "size": {
+          "field": "Aircraft_Trips",
+          "type": "quantitative",
+          "scale": {"range": [1, 10]}
+        },
+        "tooltip": [
+          {"field": "city1", "title": "From"},
+          {"field": "city2", "title": "To"},
+          {"field": "Aircraft_Trips", "title": "Aircraft Trips"}
+        ]
+      }
     }
-  ],
-  "mark": {
-    "type": "area",
-    "interpolate": "basis",
-    "line": true
-  },
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "quantitative",
-      "axis": {"title": "Year"}
-    },
-    "y": {
-      "field": "Total_Passenger_Trips",
-      "type": "quantitative",
-      "stack": "center",
-      "axis": {"title": "Total Passenger Trips"}
-    },
-    "color": {
-      "field": "route",
-      "type": "nominal",
-      "title": "City Pair",
-      "legend": {"title": "Routes Between Smaller Cities"}
-    },
-    "tooltip": [
-      {"field": "route", "type": "nominal", "title": "Route"},
-      {"field": "Year", "type": "quantitative", "title": "Year"},
-      {"field": "Total_Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
-    ]
-  }
+  ]
 }

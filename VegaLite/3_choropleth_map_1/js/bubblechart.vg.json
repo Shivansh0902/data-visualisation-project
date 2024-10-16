@@ -74,8 +74,10 @@
       "name": "yearFilter",
       "value": 1984,
       "bind": {
-        "input": "select",
-        "options": [1984, 1985, 1986, 1987],
+        "input": "range",
+        "min": 1984,
+        "max": 2020,
+        "step": 1,
         "name": "Select Year: "
       }
     }
@@ -99,14 +101,13 @@
     "x": {
       "field": "Aircraft_Trips",
       "type": "quantitative",
-      "scale": {"domain": [0, 6000]},
       "axis": {"title": "Aircraft Trips"}
     },
     "y": {
       "field": "Passenger_Load_Factor",
       "type": "quantitative",
-      "scale": {"domain": [0, 120]},
-      "axis": {"title": "Passenger Load Factor (%)"}
+      "axis": {"title": "Passenger Load Factor (%)"},
+      "scale": {"domain": [0, 120]} 
     },
     "size": {
       "field": "Normalized_Passenger_Trips",
@@ -122,6 +123,7 @@
     "tooltip": [
       {"field": "City1", "type": "nominal", "title": "From"},
       {"field": "City2", "type": "nominal", "title": "To"},
+      {"field": "Year", "type": "quantitative", "title": "Year"},
       {"field": "Aircraft_Trips", "type": "quantitative", "title": "Aircraft Trips"},
       {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
       {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Volume"}
