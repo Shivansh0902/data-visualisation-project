@@ -1,32 +1,161 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Distance vs. Passenger Load Factor",
-    "width": 800,
-    "height": 400,
-    "data": {
-      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv", 
-      "format": {"type": "csv"}
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Interactive map of Australian airport connections.",
+  "width": 900,
+  "height": 560,
+  "padding": {"top": 25, "left": 0, "right": 0, "bottom": 0},
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "scale", "value": 1200,
+      "bind": {"input": "range", "min": 500, "max": 3000}
     },
-    "mark": "circle",
-    "encoding": {
-      "x": {
-        "field": "Distance_GC_(km)",
-        "type": "quantitative",
-        "axis": {"title": "Distance (km)"}
-      },
-      "y": {
-        "field": "Passenger_Load_Factor",
-        "type": "quantitative",
-        "axis": {"title": "Passenger Load Factor (%)"}
-      },
-      "size": {"field": "Passenger_Trips", "type": "quantitative"},
-      "tooltip": [
-        {"field": "City1", "type": "nominal", "title": "From"},
-        {"field": "City2", "type": "nominal", "title": "To"},
-        {"field": "Distance_GC_(km)", "type": "quantitative", "title": "Distance (km)"},
-        {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
-        {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
+    {
+      "name": "translateX", "value": 450,
+      "bind": {"input": "range", "min": -500, "max": 1200}
+    },
+    {
+      "name": "translateY", "value": 260,
+      "bind": {"input": "range", "min": -300, "max": 700}
+    },
+    {
+      "name": "shape", "value": "line",
+      "bind": {"input": "radio", "options": ["line", "curve"]}
+    },
+    {
+      "name": "hover",
+      "value": null,
+      "on": [
+        {"events": "@cell:pointerover", "update": "datum"},
+        {"events": "@cell:pointerout", "update": "null"}
+      ]
+    },
+    {
+      "name": "title",
+      "value": "Australian Airports",
+      "update": "hover ? hover.name + ' (' + hover.ident + ')' : 'Australian Airports'"
+    },
+    {
+      "name": "cell_stroke",
+      "value": null,
+      "on": [
+        {"events": "dblclick", "update": "cell_stroke ? null : 'brown'"},
+        {"events": "pointerdown!", "update": "cell_stroke"}
       ]
     }
-  }
-  
+  ],
+
+  "data": [
+    {
+      "name": "australia",  // Adding TopoJSON for Australia
+      "url": "data/australia-topo.json",  // This needs to be the TopoJSON for Australia
+      "format": {"type": "topojson", "feature": "land"},  // Adjust 'land' to the relevant topojson feature if needed
+      "transform": [
+        {
+          "type": "geopath",
+          "projection": "projection"
+        }
+      ]
+    },
+    {
+      "name": "airports",
+      "url": "data/airports.csv",  // Your airports CSV
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["longitude_deg", "latitude_deg"]
+        }
+      ]
+    },
+    {
+      "name": "routes",
+      "url": "data/routes.csv",  // Your routes CSV
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "airports",
+          "key": "municipality",
+          "fields": ["City1", "City2"],
+          "as": ["source", "target"]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.source && datum.target"
+        },
+        {
+          "type": "linkpath",
+          "shape": {"signal": "shape"}
+        }
+      ]
+    }
+  ],
+
+  "projections": [
+    {
+      "name": "projection",
+      "type": "mercator",  
+      "scale": {"signal": "scale"},
+      "translate": [{"signal": "translateX"}, {"signal": "translateY"}]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "path",
+      "from": {"data": "australia"},  // This is the TopoJSON path for the map of Australia
+      "encode": {
+        "enter": {
+          "fill": {"value": "#dedede"},  // Adjust color of the map if needed
+          "stroke": {"value": "white"}
+        },
+        "update": {
+          "path": {"field": "path"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "airports"},
+      "encode": {
+        "enter": {
+          "size": {"value": 100},
+          "fill": {"value": "steelblue"}
+        },
+        "update": {
+          "x": {"field": "x"},
+          "y": {"field": "y"}
+        }
+      }
+    },
+    {
+      "type": "path",
+      "from": {"data": "routes"},
+      "encode": {
+        "enter": {
+          "path": {"field": "path"},
+          "stroke": {"value": "black"},
+          "strokeOpacity": {"value": 0.35}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": 895},
+          "y": {"value": 0},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 20},
+          "align": {"value": "right"}
+        },
+        "update": {
+          "text": {"signal": "title"}
+        }
+      }
+    }
+  ]
+}

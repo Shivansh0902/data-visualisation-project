@@ -1,45 +1,78 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Airports by Selected State",
-    "width": 800,
+    "title": "Airports in Victoria and New South Wales",
+    "width": "container",
     "height": 500,
-    "config": {
-      "background": "#a6cee3"
+    "params": [
+      {
+        "name": "State_selection",
+        "value": "AU-VIC",
+        "bind": {
+          "input": "select",
+          "options": ["AU-VIC", "AU-NSW"],
+          "labels": ["Victoria", "New South Wales"],
+          "name": "Select a State: "
+        }
+      },
+      {
+        "name": "zoom_level",
+        "value": 5000,
+        "bind": {
+          "input": "range",
+          "min": 3000,
+          "max": 10000,
+          "step": 500,
+          "name": "Zoom Level: "
+        }
+      },
+      {
+        "name": "center_to",
+        "value": [146, -36.5],
+        "bind": {
+          "input": "select",
+          "options": [
+            [145, -37.95],  
+            [150.0, -32.5]  
+          ],
+          "labels": ["Victoria", "New South Wales"],
+          "name": "Map Center: "
+        }
+      }
+    ],
+    "projection": {
+      "type": "mercator",
+      "center": {"expr": "center_to"},  
+      "scale": {"expr": "zoom_level"}
     },
-    "projection": {"type": "mercator"},
     "layer": [
       {
-        "selection": {
-          "StateFilter": {
-            "type": "single", 
-            "fields": ["iso_region"],
-            "bind": {
-              "input": "select",
-              "options": [
-                "", 
-                "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
-                "AU-NT", "AU-ACT"
-              ],
-              "name": "Select a State"
-            },
-            "empty": "all"
-          }
-        },
         "transform": [
           {
-            "calculate": "datum.iso_region === 'AU-VIC' ? 'victoria.topojson' : datum.iso_region === 'AU-NSW' ? 'nsw.topojson' : datum.iso_region === 'AU-QLD' ? 'qld.topojson' : datum.iso_region === 'AU-SA' ? 'sa.topojson' : datum.iso_region === 'AU-WA' ? 'wa.topojson' : datum.iso_region === 'AU-TAS' ? 'tas.topojson' : datum.iso_region === 'AU-NT' ? 'nt.topojson' : null",
-            "as": "topojson_url"
+            "filter": "State_selection === 'AU-VIC'"
           }
         ],
         "data": {
-          "url": {
-            "signal": "StateFilter.iso_region === 'AU-VIC' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/victoria.topojson' : StateFilter.iso_region === 'AU-NSW' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nsw.topojson' : StateFilter.iso_region === 'AU-QLD' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/qld.json' : StateFilter.iso_region === 'AU-SA' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/sa.topojson' : StateFilter.iso_region === 'AU-WA' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/wa.topojson' : StateFilter.iso_region === 'AU-TAS' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/tas.topojson' : StateFilter.iso_region === 'AU-NT' ? 'https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nt.topojson' : null"
-          },
-          "format": {"type": "topojson", "feature": "regions"}
+          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/victoria.topojson",
+          "format": {"type": "topojson", "feature": "victoria"}
         },
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "mark": {"type": "geoshape", "fill": "lightgreen", "stroke": "white"},
         "encoding": {
-          "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+          "tooltip": {"field": "properties.name", "type": "nominal", "title": "Victoria Region"}
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "State_selection === 'AU-NSW'"
+          }
+        ],
+        "data": {
+          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nsw.topojson",
+          "format": {"type": "topojson", "feature": "new_south_wales"}
+        },
+        "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "white"},
+        "encoding": {
+          "tooltip": {"field": "properties.name", "type": "nominal", "title": "New South Wales Region"}
         }
       },
       {
@@ -49,23 +82,39 @@
         },
         "transform": [
           {
-            "filter": "datum.iso_region && datum.iso_region === StateFilter.iso_region"
+            "filter": {
+              "param": "State_selection",
+              "field": "iso_region"
+            }
           }
         ],
         "mark": "circle",
         "encoding": {
           "longitude": {"field": "longitude_deg", "type": "quantitative"},
           "latitude": {"field": "latitude_deg", "type": "quantitative"},
-          "size": {"field": "score", "type": "quantitative", "scale": {"range": [10, 100]}},
-          "color": {"value": "steelblue"}, 
+          "size": {
+            "field": "score",
+            "type": "quantitative",
+            "scale": {
+              "type": "log",
+              "domain": [1, 1027975],
+              "range": [10, 200]
+            },
+            "legend": {
+              "title": "Airport Score",
+              "orient": "right",
+              "labelFontSize": 12
+            }
+          },
+          "color": {"value": "blue"},
           "tooltip": [
             {"field": "name", "type": "nominal", "title": "Airport Name"},
             {"field": "municipality", "type": "nominal", "title": "City"},
-            {"field": "iso_region", "type": "nominal", "title": "State"},
-            {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
+            {"field": "iata_code", "type": "nominal", "title": "IATA Code"},
+            {"field": "score", "type": "quantitative", "title": "Score"}
           ]
         }
       }
     ]
-}
+  }
   
