@@ -14,6 +14,7 @@
 
     <!-- Container for the map visualization -->
     <div id="map_vis"></div>
+    <div id="nsw"></div>
 
     <div id="map_vis_2"></div>
 
@@ -55,6 +56,11 @@
         }).catch(console.error);
         // // Embed the Bubble Chart visualization (bubblechart.vg.json)
         vegaEmbed('#bubblechart_vis', 'js/bubblechart.vg.json').then(result => {
+            // Access the Vega view instance as result.view
+        }).catch(console.error);
+
+        // Embed the Map visualization (test1.vg.json)
+        vegaEmbed('#nsw', 'js/nsw.vg.json').then(result => {
             // Access the Vega view instance as result.view
         }).catch(console.error);
     </script>
