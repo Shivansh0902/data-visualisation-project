@@ -1,74 +1,107 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Flight Routes Between Airports",
-  "width": 900,
-  "height": 600,
-  "projection": {
-    "type": "mercator",
-    "scale": 1300,
-    "center": [134.5, -27]
+  "config": {
+    "view": {
+      "stroke": null
+    }
   },
   "layer": [
     {
-      "mark": {
-        "type": "geoshape",
-        "fill": "lightgray",
-        "stroke": "white"
-      },
       "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.json",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_admin_1_states_provinces"
         }
       },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      },
       "encoding": {
-        "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "State"}
+        ]
       }
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/Cleaned_Flight_Routes_Data.csv",
-        "format": {"type": "csv"}
+        "values": [
+          {"Airport Code": "BBE", "Latitude": -27.416667, "Longitude": 117.666667},
+          {"Airport Code": "AXL", "Latitude": -19.116667, "Longitude": 136.766667},
+          {"Airport Code": "BVZ", "Latitude": -17.983333, "Longitude": 125.450000},
+          {"Airport Code": "DRW", "Latitude": -12.416667, "Longitude": 130.866667},
+          {"Airport Code": "LLP", "Latitude": -23.016667, "Longitude": 138.700000}
+        ]
       },
-      "mark": "circle",
+      "mark": {
+        "type": "circle",
+        "size": 100,
+        "color": "red"
+      },
       "encoding": {
-        "longitude": {"field": "longitude_deg", "type": "quantitative"},
-        "latitude": {"field": "latitude_deg", "type": "quantitative"},
-        "size": {
-          "field": "score",
-          "type": "quantitative",
-          "scale": {
-            "type": "log",
-            "domain": [1, 1027975],
-            "range": [10, 200]
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Airport Code", "type": "nominal", "title": "Airport Code"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Departing Port": "DRW", "Arriving Port": "AXL"},
+          {"Departing Port": "BBE", "Arriving Port": "BVZ"},
+          {"Departing Port": "LLP", "Arriving Port": "DRW"}
+        ]
+      },
+      "transform": [
+        {
+          "lookup": "Departing Port",
+          "from": {
+            "data": {
+              "values": [
+                {"Airport Code": "BBE", "Latitude": -27.416667, "Longitude": 117.666667},
+                {"Airport Code": "AXL", "Latitude": -19.116667, "Longitude": 136.766667},
+                {"Airport Code": "BVZ", "Latitude": -17.983333, "Longitude": 125.450000},
+                {"Airport Code": "DRW", "Latitude": -12.416667, "Longitude": 130.866667},
+                {"Airport Code": "LLP", "Latitude": -23.016667, "Longitude": 138.700000}
+              ]
+            },
+            "key": "Airport Code",
+            "fields": ["Latitude", "Longitude"]
           },
-          "legend": {"title": "Airport Score"}
+          "as": ["startLat", "startLon"]
         },
-        "color": {"value": "blue"},
-        "tooltip": [
-          {"field": "name", "type": "nominal", "title": "Airport Name"},
-          {"field": "municipality", "type": "nominal", "title": "City"}
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/Cleaned_Flight_Routes_Data.csv",
-        "format": {"type": "csv"}
+        {
+          "lookup": "Arriving Port",
+          "from": {
+            "data": {
+              "values": [
+                {"Airport Code": "BBE", "Latitude": -27.416667, "Longitude": 117.666667},
+                {"Airport Code": "AXL", "Latitude": -19.116667, "Longitude": 136.766667},
+                {"Airport Code": "BVZ", "Latitude": -17.983333, "Longitude": 125.450000},
+                {"Airport Code": "DRW", "Latitude": -12.416667, "Longitude": 130.866667},
+                {"Airport Code": "LLP", "Latitude": -23.016667, "Longitude": 138.700000}
+              ]
+            },
+            "key": "Airport Code",
+            "fields": ["Latitude", "Longitude"]
+          },
+          "as": ["endLat", "endLon"]
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "blue",
+        "strokeWidth": 1
       },
-      "mark": {"type": "rule", "stroke": "red", "strokeWidth": 1.5, "opacity": 0.7},
       "encoding": {
-        "longitude": {"field": "dep_longitude", "type": "quantitative"},
-        "latitude": {"field": "dep_latitude", "type": "quantitative"},
-        "longitude2": {"field": "arr_longitude", "type": "quantitative"},
-        "latitude2": {"field": "arr_latitude", "type": "quantitative"},
-        "tooltip": [
-          {"field": "Departing Port", "type": "nominal", "title": "From"},
-          {"field": "Arriving Port", "type": "nominal", "title": "To"},
-          {"field": "Airline", "type": "nominal", "title": "Airline"},
-          {"field": "Sectors Flown", "type": "quantitative", "title": "Sectors Flown"}
-        ]
+        "latitude": {"field": "startLat", "type": "quantitative"},
+        "longitude": {"field": "startLon", "type": "quantitative"},
+        "latitude2": {"field": "endLat", "type": "quantitative"},
+        "longitude2": {"field": "endLon", "type": "quantitative"}
       }
     }
   ]
