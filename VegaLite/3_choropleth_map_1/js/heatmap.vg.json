@@ -48,9 +48,9 @@
 
   "data": [
     {
-      "name": "australia",  // Adding TopoJSON for Australia
-      "url": "data/australia-topo.json",  // This needs to be the TopoJSON for Australia
-      "format": {"type": "topojson", "feature": "land"},  // Adjust 'land' to the relevant topojson feature if needed
+      "name": "australia",
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
+      "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"},
       "transform": [
         {
           "type": "geopath",
@@ -60,8 +60,8 @@
     },
     {
       "name": "airports",
-      "url": "data/airports.csv",  // Your airports CSV
-      "format": {"type": "csv", "parse": "auto"},
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/airports.csv",  
+      "format": {"type": "csv"},
       "transform": [
         {
           "type": "geopoint",
@@ -72,23 +72,26 @@
     },
     {
       "name": "routes",
-      "url": "data/routes.csv",  // Your routes CSV
-      "format": {"type": "csv", "parse": "auto"},
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv", 
+      "format": {"type": "csv"},
       "transform": [
         {
-          "type": "lookup",
-          "from": "airports",
-          "key": "municipality",
-          "fields": ["City1", "City2"],
-          "as": ["source", "target"]
+          "lookup": "City1",
+          "from": {
+            "data": "airports",
+            "key": "City1",
+            "fields": ["latitude_deg", "longitude_deg"]
+          },
+          "as": ["source_lat", "source_lon"]
         },
         {
-          "type": "filter",
-          "expr": "datum.source && datum.target"
-        },
-        {
-          "type": "linkpath",
-          "shape": {"signal": "shape"}
+          "lookup": "City2",
+          "from": {
+            "data": "airports",
+            "key": "City2",
+            "fields": ["latitude_deg", "longitude_deg"]
+          },
+          "as": ["target_lat", "target_lon"]
         }
       ]
     }
@@ -97,7 +100,7 @@
   "projections": [
     {
       "name": "projection",
-      "type": "mercator",  
+      "type": "mercator",
       "scale": {"signal": "scale"},
       "translate": [{"signal": "translateX"}, {"signal": "translateY"}]
     }
@@ -106,10 +109,10 @@
   "marks": [
     {
       "type": "path",
-      "from": {"data": "australia"},  // This is the TopoJSON path for the map of Australia
+      "from": {"data": "australia"},
       "encode": {
         "enter": {
-          "fill": {"value": "#dedede"},  // Adjust color of the map if needed
+          "fill": {"value": "#dedede"},
           "stroke": {"value": "white"}
         },
         "update": {
@@ -136,8 +139,11 @@
       "from": {"data": "routes"},
       "encode": {
         "enter": {
-          "path": {"field": "path"},
-          "stroke": {"value": "black"},
+          "x": {"field": "source_lon"},
+          "y": {"field": "source_lat"},
+          "x2": {"field": "target_lon"},
+          "y2": {"field": "target_lat"},
+          "stroke": {"value": "red"},
           "strokeOpacity": {"value": 0.35}
         }
       }
