@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Total Passenger Volume by Departure City (Filtered by Year)",
+    "width": 800,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "yearFilter",
+        "value": 1984,
+        "bind": {
+          "input": "range",
+          "min": 1984,
+          "max": 2020,
+          "step": 1,
+          "name": "Select Year: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "calculate": "toNumber(datum.Passenger_Trips)",
+        "as": "Passenger_Trips_Num"
+      },
+      {
+        "filter": "datum.Passenger_Trips_Num > 0 && datum.Year == yearFilter"
+      },
+      {
+        "aggregate": [
+          {"op": "sum", "field": "Passenger_Trips_Num", "as": "Total_Passenger_Trips"}
+        ],
+        "groupby": ["City1"]
+      },
+      {
+        "window": [{"op": "rank", "as": "rank"}],
+        "sort": [{"field": "Total_Passenger_Trips", "order": "descending"}]
+      },
+      {
+        "filter": "datum.rank <= 10"
+      }
+    ],
+    "mark": {
+      "type": "bar",
+      "cornerRadiusEnd": 10,
+      "stroke": "black",
+      "strokeWidth": 1
+    },
+    "encoding": {
+      "y": {
+        "field": "City1",
+        "type": "nominal",
+        "sort": {"field": "Total_Passenger_Trips", "order": "descending"},
+        "axis": {
+          "title": "Departure City",
+          "labelFontSize": 14,
+          "titleFontSize": 16,
+          "labelFontWeight": "bold"
+        }
+      },
+      "x": {
+        "field": "Total_Passenger_Trips",
+        "type": "quantitative",
+        "axis": {
+          "title": "Total Passenger Volume",
+          "labelFontSize": 14,
+          "titleFontSize": 16,
+          "labelFontWeight": "bold"
+        }
+      },
+      "color": {
+        "field": "City1",
+        "type": "nominal",
+        "legend": {
+          "title": "Departure City",
+          "titleFontSize": 16,
+          "labelFontSize": 14
+        }
+      },
+      "tooltip": [
+        {"field": "City1", "type": "nominal", "title": "Departure City"},
+        {"field": "Total_Passenger_Trips", "type": "quantitative", "title": "Total Passenger Volume"},
+        {"field": "yearFilter", "type": "quantitative", "title": "Year"}
+      ]
+    }
+  }
+  

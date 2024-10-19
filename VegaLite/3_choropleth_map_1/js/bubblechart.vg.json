@@ -1,133 +1,181 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Aircraft Trips vs. Passenger Load Factor (City Routes)",
-  "width": 1000,
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": "Filtered Airline Performance Radar Chart (Metrics < 20%)",
+  "width": 800,
   "height": 600,
-  "data": {
-    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
-    "format": {"type": "csv"}
-  },
-  "params": [
+  "padding": 50,
+  "autosize": { "type": "none", "contains": "padding" },
+  "background": "#E9F7E9",
+  "config": { "font": "Cabin" },
+  "legends": [
     {
-      "name": "city1Filter",
-      "value": "melbourne",
-      "bind": {
-        "input": "select",
-        "options": [
-          "melbourne",
-          "sydney",
-          "brisbane",
-          "adelaide",
-          "perth",
-          "canberra",
-          "hobart",
-          "darwin",
-          "gold coast"
-        ],
-        "labels": [
-          "Melbourne",
-          "Sydney",
-          "Brisbane",
-          "Adelaide",
-          "Perth",
-          "Canberra",
-          "Hobart",
-          "Darwin",
-          "Gold Coast"
-        ],
-        "name": "Select Departure City (City1): "
-      }
-    },
-    {
-      "name": "city2Filter",
-      "value": "",
-      "bind": {
-        "input": "select",
-        "options": [
-          "",  
-          "melbourne",
-          "sydney",
-          "brisbane",
-          "adelaide",
-          "perth",
-          "canberra",
-          "hobart",
-          "darwin",
-          "gold coast"
-        ],
-        "labels": [
-          "All Destinations",
-          "Melbourne",
-          "Sydney",
-          "Brisbane",
-          "Adelaide",
-          "Perth",
-          "Canberra",
-          "Hobart",
-          "Darwin",
-          "Gold Coast"
-        ],
-        "name": "Select Destination City (City2): "
-      }
-    },
-    {
-      "name": "yearFilter",
-      "value": 1984,
-      "bind": {
-        "input": "range",
-        "min": 1984,
-        "max": 2020,
-        "step": 1,
-        "name": "Select Year: "
+      "fill": "color",
+      "labelFont": "Cabin",
+      "titleFont": "Cabin",
+      "labelFontSize": 16,
+      "titleFontSize": 18,
+      "orient": "right",
+      "offset": -230,
+      "padding": 5,
+      "title": "Airline",
+      "encode": {
+        "symbols": {
+          "update": {
+            "shape": { "value": "circle" },
+            "size": { "value": 100 }
+          }
+        }
       }
     }
   ],
-  "transform": [
+  "signals": [
     {
-      "filter": "(lower(datum.City1) === lower(city1Filter)) && (!city2Filter || lower(datum.City2) === lower(city2Filter)) && datum.Year == yearFilter && datum.Aircraft_Trips > 0 && datum.Passenger_Trips > 0 && datum.Passenger_Load_Factor > 0"
-    },
-    {
-      "calculate": "datum.Passenger_Trips / 1000",
-      "as": "Normalized_Passenger_Trips"
+      "name": "airlineFilter",
+      "value": "Qantas",
+      "bind": {
+        "input": "select",
+        "options": ["Qantas", "Jetstar", "Virgin Australia"],
+        "name": "Select Airline: "
+      }
     }
   ],
-  "mark": {
-    "type": "circle",
-    "opacity": 0.7,
-    "stroke": "black",
-    "strokeWidth": 1
+  "data": [
+    {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+      "name": "data",
+      "format": { "type": "csv" },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.Airline == airlineFilter && (datum['OnTimeDepartures(%)'] < 40 || datum['OnTimeArrivals(%)'] < 40)"
+        },
+        {
+          "type": "fold",
+          "fields": ["OnTimeDepartures(%)", "OnTimeArrivals(%)", "DeparturesDelayed", "ArrivalsDelayed", "Cancellations(%)"],
+          "as": ["Metric", "Value"]
+        },
+        {
+          "type": "formula",
+          "as": "Value",
+          "expr": "toNumber(datum.Value)"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": { "signal": "[PI/2, 5*PI/2]" },
+      "padding": 0.5,
+      "domain": { "data": "data", "field": "Metric" }
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": { "signal": "[0, width/2]" },
+      "zero": true,
+      "nice": false,
+      "domain": { "data": "data", "field": "Value" },
+      "domainMin": 0,
+      "domainMax": 100
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Qantas", "Jetstar", "Virgin Australia"],
+      "range": ["#4DAF4A", "#377EB8", "#FF0000"]
+    }
+  ],
+  "encode": {
+    "enter": {
+      "x": { "signal": "width / 2" },
+      "y": { "signal": "height / 2" }
+    }
   },
-  "encoding": {
-    "x": {
-      "field": "Aircraft_Trips",
-      "type": "quantitative",
-      "axis": {"title": "Aircraft Trips"},
-      "scale": {"domainMin": 1}
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {
+          "data": "data",
+          "name": "facet",
+          "groupby": ["Airline"]
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": { "data": "facet" },
+          "encode": {
+            "enter": {
+              "interpolate": { "value": "linear-closed" },
+              "x": { "signal": "scale('radial', datum.Value) * cos(scale('angular', datum.Metric))" },
+              "y": { "signal": "scale('radial', datum.Value) * sin(scale('angular', datum.Metric))" },
+              "stroke": { "scale": "color", "field": "Airline" },
+              "strokeWidth": { "value": 4 },
+              "strokeOpacity": { "value": 0.6 }
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": { "data": "facet" },
+          "name": "data-points",
+          "zindex": 2,
+          "encode": {
+            "enter": {
+              "x": { "signal": "scale('radial', datum.Value) * cos(scale('angular', datum.Metric))" },
+              "y": { "signal": "scale('radial', datum.Value) * sin(scale('angular', datum.Metric))" },
+              "fill": { "scale": "color", "field": "Airline" },
+              "size": { "value": 150 },
+              "strokeWidth": { "value": 3 }
+            },
+            "update": {
+              "tooltip": {
+                "signal": "{'Airline': datum.Airline, 'Metric': datum.Metric, 'Value': format(datum.Value, ',.2f')}"
+              }
+            }
+          }
+        }
+      ]
     },
-    "y": {
-      "field": "Passenger_Load_Factor",
-      "type": "quantitative",
-      "axis": {"title": "Passenger Load Factor (%)"},
-      "scale": {"domain": [0, 120]}
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": { "data": "data" },
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": { "value": 0 },
+          "y": { "value": 0 },
+          "x2": { "signal": "width/2 * cos(scale('angular', datum.Metric))" },
+          "y2": { "signal": "height/2 * sin(scale('angular', datum.Metric))" },
+          "stroke": { "value": "lightgray" },
+          "strokeWidth": { "value": 2 }
+        }
+      }
     },
-    "size": {
-      "field": "Normalized_Passenger_Trips",
-      "type": "quantitative",
-      "scale": {"domain": [0, 569.803], "range": [50, 1000]},
-      "legend": {"title": "Normalized Passenger Volume (x1000)"}
-    },
-    "color": {
-      "field": "City2",
-      "type": "nominal",
-      "legend": {"title": "Destination City (City2)"}
-    },
-    "tooltip": [
-      {"field": "City1", "type": "nominal", "title": "From"},
-      {"field": "City2", "type": "nominal", "title": "To"},
-      {"field": "Year", "type": "quantitative", "title": "Year"},
-      {"field": "Aircraft_Trips", "type": "quantitative", "title": "Aircraft Trips"},
-      {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
-      {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Volume"}
-    ]
-  }
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": { "data": "data" },
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": { "signal": "(width / 2 + 10) * cos(scale('angular', datum.Metric))" },
+          "y": { "signal": "(height / 2 + 10) * sin(scale('angular', datum.Metric))" },
+          "text": { "field": "Metric" },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fontWeight": { "value": "bold" },
+          "fontSize": { "value": 14 },
+          "font": { "value": "Cabin" }
+        }
+      }
+    }
+  ]
 }

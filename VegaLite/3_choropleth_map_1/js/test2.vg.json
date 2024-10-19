@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Airports in Australia (Victoria, New South Wales, NT, Queensland)",
+  "title": "Airports in Australia (Victoria, New South Wales, NT, Queensland, WA, TAS, SA)",
   "width": 900,
   "height": 600,
   "params": [
@@ -9,18 +9,18 @@
       "value": "AU-VIC",
       "bind": {
         "input": "select",
-        "options": ["AU-VIC", "AU-NSW", "AU-NT", "AU-QLD"],
-        "labels": ["Victoria", "New South Wales", "Northern Territory", "Queensland"],
+        "options": ["AU-VIC", "AU-NSW", "AU-NT", "AU-QLD", "AU-WA", "AU-TAS", "AU-SA"],
+        "labels": ["Victoria", "New South Wales", "Northern Territory", "Queensland", "Western Australia", "Tasmania", "South Australia"],
         "name": "Select a State: "
       }
     },
     {
       "name": "zoom_level",
-      "expr": "State_selection === 'AU-VIC' ? 7000 : (State_selection === 'AU-NSW' ? 6000 : (State_selection === 'AU-NT' ? 3000 : 5000))",
+      "expr": "State_selection === 'AU-VIC' ? 7000 : (State_selection === 'AU-NSW' ? 6000 : (State_selection === 'AU-NT' ? 3000 : (State_selection === 'AU-WA' ? 5000 : (State_selection === 'AU-TAS' ? 4000 : (State_selection === 'AU-SA' ? 4000 : 5000)))))",
       "bind": {
         "input": "range",
-        "min": 2000,
-        "max": 5000,
+        "min": 1500,
+        "max": 7000,
         "step": 500,
         "name": "Zoom Level: "
       }
@@ -29,10 +29,10 @@
   "projection": {
     "type": "mercator",
     "center": {
-      "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : (State_selection === 'AU-NSW' ? [147.0, -33.9] : (State_selection === 'AU-NT' ? [133.5, -19.0] : [145.5, -20.0]))"
+      "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : (State_selection === 'AU-NSW' ? [147.0, -33.9] : (State_selection === 'AU-NT' ? [133.5, -19.0] : (State_selection === 'AU-WA' ? [121.5, -27.0] : (State_selection === 'AU-TAS' ? [146.7, -42.0] : (State_selection === 'AU-SA' ? [134.0, -30.0] : [145.5, -20.0])))))"
     },
     "scale": {"expr": "zoom_level"},
-    "translate": [450, 300], 
+    "translate": [450, 300],
     "interactive": true
   },
   "layer": [
@@ -100,6 +100,51 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-WA'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/wa.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "green", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Western Australia Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-TAS'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/tas.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "purple", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Tasmania Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-SA'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/sa.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "orange", "stroke": "black"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "South Australia Region"}
+      }
+    },
+    {
       "data": {
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
         "format": {"type": "csv"}
@@ -109,7 +154,7 @@
           "filter": "datum.iso_region === State_selection"
         }
       ],
-      "mark": {"type": "point"},
+      "mark": {"type": "point", "filled": true},
       "encoding": {
         "longitude": {"field": "longitude_deg", "type": "quantitative"},
         "latitude": {"field": "latitude_deg", "type": "quantitative"},
@@ -119,7 +164,7 @@
           "scale": {
             "type": "log",
             "domain": [1, 1027975],
-            "range": [10, 150]
+            "range": [20, 200]
           },
           "legend": {
             "title": "Airport Score",
@@ -143,7 +188,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["large_airport", "medium_airport", "small_airport"],
-            "range": ["#00008B", "#ff7f0e", "#2ca02c"]
+            "range": ["#1f77b4", "#ff7f0e", "#2ca02c"]
           },
           "legend": {
             "title": "Airport Type",

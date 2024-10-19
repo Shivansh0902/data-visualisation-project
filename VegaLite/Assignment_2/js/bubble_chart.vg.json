@@ -1,0 +1,104 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Aircraft Trips vs. Passenger Load Factor (City Routes)",
+    "width": 1000,
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "city1Filter",
+        "value": "melbourne",
+        "bind": {
+          "input": "select",
+          "options": [
+            "BRISBANE",
+            "ADELAIDE",
+            "MELBOURNE",
+            "CAIRNS",
+            "ALICE SPRINGS",
+            "DARWIN",
+            "SYDNEY",
+            "PERTH",
+            "CANBERRA",
+            "HOBART"
+          ],
+          "labels": [
+            "Brisbane",
+            "Adelaide",
+            "Melbourne",
+            "Cairns",
+            "Alice Springs",
+            "Darwin",
+            "Sydney",
+            "Perth",
+            "Canberra",
+            "Hobart"
+          ],
+          "name": "Select Departure City (City1): "
+        }
+      },
+      {
+        "name": "yearFilter",
+        "value": 1984,
+        "bind": {
+          "input": "range",
+          "min": 1984,
+          "max": 2020,
+          "step": 1,
+          "name": "Select Year: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "(lower(datum.City1) === lower(city1Filter)) && datum.Year == yearFilter && datum.Aircraft_Trips != null && datum.Aircraft_Trips > 0 && datum.Passenger_Trips > 0 && datum.Passenger_Load_Factor > 0"
+      },
+      {
+        "calculate": "datum.Passenger_Trips / 1000",
+        "as": "Normalized_Passenger_Trips"
+      }
+    ],
+    "mark": {
+      "type": "circle",
+      "opacity": 0.7,
+      "stroke": "black",
+      "strokeWidth": 1
+    },
+    "encoding": {
+      "x": {
+        "field": "Aircraft_Trips",
+        "type": "quantitative",
+        "axis": {"title": "Aircraft Trips"},
+        "scale": {"domainMin": 1}
+      },
+      "y": {
+        "field": "Passenger_Load_Factor",
+        "type": "quantitative",
+        "axis": {"title": "Passenger Load Factor (%)"},
+        "scale": {"domain": [0, 120]}
+      },
+      "size": {
+        "field": "Normalized_Passenger_Trips",
+        "type": "quantitative",
+        "scale": {"domain": [0, 569.803], "range": [50, 1000]},
+        "legend": {"title": "Normalized Passenger Volume (x1000)"}
+      },
+      "color": {
+        "field": "City2",
+        "type": "nominal",
+        "legend": {"title": "Destination City (City2)"}
+      },
+      "tooltip": [
+        {"field": "City1", "type": "nominal", "title": "From"},
+        {"field": "City2", "type": "nominal", "title": "To"},
+        {"field": "Year", "type": "quantitative", "title": "Year"},
+        {"field": "Aircraft_Trips", "type": "quantitative", "title": "Aircraft Trips"},
+        {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
+        {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Volume"}
+      ]
+    }
+  }
+  
