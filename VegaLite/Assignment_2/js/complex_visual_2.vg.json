@@ -41,7 +41,7 @@
     ],
     "data": [
       {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/routes.csv",
         "name": "data",
         "format": { "type": "csv" },
         "transform": [

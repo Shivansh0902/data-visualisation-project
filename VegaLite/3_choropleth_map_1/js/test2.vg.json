@@ -46,7 +46,7 @@
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/victoria.topojson",
         "format": {"type": "topojson", "feature": "victoria"}
       },
-      "mark": {"type": "geoshape", "fill": "silver", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "silver", "stroke": "w"},
       "encoding": {
         "tooltip": {"field": "properties.name", "type": "nominal", "title": "Victoria Region"}
       }
@@ -64,7 +64,7 @@
           "feature": "ne_10m_admin_1_states_provinces"
         }
       },
-      "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "black"},
       "encoding": {
         "tooltip": {"field": "properties.name", "type": "nominal", "title": "New South Wales Region"}
       }
@@ -79,7 +79,7 @@
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nt.topojson",
         "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
       },
-      "mark": {"type": "geoshape", "fill": "orchid", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "orchid", "stroke": "black"},
       "encoding": {
         "tooltip": {"field": "properties.name", "type": "nominal", "title": "Northern Territory Region"}
       }
@@ -94,7 +94,7 @@
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/qld.topojson",
         "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
       },
-      "mark": {"type": "geoshape", "fill": "maroon", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "maroon", "stroke": "black"},
       "encoding": {
         "tooltip": {"field": "properties.name", "type": "nominal", "title": "Queensland Region"}
       }
@@ -109,7 +109,7 @@
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/wa.topojson",
         "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
       },
-      "mark": {"type": "geoshape", "fill": "green", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "green", "stroke": "black"},
       "encoding": {
         "tooltip": {"field": "properties.name", "type": "nominal", "title": "Western Australia Region"}
       }
@@ -124,7 +124,7 @@
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/tas.topojson",
         "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
       },
-      "mark": {"type": "geoshape", "fill": "purple", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "purple", "stroke": "black"},
       "encoding": {
         "tooltip": {"field": "properties.name", "type": "nominal", "title": "Tasmania Region"}
       }

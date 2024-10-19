@@ -161,12 +161,12 @@
   </footer>
   <script type="text/javascript">
     var spec1 = "Charts/flight-delays.json";
-    vegaEmbed('#vis1', spec1, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec2 = "Charts/passenger-traffic.json";
+    vegaEmbed('#vis1', spec1, { "js/complex_visual_1.vg.json": false }).then(function (result) { }).catch(console.error);
+    var spec2 = "Charts/complex_visual_2.vg.json.json";
     vegaEmbed('#vis2', spec2, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec3 = "Charts/cancellation-rates.json";
+    var spec3 = "Charts/complex_visual_3.vg.json";
     vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec4 = "Charts/airport-efficiency.json";
+    var spec4 = "Charts/rounded_barchart.vg.json";
     vegaEmbed('#vis4', spec4, { "actions": false }).then(function (result) { }).catch(console.error);
   </script>
 </body>

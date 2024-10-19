@@ -4,7 +4,7 @@
     "width": 800,
     "height": 500,
     "data": {
-      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/alter_routes.csv",
       "format": {"type": "csv"}
     },
     "params": [
