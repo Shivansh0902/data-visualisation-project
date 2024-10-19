@@ -4,7 +4,7 @@
   "width": 1000,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
     "format": {"type": "csv"}
   },
   "params": [
@@ -84,7 +84,7 @@
   ],
   "transform": [
     {
-      "filter": "(lower(datum.City1) === lower(city1Filter)) && (!city2Filter || lower(datum.City2) === lower(city2Filter)) && datum.Year == yearFilter"
+      "filter": "(lower(datum.City1) === lower(city1Filter)) && (!city2Filter || lower(datum.City2) === lower(city2Filter)) && datum.Year == yearFilter && datum.Aircraft_Trips > 0 && datum.Passenger_Trips > 0 && datum.Passenger_Load_Factor > 0"
     },
     {
       "calculate": "datum.Passenger_Trips / 1000",
@@ -101,13 +101,14 @@
     "x": {
       "field": "Aircraft_Trips",
       "type": "quantitative",
-      "axis": {"title": "Aircraft Trips"}
+      "axis": {"title": "Aircraft Trips"},
+      "scale": {"domainMin": 1}
     },
     "y": {
       "field": "Passenger_Load_Factor",
       "type": "quantitative",
       "axis": {"title": "Passenger Load Factor (%)"},
-      "scale": {"domain": [0, 120]} 
+      "scale": {"domain": [0, 120]}
     },
     "size": {
       "field": "Normalized_Passenger_Trips",

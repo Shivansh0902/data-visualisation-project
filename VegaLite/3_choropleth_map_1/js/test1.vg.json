@@ -1,39 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Airport Locations and Routes in Australia",
+  "title": "Interactive Airport Routes in Australia",
   "width": 900,
   "height": 600,
-  "config": {
-    "view": {"stroke": null},
-    "background": "#a6cee3"
-  },
-  "params": [
-    {
-      "name": "airlineFilter",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Jetstar",
-          "Qantas",
-          "QantasLink",
-          "Regional Express",
-          "Tigerair Australia",
-          "Virgin Australia",
-          "Virgin Australia Regional Airlines"
-        ],
-        "labels": [
-          "Jetstar",
-          "Qantas",
-          "QantasLink",
-          "Regional Express",
-          "Tigerair Australia",
-          "Virgin Australia",
-          "Virgin Australia Regional Airlines"
-        ]
-      },
-      "value": null
-    }
-  ],
   "projection": {"type": "mercator"},
   "layer": [
     {
@@ -47,92 +16,103 @@
       }
     },
     {
+      "mark": {"type": "rule", "color": "#000", "opacity": 0.35},
       "data": {
         "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/Cleaned_Flight_Routes_Data.csv",
         "format": {"type": "csv"}
       },
       "transform": [
         {
-          "filter": "datum.Airline === airlineFilter || !airlineFilter"
+          "lookup": "dep_iata",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "iata_code",
+            "fields": ["latitude_deg", "longitude_deg"]
+          }
+        },
+        {
+          "lookup": "arr_iata",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "iata_code",
+            "fields": ["latitude_deg", "longitude_deg"]
+          },
+          "as": ["arr_latitude", "arr_longitude"]
+        },
+        {
+          "filter": {
+            "param": "airportSelection",
+            "empty": false,
+            "field": "dep_iata"
+          }
         }
       ],
-      "mark": "rule",
       "encoding": {
-        "latitude": {"field": "dep_lat", "type": "quantitative"},
-        "longitude": {"field": "dep_lon", "type": "quantitative"},
-        "latitude2": {"field": "arr_lat", "type": "quantitative"},
-        "longitude2": {"field": "arr_lon", "type": "quantitative"},
+        "latitude": {"field": "latitude_deg"},
+        "longitude": {"field": "longitude_deg"},
+        "latitude2": {"field": "arr_latitude"},
+        "longitude2": {"field": "arr_longitude"},
         "color": {
-          "field": "Airline",
-          "type": "nominal",
-          "scale": {
-            "domain": ["Jetstar", "Qantas", "QantasLink", "Regional Express", "Tigerair Australia", "Virgin Australia", "Virgin Australia Regional Airlines"],
-            "range": ["#e6194B", "#3cb44b", "#ffe119", "#4363d8", "#f58231", "#1e8cb4", "#46f0f0"]
-          },
-          "legend": {"title": "Airline"}
-        },
-        "tooltip": [
-          {"field": "DepartingPort", "title": "Departing Airport"},
-          {"field": "dep_lat", "title": "Departing Lat", "format": ".3f"},
-          {"field": "dep_lon", "title": "Departing Lon", "format": ".3f"},
-          {"field": "ArrivingPort", "title": "Arriving Airport"},
-          {"field": "arr_lat", "title": "Arriving Lat", "format": ".3f"},
-          {"field": "arr_lon", "title": "Arriving Lon", "format": ".3f"},
-          {"field": "Airline", "title": "Airline"}
-        ]
+          "condition": {"param": "airportSelection", "value": "#e6194B"},
+          "value": "black"
+        }
       }
     },
     {
+      "mark": "circle",
       "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/Cleaned_Flight_Routes_Data.csv",
         "format": {"type": "csv"}
       },
       "transform": [
+        {"aggregate": [{"op": "count", "as": "routes"}], "groupby": ["dep_iata"]},
         {
-          "filter": "datum.iso_region && datum.iso_region !== ''"
-        }
-      ],
-      "selection": {
-        "StateFilter": {
-          "type": "single", 
-          "fields": ["iso_region"],
-          "bind": {
-            "input": "select",
-            "options": [
-              "", 
-              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
-              "AU-NT", "AU-ACT"
-            ],
-            "name": "Select a State"
-          },
-          "empty": "all"
-        }
-      },
-      "mark": "circle",
-      "encoding": {
-        "longitude": {"field": "longitude_deg", "type": "quantitative"},
-        "latitude": {"field": "latitude_deg", "type": "quantitative"},
-        "size": {
-          "field": "score",
-          "type": "quantitative",
-          "scale": {
-            "type": "log",  
-            "domain": [1, 1000000],  
-            "range": [10, 500]  
+          "lookup": "dep_iata",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "iata_code",
+            "fields": ["municipality", "latitude_deg", "longitude_deg"]
           }
         },
-        "color": {"value": "steelblue"}, 
+        {"filter": "datum.iata_code !== ''"}
+      ],
+      "encoding": {
+        "latitude": {"field": "latitude_deg"},
+        "longitude": {"field": "longitude_deg"},
+        "size": {
+          "field": "routes",
+          "type": "quantitative",
+          "scale": {"rangeMax": 1000},
+          "legend": null
+        },
+        "order": {
+          "field": "routes",
+          "sort": "descending"
+        },
+        "color": {"value": "steelblue"},
         "tooltip": [
-          {"field": "name", "type": "nominal", "title": "Airport Name"},
-          {"field": "municipality", "type": "nominal", "title": "City"},
-          {"field": "iso_region", "type": "nominal", "title": "State"},
-          {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
+          {"field": "municipality", "title": "City"},
+          {"field": "dep_iata", "title": "IATA Code"},
+          {"field": "routes", "title": "Number of Routes"}
         ]
       },
-      "transform": [
+      "params": [
         {
-          "filter": {
-            "selection": "StateFilter"
+          "name": "airportSelection",
+          "select": {
+            "type": "point",
+            "fields": ["dep_iata"],
+            "on": "mouseover",
+            "nearest": true
           }
         }
       ]

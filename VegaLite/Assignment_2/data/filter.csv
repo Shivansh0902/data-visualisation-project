@@ -1,0 +1,572 @@
+id,ident,type,name,latitude_deg,longitude_deg,elevation_ft,continent,iso_country,iso_region,municipality,scheduled_service,gps_code,iata_code,local_code,home_link,wikipedia_link,keywords,score,last_updated
+27145,YSSY,large_airport,Sydney Kingsford Smith International Airport,-33.94609833,151.177002,21,OC,AU,AU-NSW,Sydney,1,YSSY,SYD,,http://www.sydneyairport.com.au/,http://en.wikipedia.org/wiki/Kingsford_Smith_International_Airport,RAAF Station Mascot,1027975,2008-06-26T14:52:34+00:00
+27066,YMML,large_airport,Melbourne International Airport,-37.673302,144.843002,434,OC,AU,AU-VIC,Melbourne,1,YMML,MEL,,http://melbourneairport.com.au/,http://en.wikipedia.org/wiki/Melbourne_Airport,,1016075,2017-03-06T19:29:22+00:00
+26901,YBBN,large_airport,Brisbane International Airport,-27.38419914,153.11700439453100,13,OC,AU,AU-QLD,Brisbane,1,YBBN,BNE,,,http://en.wikipedia.org/wiki/Brisbane_Airport,,1013175,2008-06-26T14:52:34+00:00
+27119,YPPH,large_airport,Perth International Airport,-31.94029999,115.96700286865200,67,OC,AU,AU-WA,Perth,1,YPPH,PER,,,http://en.wikipedia.org/wiki/Perth_Airport,,51375,2008-06-26T14:52:34+00:00
+26904,YBCS,medium_airport,Cairns International Airport,-16.88579941,145.7550049,10,OC,AU,AU-QLD,Cairns,1,YBCS,CNS,,,http://en.wikipedia.org/wiki/Cairns_International_Airport,,1050,2010-08-29T23:17:14+00:00
+27096,YPAD,large_airport,Adelaide International Airport,-34.945,138.531006,20,OC,AU,AU-SA,Adelaide,1,YPAD,ADL,,,http://en.wikipedia.org/wiki/Adelaide_International_Airport,,975,2017-05-16T06:15:44+00:00
+27101,YPDN,medium_airport,Darwin International Airport,-12.41469955,130.8769989013670,103,OC,AU,AU-NT,Darwin,1,YPDN,DRW,,http://www.darwin-airport.com.au/,http://en.wikipedia.org/wiki/Darwin_International_Airport,RAAF Base Darwin,975,2008-08-01T10:53:13+00:00
+26902,YBCG,medium_airport,Gold Coast Airport,-28.1644001,153.5050049,21,OC,AU,AU-QLD,Gold Coast,1,YBCG,OOL,,,http://en.wikipedia.org/wiki/Gold_Coast_Airport,,800,2015-09-07T20:06:40+00:00
+27131,YSCB,large_airport,Canberra International Airport,-35.30690002,149.19500732421900,1886,OC,AU,AU-ACT,Canberra,1,YSCB,CBR,,,http://en.wikipedia.org/wiki/Canberra_International_Airport,RAAF Base Fairbairn,1150,2008-10-20T11:48:59+00:00
+26900,YBAS,medium_airport,Alice Springs Airport,-23.80669975,133.90199279785200,1789,OC,AU,AU-NT,Alice Springs,1,YBAS,ASP,,http://www.alicespringsairport.com.au/,http://en.wikipedia.org/wiki/Alice_Springs_Airport,,975,2008-08-01T10:52:25+00:00
+27058,YMHB,medium_airport,Hobart International Airport,-42.83610153,147.5099945,13,OC,AU,AU-TAS,Hobart,1,YMHB,HBA,,,http://en.wikipedia.org/wiki/Hobart_International_Airport,,975,2010-08-29T23:16:15+00:00
+27063,YMLT,medium_airport,Launceston Airport,-41.54529953,147.2140045,562,OC,AU,AU-TAS,Launceston,1,YMLT,LST,,http://www.launcestonairport.com.au/,http://en.wikipedia.org/wiki/Launceston_Airport,,975,2010-09-02T09:17:33+00:00
+27130,YSBK,medium_airport,Sydney Bankstown Airport,-33.92440033,150.98800659179700,29,OC,AU,AU-NSW,Sydney,0,YSBK,BWU,,,http://en.wikipedia.org/wiki/Bankstown_Airport,,250,2008-06-26T14:52:34+00:00
+26895,YAYE,medium_airport,Ayers Rock Connellan Airport,-25.1861,130.975998,1626,OC,AU,AU-NT,Ayers Rock,1,YAYE,AYQ,,,http://en.wikipedia.org/wiki/Ayers_Rock_Airport,"Ayers Rock,Uluru",800,2016-09-22T17:56:51+00:00
+27043,YMAV,medium_airport,Avalon Airport,-38.039398,144.468994,35,OC,AU,AU-VIC,Melbourne,1,YMAV,AVV,,https://www.avalonairport.com.au/,http://en.wikipedia.org/wiki/Avalon_Airport,"Lara, Geelong",975,2017-03-06T19:25:33+00:00
+26934,YBTL,medium_airport,Townsville Airport,-19.25250053,146.76499938964800,18,OC,AU,AU-QLD,Townsville,1,YBTL,TSV,,http://www.townsvilleairport.com.au/,http://en.wikipedia.org/wiki/Townsville_Airport,"RAAF Base Garbutt, RAAF Base Townsville",975,2009-02-09T10:25:01+00:00
+26918,YBMC,medium_airport,Sunshine Coast Airport,-26.6033,153.091003,15,OC,AU,AU-QLD,Maroochydore,1,YBSU,MCY,,http://www.sunshinecoastairport.com.au/,http://en.wikipedia.org/wiki/Sunshine_Coast_Airport,YBSU,800,2018-07-02T22:59:27+00:00
+27064,YMMB,medium_airport,Melbourne Moorabbin Airport,-37.97579956,145.1020050048830,50,OC,AU,AU-VIC,Melbourne,1,YMMB,MBW,,http://www.moorabbinairport.com.au/,http://en.wikipedia.org/wiki/Moorabbin_Airport,,800,2009-01-04T04:08:18+00:00
+27060,YMIA,medium_airport,Mildura Airport,-34.22919846,142.0859985,167,OC,AU,AU-VIC,Mildura,1,YMIA,MQL,,http://www.milduraairport.com.au/,http://en.wikipedia.org/wiki/Mildura_Airport,,800,2010-09-06T15:50:38+00:00
+26925,YBRK,medium_airport,Rockhampton Airport,-23.38190079,150.4750061,34,OC,AU,AU-QLD,Rockhampton,1,YBRK,ROK,,http://www.rok.aero/,http://en.wikipedia.org/wiki/Rockhampton_Airport,,800,2010-09-02T09:10:23+00:00
+27106,YPJT,medium_airport,Perth Jandakot Airport,-32.09749985,115.88099670410200,99,OC,AU,AU-WA,Perth,0,YPJT,JAD,,,http://en.wikipedia.org/wiki/Jandakot_Airport,,250,2008-06-26T14:52:34+00:00
+26909,YBHM,medium_airport,Hamilton Island Airport,-20.35810089,148.9519959,15,OC,AU,AU-QLD,Hamilton Island,1,YBHM,HTI,,http://www.hamiltonisland.com.au/airport/,http://en.wikipedia.org/wiki/Hamilton_Island_Airport,,800,2010-09-02T09:11:16+00:00
+27051,YMEN,medium_airport,Melbourne Essendon Airport,-37.7281,144.901993,282,OC,AU,AU-VIC,Melbourne,1,YMEN,MEB,,http://www.essendonairport.com.au/,http://en.wikipedia.org/wiki/Essendon_Airport,,325,2019-07-19T15:33:34+00:00
+27147,YSTW,medium_airport,Tamworth Airport,-31.08390045,150.8470001,1334,OC,AU,AU-NSW,Tamworth,1,YSTW,TMW,,http://www.tamworth.nsw.gov.au/Council/Council-Enterprises-and-Venues/Tamworth-Regional-Airport/Tamworth-Regional-Airport/defaul,http://en.wikipedia.org/wiki/Tamworth_Airport,,975,2010-09-02T09:08:58+00:00
+26927,YBRM,medium_airport,Broome International Airport,-17.94470024,122.23200225830100,56,OC,AU,AU-WA,Broome,1,YBRM,BME,,,http://en.wikipedia.org/wiki/Broome_International_Airport,,800,2008-06-26T14:52:34+00:00
+27118,YPPF,small_airport,Adelaide Parafield Airport,-34.79330063,138.6329956,57,OC,AU,AU-SA,Adelaide,0,YPPF,,,http://www.adelaideairport.com.au/corporate-and-community/adelaide-airport-limited/airports,http://en.wikipedia.org/wiki/Parafield_Airport,,50,2010-09-12T09:05:54+00:00
+26897,YBAF,small_airport,Brisbane Archerfield Airport,-27.57029915,153.0079956,63,OC,AU,AU-QLD,Brisbane,0,YBAF,ACF,,,http://en.wikipedia.org/wiki/Archerfield_Airport,RAAF Station Archerfield,50,2011-08-07T13:30:35+00:00
+27175,YWLM,medium_airport,Newcastle Airport,-32.79499817,151.83399963378900,31,OC,AU,AU-NSW,Williamtown,1,YWLM,NTL,,,http://en.wikipedia.org/wiki/Newcastle_Airport_(Williamtown),RAAF Base Williamtown,975,2009-02-09T10:33:52+00:00
+26920,YBNA,medium_airport,Ballina Byron Gateway Airport,-28.83390045,153.5619965,7,OC,AU,AU-NSW,Ballina,1,YBNA,BNK,,,http://en.wikipedia.org/wiki/Ballina_Airport,,800,2010-09-02T08:43:09+00:00
+27132,YSCH,medium_airport,Coffs Harbour Airport,-30.32060051,153.1159973,18,OC,AU,AU-NSW,Coffs Harbour,1,YCFS,CFS,,,http://en.wikipedia.org/wiki/Coffs_Harbour_Airport,"YSCH, RAAF Base Coffs Harbour",800,2013-10-03T13:41:46+00:00
+27108,YPKG,medium_airport,Kalgoorlie Boulder Airport,-30.7894001,121.461998,1203,OC,AU,AU-WA,Kalgoorlie,1,YPKG,KGI,,,http://en.wikipedia.org/wiki/Kalgoorlie-Boulder_Airport,,800,2010-08-29T23:19:13+00:00
+26908,YBHI,medium_airport,Broken Hill Airport,-32.00139999,141.4720001,958,OC,AU,AU-NSW,Broken Hill,1,YBHI,BHQ,,,http://en.wikipedia.org/wiki/Broken_Hill_Airport,,800,2010-09-02T08:45:23+00:00
+27148,YSWG,medium_airport,Wagga Wagga City Airport,-35.16529846,147.4660034,724,OC,AU,AU-NSW,Wagga Wagga,1,YSWG,WGA,,http://www.wagga.nsw.gov.au/www/html/271-airport.asp,http://en.wikipedia.org/wiki/Wagga_Wagga_Airport,RAAF Base Wagga,800,2010-09-02T09:08:05+00:00
+26932,YBTH,medium_airport,Bathurst Airport,-33.40940094,149.6519928,2435,OC,AU,AU-NSW,Bathurst,1,YBTH,BHS,,,http://en.wikipedia.org/wiki/Bathurst_Airport_(New_South_Wales),,800,2012-11-22T08:40:08+00:00
+27184,YWYY,medium_airport,Wynyard Airport,-40.99890137,145.7310028076170,62,OC,AU,AU-TAS,Burnie,1,YWYY,BWT,,,http://en.wikipedia.org/wiki/Burnie_Airport,,800,2008-06-26T14:52:34+00:00
+26991,YGEL,medium_airport,Geraldton Airport,-28.796101,114.707001,121,OC,AU,AU-WA,Geraldton,1,YGEL,GET,,,http://en.wikipedia.org/wiki/Geraldton_Airport,,800,2016-02-13T16:18:22+00:00
+26919,YBMK,medium_airport,Mackay Airport,-21.17169952,149.1799927,19,OC,AU,AU-QLD,Mackay,1,YBMK,MKY,,http://www.mackayairport.com.au/,http://en.wikipedia.org/wiki/Mackay_Airport,,800,2010-09-02T14:16:54+00:00
+27041,YLTV,medium_airport,Latrobe Valley Airport,-38.207199,146.470001,180,OC,AU,AU-VIC,Morwell,0,YLTV,TGN,,,http://en.wikipedia.org/wiki/Latrobe_Valley_Airport,"Traralgon, Morwell",250,2016-05-24T21:29:27+00:00
+27919,YRED,small_airport,Redcliffe Airport,-27.20669937,153.0679931640630,2,OC,AU,AU-QLD,Redcliffe,0,YRED,,,,http://en.wikipedia.org/wiki/Redcliffe_Airport_(Australia),,50,2008-08-10T09:10:42+00:00
+26893,YARM,medium_airport,Armidale Airport,-30.52809906,151.6170044,3556,OC,AU,AU-NSW,Armidale,1,YARM,ARM,,,http://en.wikipedia.org/wiki/Armidale_Airport,,800,2010-09-02T08:41:26+00:00
+26936,YBUD,medium_airport,Bundaberg Airport,-24.90390015,152.3190002,107,OC,AU,AU-QLD,Bundaberg,1,YBUD,BDB,,http://bundaberg.qld.gov.au/services/airport,http://en.wikipedia.org/wiki/Bundaberg_Airport,,800,2010-09-19T19:38:37+00:00
+26975,YDPO,medium_airport,Devonport Airport,-41.16970062,146.4299927,33,OC,AU,AU-TAS,Devonport,1,YDPO,DPO,,http://www.tasports.com.au/infrastructure/devonport_airport.html,http://en.wikipedia.org/wiki/Devonport_Airport,,800,2010-09-19T19:41:12+00:00
+27107,YPKA,medium_airport,Karratha Airport,-20.71220016,116.7730026,29,OC,AU,AU-WA,Karratha,1,YPKA,KTA,,,http://en.wikipedia.org/wiki/Karratha_Airport,,800,2010-08-29T23:16:48+00:00
+27111,YPKU,medium_airport,Kununurra Airport,-15.77810001,128.7079926,145,OC,AU,AU-WA,Kununurra,1,YPKU,KNX,,,http://en.wikipedia.org/wiki/Kununurra_Airport,,800,2010-09-06T15:47:00+00:00
+27035,YLIS,medium_airport,Lismore Airport,-28.83029938,153.2599945,35,OC,AU,AU-NSW,Lismore,1,YLIS,LSY,,,http://en.wikipedia.org/wiki/Lismore_Airport,,800,2010-09-02T09:18:39+00:00
+26917,YBMA,medium_airport,Mount Isa Airport,-20.66390038,139.4889984,1121,OC,AU,AU-QLD,Mount Isa,1,YBMA,ISA,,,http://en.wikipedia.org/wiki/Mount_Isa_Airport,,800,2010-08-29T23:17:41+00:00
+27109,YPKS,medium_airport,Parkes Airport,-33.13140106,148.2389984,1069,OC,AU,AU-NSW,Parkes,1,YPKS,PKE,,,http://en.wikipedia.org/wiki/Parkes_Airport,,800,2010-09-02T14:36:32+00:00
+27048,YMDG,medium_airport,Mudgee Airport,-32.5625,149.6109924,1545,OC,AU,AU-NSW,Mudgee,0,YMDG,DGE,,,http://en.wikipedia.org/wiki/Mudgee_Airport,,250,2010-09-02T14:33:17+00:00
+26888,YABA,medium_airport,Albany Airport,-34.94329834,117.80899810791000,233,OC,AU,AU-WA,Albany,1,YABA,ALH,,,http://en.wikipedia.org/wiki/Albany_Airport_(Australia),"ABA, YPAL",925,2008-06-26T14:52:34+00:00
+27044,YMAY,medium_airport,Albury Airport,-36.06779861,146.95799255371100,539,OC,AU,AU-NSW,Albury,1,YMAY,ABX,,,http://en.wikipedia.org/wiki/Albury_Airport,,800,2008-06-26T14:52:34+00:00
+26999,YGTH,medium_airport,Griffith Airport,-34.25080109,146.0670013,439,OC,AU,AU-NSW,Griffith,1,YGTH,GFF,,,http://en.wikipedia.org/wiki/Griffith_Airport,,800,2010-09-02T09:06:54+00:00
+27052,YMER,medium_airport,Merimbula Airport,-36.90859985,149.901001,7,OC,AU,AU-NSW,Merimbula,1,YMER,MIM,,,http://en.wikipedia.org/wiki/Merimbula_Airport,,800,2010-09-02T14:26:09+00:00
+27072,YMOR,medium_airport,Moree Airport,-29.49889946,149.8450012,701,OC,AU,AU-NSW,Moree,1,YMOR,MRZ,,,http://en.wikipedia.org/wiki/Moree_Airport,,800,2010-09-02T14:28:01+00:00
+27117,YPPD,medium_airport,Port Hedland International Airport,-20.37779999,118.6259995,33,OC,AU,AU-WA,Port Hedland,1,YPPD,PHE,,,http://en.wikipedia.org/wiki/Port_Hedland_International_Airport,,800,2010-08-29T23:18:37+00:00
+27115,YPMQ,medium_airport,Port Macquarie Airport,-31.43580055,152.8630066,12,OC,AU,AU-NSW,Port Macquarie,1,YPMQ,PQQ,,http://www.hastings.nsw.gov.au/www/html/455-welcome-to-port-macquarie-airport.asp?intLocationID=455,http://en.wikipedia.org/wiki/Port_Macquarie_Airport,,800,2010-09-02T14:37:25+00:00
+26984,YFBS,medium_airport,Forbes Airport,-33.363602,147.934998,760,OC,AU,AU-NSW,Forbes,0,YFBS,FRB,,,http://en.wikipedia.org/wiki/Forbes_Airport,,250,2016-10-05T13:25:02+00:00
+27095,YORG,medium_airport,Orange Airport,-33.38169861,149.1329956,3115,OC,AU,AU-NSW,Orange,0,YORG,OAG,,,http://en.wikipedia.org/wiki/Orange_Airport,,250,2010-09-02T14:35:51+00:00
+27701,YKTN,small_airport,Kyneton Airport,-37.22626209,144.4472981,1650,OC,AU,AU-VIC,Kyneton,0,YKTN,,,,http://en.wikipedia.org/wiki/Kyneton_Airport,,50,2011-10-18T09:33:21+00:00
+26941,YCAR,medium_airport,Carnarvon Airport,-24.880211,113.67174,13,OC,AU,AU-WA,Carnarvon,1,YCAR,CVQ,,,https://en.wikipedia.org/wiki/Carnarvon_Airport_(Western_Australia),,800,2016-02-13T16:25:51+00:00
+26905,YBCV,medium_airport,Charleville Airport,-26.41329956,146.2619934,1003,OC,AU,AU-QLD,Charleville,1,YBCV,CTL,,,http://en.wikipedia.org/wiki/Charleville_Airport,,800,2010-09-19T19:39:40+00:00
+27113,YPLM,medium_airport,Learmonth Airport,-22.23559952,114.0889969,19,OC,AU,AU-WA,Exmouth,1,YPLM,LEA,,,http://en.wikipedia.org/wiki/RAAF_Learmonth,RAAF Learmonth,800,2010-09-06T15:48:23+00:00
+27003,YHBA,medium_airport,Hervey Bay Airport,-25.31889915,152.8800049,60,OC,AU,AU-QLD,Hervey Bay,1,YHBA,HVB,,,http://en.wikipedia.org/wiki/Hervey_Bay_Airport,,800,2010-09-02T09:16:15+00:00
+27038,YLRE,medium_airport,Longreach Airport,-23.43420029,144.2799988,627,OC,AU,AU-QLD,Longreach,1,YLRE,LRE,,,http://en.wikipedia.org/wiki/Longreach_Airport,,800,2010-09-19T19:44:42+00:00
+27099,YPBO,medium_airport,Paraburdoo Airport,-23.17110062,117.7450027,1406,OC,AU,AU-WA,Paraburdoo,1,YPBO,PBO,,,http://en.wikipedia.org/wiki/Paraburdoo_Airport,,800,2010-09-19T19:47:36+00:00
+27112,YPLC,medium_airport,Port Lincoln Airport,-34.6053009,135.8800049,36,OC,AU,AU-SA,Port Lincoln,1,YPLC,PLO,,,http://en.wikipedia.org/wiki/Port_Lincoln_Airport,,800,2010-09-19T19:48:12+00:00
+27128,YROM,medium_airport,Roma Airport,-26.54500008,148.7749939,1032,OC,AU,AU-QLD,Roma,1,YROM,RMA,,,http://en.wikipedia.org/wiki/Roma_Airport,,800,2010-09-19T19:48:50+00:00
+26898,YBAM,small_airport,Northern Peninsula Airport,-10.9508,142.459,34,OC,AU,AU-QLD,Bamaga,1,YNPE,ABM,,http://www.nparc.qld.gov.au/airport,https://en.wikipedia.org/wiki/Northern_Peninsula_Airport,"YBAM, Bamaga Airport, Bamaga Injinoo Airport",450,2019-07-26T07:47:51+00:00
+27721,YLHI,small_airport,Lord Howe Island Airport,-31.53829956,159.0769959,5,OC,AU,AU-NSW,Lord Howe Island,1,YLHI,LDH,,,http://en.wikipedia.org/wiki/Lord_Howe_Island_Airport,,450,2010-09-02T14:16:01+00:00
+27144,YSRI,medium_airport,RAAF Base Richmond,-33.600601,150.781006,67,OC,AU,AU-NSW,Richmond,0,YSRI,XRH,,,http://en.wikipedia.org/wiki/RAAF_Base_Richmond,military,300,2016-06-15T05:54:00+00:00
+27316,YADG,small_airport,Aldinga Airport,-35.29000092,138.4900055,110,OC,AU,AU-SA,Aldinga,0,YADG,,,http://www.adelaidebiplanes.com.au/,,,50,2010-08-22T15:30:25+00:00
+32724,YIMT,small_airport,Innamincka Township Airport,-27.74169922,140.7449951171880,,OC,AU,AU-SA,Innamincka Township,0,YIMT,,,,,,50,2008-06-13T14:30:04+00:00
+28012,YTYA,small_airport,Tyabb Airport,-38.26670074,145.1750031,88,OC,AU,AU-VIC,Melbourne,0,YTYA,,,http://www.pac.asn.au/,,,50,2012-01-02T16:52:45+00:00
+27073,YMPC,small_airport,"RAAF Williams, Point Cook Base",-37.932201,144.753006,14,OC,AU,AU-VIC,Point Cook,0,YMPC,,,,http://en.wikipedia.org/wiki/RAAF_Williams,,50,2017-03-06T19:23:48+00:00
+26948,YCCY,medium_airport,Cloncurry Airport,-20.66860008,140.5039978,616,OC,AU,AU-QLD,Cloncurry,1,YCCY,CNJ,,,http://en.wikipedia.org/wiki/Cloncurry_Airport,,800,2010-09-19T19:40:28+00:00
+27135,YSDU,medium_airport,Dubbo City Regional Airport,-32.21670151,148.5749969,935,OC,AU,AU-NSW,Dubbo,1,YSDU,DBO,,http://www.dubbo.nsw.gov.au/BusinessandIndustry/DubboCityRegionalAirport.html,http://en.wikipedia.org/wiki/Dubbo_Airport,,800,2010-09-02T08:48:25+00:00
+27082,YNBR,medium_airport,Narrabri Airport,-30.31920052,149.8269959,788,OC,AU,AU-NSW,Narrabri,1,YNBR,NAA,,http://narrabri.cfm.predelegation.com/index.cfm?page_id=1249,http://en.wikipedia.org/wiki/Narrabri_Airport,,800,2010-09-02T14:34:11+00:00
+27088,YNTN,medium_airport,Normanton Airport,-17.68409,141.069664,73,OC,AU,AU-QLD,Normanton,1,YNTN,NTN,,,http://en.wikipedia.org/wiki/Normanton_Airport,,800,2016-02-13T15:49:22+00:00
+26924,YBPN,medium_airport,Proserpine Whitsunday Coast Airport,-20.49500084,148.552002,82,OC,AU,AU-QLD,Proserpine,1,YBPN,PPP,,,http://en.wikipedia.org/wiki/Proserpine_/_Whitsunday_Coast_Airport,,800,2010-09-06T15:53:01+00:00
+27170,YWHA,medium_airport,Whyalla Airport,-33.05889893,137.51400756835900,41,OC,AU,AU-SA,Whyalla,1,YWHA,WYA,,,http://en.wikipedia.org/wiki/Whyalla_Airport,,800,2008-06-26T14:52:34+00:00
+27093,YOLD,small_airport,Olympic Dam Airport,-30.48500061,136.8769989,343,OC,AU,AU-SA,Olympic Dam,1,YOLD,OLP,,,http://en.wikipedia.org/wiki/Olympic_Dam_Airport,,450,2010-09-19T19:45:52+00:00
+26972,YDLQ,medium_airport,Deniliquin Airport,-35.55939865,144.9459991,316,OC,AU,AU-NSW,Deniliquin,0,YDLQ,DNQ,,http://www.deniliquin.nsw.gov.au/index.php?option=com_content&view=article&id=46786:deniliquin-airport&catid=350&Itemid=1540,http://en.wikipedia.org/wiki/Deniliquin_Airport,,250,2014-08-31T21:56:15+00:00
+27016,YIVL,medium_airport,Inverell Airport,-29.88829994,151.1439972,2667,OC,AU,AU-NSW,Inverell,0,YIVL,IVR,,,http://en.wikipedia.org/wiki/Inverell_Airport,,250,2013-10-03T15:08:31+00:00
+27179,YWSL,medium_airport,West Sale Airport,-38.090827,146.965335,72,OC,AU,AU-VIC,Sale,0,YWSL,SXE,,,http://en.wikipedia.org/wiki/West_Sale_Airport,,250,2013-08-15T02:11:25+00:00
+27163,YTWB,small_airport,Toowoomba Airport,-27.542801,151.916,2086,OC,AU,AU-QLD,Toowoomba,0,YTWB,TWB,,,http://en.wikipedia.org/wiki/Victoria_River_Downs_Airport,,250,2018-03-11T12:17:39+00:00
+27451,YCEM,small_airport,Coldstream Airport,-37.72766876,145.4083709716800,76,OC,AU,AU-VIC,Coldstream,0,YCEM,,,,,,50,2009-08-01T21:34:21+00:00
+27478,YCOI,small_airport,Collie Airport,-33.36669922,116.2170029,818,OC,AU,AU-WA,Collie,0,YCOI,CIE,,,,,50,2014-07-20T13:00:42+00:00
+38201,AU-0002,small_airport,Dwellingup Airstrip,-32.69269943,116.0749969,,OC,AU,AU-WA,Dwellingup,0,,,A01,,,http://sabc.org.au/knav/airport/A01.html,50,2011-07-18T13:40:25+00:00
+27753,YMBT,small_airport,Mount Beauty Airport,-36.73157568,147.1689034,1100,OC,AU,AU-VIC,Mount Beauty,0,YMBT,,,,,Victorian Aerial Fire Bases,50,2011-07-18T12:48:32+00:00
+27849,YNRG,small_airport,Narrogin Airport,-32.93000031,117.0800018,329,OC,AU,AU-WA,Narrogin,0,YNRG,NRG,,http://www.narroginshire.wa.gov.au/airport.aspx,,,50,2015-12-19T22:51:47+00:00
+28079,YWVA,small_airport,Warnervale Airport,-33.240278,151.429722,25,OC,AU,AU-NSW,Warnervale,0,YWVA,,,http://www.ccac.com.au/,http://en.wikipedia.org/wiki/Warnervale_Airport,,50,2012-04-16T08:57:18+00:00
+28053,YWKM,small_airport,Wyalkatchem Airport,-31.2026341,117.3788738,,OC,AU,AU-WA,Wyalkatchem,0,YWKM,,,,,,50,2011-07-26T10:42:58+00:00
+26899,YBAR,medium_airport,Barcaldine Airport,-23.56529999,145.3070068,878,OC,AU,AU-QLD,Barcaldine,1,YBAR,BCI,,,http://en.wikipedia.org/wiki/Barcaldine_Airport,,800,2010-09-19T19:35:31+00:00
+26903,YBCK,medium_airport,Blackall Airport,-24.42779922,145.4290009,928,OC,AU,AU-QLD,Blackall,1,YBCK,BKQ,,,http://en.wikipedia.org/wiki/Blackall_Airport,,800,2010-09-19T19:36:32+00:00
+26961,YCOE,medium_airport,Coen Airport,-13.761133,143.113311,532,OC,AU,AU-QLD,Coen,1,YCOE,CUQ,,,http://en.wikipedia.org/wiki/Coen_Airport,,800,2016-02-13T15:39:40+00:00
+26962,YCOM,medium_airport,Cooma Snowy Mountains Airport,-36.30059814,148.973999,3088,OC,AU,AU-NSW,Cooma,1,YCOM,OOM,,,http://en.wikipedia.org/wiki/Cooma_-_Snowy_Mountains_Airport,,800,2010-09-02T08:46:53+00:00
+26982,YESP,medium_airport,Esperance Airport,-33.684399,121.822998,470,OC,AU,AU-WA,Esperance,1,YESP,EPR,,,http://en.wikipedia.org/wiki/Esperance_Airport,,800,2016-02-13T16:36:51+00:00
+27004,YHID,medium_airport,Horn Island Airport,-10.58640003,142.2899933,43,OC,AU,AU-QLD,Horn Island,1,YHID,HID,,,http://en.wikipedia.org/wiki/Horn_Island_Airport,,800,2010-09-19T19:43:58+00:00
+27034,YLHR,medium_airport,Lockhart River Airport,-12.7869,143.304993,77,OC,AU,AU-QLD,Lockhart River,1,YLHR,IRG,,,http://en.wikipedia.org/wiki/Lockhart_River_Airport,,800,2016-02-13T15:46:29+00:00
+27075,YMRY,medium_airport,Moruya Airport,-35.89780045,150.1439972,14,OC,AU,AU-NSW,Moruya,1,YMRY,MYA,,,http://en.wikipedia.org/wiki/Moruya_Airport,RAAF Moruya,800,2010-09-02T14:31:17+00:00
+27008,YHOT,medium_airport,Mount Hotham Airport,-37.04750061,147.3339996,4260,OC,AU,AU-VIC,Mount Hotham,1,YHOT,MHU,,,http://en.wikipedia.org/wiki/Mount_Hotham_Airport,,800,2010-09-02T14:32:44+00:00
+27090,YNWN,medium_airport,Newman Airport,-23.4178009,119.8030014,1724,OC,AU,AU-WA,Newman,1,YNWN,ZNE,,,http://en.wikipedia.org/wiki/Newman_Airport,,800,2010-09-06T15:52:03+00:00
+27104,YPGV,medium_airport,Gove Airport,-12.26939964,136.8179932,192,OC,AU,AU-NT,Nhulunbuy,1,YPGV,GOV,,,http://en.wikipedia.org/wiki/Gove_Airport,,800,2010-09-10T22:49:08+00:00
+27159,YTNK,medium_airport,Tennant Creek Airport,-19.63439941,134.18299865722700,1236,OC,AU,AU-NT,Tennant Creek,1,YTNK,TCA,,http://www.tennantcreekairport.com.au/,http://en.wikipedia.org/wiki/Tennant_Creek_Airport,,800,2008-08-01T10:51:53+00:00
+26939,YBWP,medium_airport,Weipa Airport,-12.67860031,141.9250031,63,OC,AU,AU-QLD,Weipa,1,YBWP,WEI,,,http://en.wikipedia.org/wiki/Weipa_Airport,,800,2010-09-19T19:51:26+00:00
+27102,YPEA,medium_airport,RAAF Base Pearce,-31.6678009,116.01499938964800,149,OC,AU,AU-WA,Bullsbrook,0,YPEA,,,,http://en.wikipedia.org/wiki/RAAF_Base_Pearce,,500,2008-06-26T14:52:34+00:00
+26894,YAUR,small_airport,Aurukun Airport,-13.354067,141.72065,31,OC,AU,AU-QLD,Aurukun,1,YAUR,AUU,,,http://en.wikipedia.org/wiki/Aurukun_Airport,,450,2016-02-13T15:24:31+00:00
+27563,YFLI,small_airport,Flinders Island Airport,-40.09170151,147.9929962,10,OC,AU,AU-TAS,Flinders Island,1,YFLI,FLS,,http://www.flinders.tas.gov.au/flinders-island-airport,http://en.wikipedia.org/wiki/Flinders_Island_Airport,,450,2014-09-21T03:13:06+00:00
+27080,YMYB,small_airport,Maryborough Airport,-25.5133,152.714996,38,OC,AU,AU-QLD,Maryborough,1,YMYB,MBH,,,https://en.wikipedia.org/wiki/Maryborough_Airport_(Queensland),,450,2018-09-16T03:48:00+00:00
+27103,YPED,medium_airport,RAAF Base Edinburgh,-34.70249939,138.62100219726600,67,OC,AU,AU-SA,Adelaide,0,YPED,,,http://www.raaf.gov.au/organisation/info_on/bases/edinburgh/index.htm,http://en.wikipedia.org/wiki/RAAF_Base_Edinburgh,,250,2008-06-26T14:52:34+00:00
+27161,YTRE,medium_airport,Taree Airport,-31.8885994,152.5140076,38,OC,AU,AU-NSW,Taree,1,YTRE,TRO,,,,,250,2012-08-08T10:54:58+00:00
+32719,YBOV,small_airport,Border Village Airport,-31.63940048,129.01199340820300,308,OC,AU,AU-SA,Border Village,0,YBOV,,,,,,50,2008-06-26T14:52:34+00:00
+38214,AU-0015,small_airport,Bremer Bay Airport,-34.38056183,119.3319473,100,OC,AU,AU-WA,Bremer Bay,0,,,A17,,,,50,2011-07-18T14:04:40+00:00
+42497,AU-0021,small_airport,Karijini National Park,-22.4871006,118.46800231933600,2325,OC,AU,AU-WA,"Dept. of Conservation, Karijini National Park (08 9189 8157)",0,,,,http://www.tompricewa.com.au/karijini.asp,,,50,2009-01-13T07:55:45+00:00
+27614,YHAW,small_airport,Wilpena Pound Airport,-31.85590744,138.46807861328100,321,OC,AU,AU-SA,Hawker,0,YHAW,HWK,,,,,50,2008-08-14T10:39:17+00:00
+27659,YJST,small_airport,Hubert Wilkins Airstrip,-33.19208451,138.6155319,,OC,AU,AU-SA,Jamestown,0,YJST,,,,,,50,2010-12-29T19:23:49+00:00
+27716,YLFD,small_airport,Lakefield Airport,-14.9207,144.203,107,OC,AU,AU-QLD,Lakefield,0,YLFD,LFP,,,,,50,2015-02-08T19:41:29+00:00
+27818,YMVM,small_airport,Mangrove Mountain Airport,-33.285122,151.212738,920,OC,AU,AU-NSW,Mangrove Mountain,0,YMVM,,,http://www.ccsoaring.com.au/,,gliding,50,2016-06-14T18:37:03+00:00
+27765,YMEL,small_airport,Melton Airport,-37.61669922,144.56700134277300,204,OC,AU,AU-VIC,Melton,0,YMEL,,,http://www.meltonairservices.com.au/index.php?sec=home,,"Foggarty's Field,",50,2009-01-04T04:12:43+00:00
+27703,YKYB,small_airport,Kyabram Airport,-36.33248237,144.9720669,340,OC,AU,AU-VIC,Private Airfield in the Shire of Campaspe,0,YKYB,,,,,,50,2011-01-24T17:15:41+00:00
+32732,YRID,small_airport,Riddell Airport,-37.48,144.718002,1150,OC,AU,AU-VIC,Riddell,0,YRID,,,http://www.riddellairfield.com.au/,,,50,2017-03-24T20:56:53+00:00
+27881,YPEF,small_airport,Penfield Airfield,-37.51330185,144.697998,1150,OC,AU,AU-VIC,Sunbury,0,YPEF,,,http://www.flypenfield.com.au,,Sunbury Airfield,50,2015-02-22T21:52:34+00:00
+28002,YTQY,small_airport,Torquay Airport,-38.29999924,144.36500549316400,9,OC,AU,AU-VIC,Torquay,0,YTQY,,,,,,50,2008-08-10T09:13:25+00:00
+32734,YTFA,small_airport,Truro Flat Airpark,-34.39830017,139.38499450683600,,OC,AU,AU-SA,Truro Flat,0,YTFA,,,,,,50,2008-07-14T08:45:12+00:00
+44626,YWGM,small_airport,White Gum Air Park,-31.863947,116.936094,1000,OC,AU,AU-WA,York,0,YWGM,,YWGM,http://www.ywgm.com.au/,,"Whitegum, WhiteGum Farm, White Gum, White Gum Air Park, Hangar Rental, Hangar Accommodation, White Gum Aviation",0,2016-03-01T15:01:02+00:00
+27158,YTNG,medium_airport,Thangool Airport,-24.4939003,150.5760040283200,644,OC,AU,AU-QLD,Biloela,1,YTNG,THG,,,http://en.wikipedia.org/wiki/Thangool_Airport,,800,2008-06-26T14:52:34+00:00
+27137,YSHK,medium_airport,Shark Bay Airport,-25.89389992,113.5770035,111,OC,AU,AU-WA,Denham,1,YSHK,MJK,,,http://en.wikipedia.org/wiki/Shark_Bay_Airport,"DNM, Denham Airport, Monkey Mia Airport",800,2015-03-14T17:54:26+00:00
+26980,YELD,medium_airport,Elcho Island Airport,-12.01939964,135.5709991,101,OC,AU,AU-NT,Elcho Island,1,YELD,ELC,,,http://en.wikipedia.org/wiki/Elcho_Island_Airport,,800,2010-09-10T22:47:59+00:00
+26981,YEML,medium_airport,Emerald Airport,-23.56749916,148.1790009,624,OC,AU,AU-QLD,Emerald,1,YEML,EMD,,http://www.emerald.qld.gov.au/Council/Departments/Engineering_Operations/Engineering_Operations.htm,http://en.wikipedia.org/wiki/Emerald_Airport,,800,2010-09-19T19:42:28+00:00
+26994,YGLA,medium_airport,Gladstone Airport,-23.869699,151.223007,64,OC,AU,AU-QLD,Gladstone,1,YGLA,GLT,4680,,http://en.wikipedia.org/wiki/Gladstone_Airport_(Australia),,800,2016-11-22T06:01:50+00:00
+26998,YGTE,medium_airport,Groote Eylandt Airport,-13.97500038,136.4600067,53,OC,AU,AU-NT,Groote Eylandt,1,YGTE,GTE,,,http://en.wikipedia.org/wiki/Groote_Eylandt_Airport,,800,2010-09-10T22:49:53+00:00
+27032,YLEO,medium_airport,Leonora Airport,-28.87809944,121.31500244140600,1217,OC,AU,AU-WA,Leonora,1,YLEO,LNO,,http://www.leonora.wa.gov.au/services_facilities/airport.html,http://en.wikipedia.org/wiki/Leonora_Airport,,800,2008-06-27T08:41:27+00:00
+27055,YMGD,medium_airport,Maningrida Airport,-12.05609989,134.2339935,123,OC,AU,AU-NT,Maningrida,1,YMGD,MNG,,,http://en.wikipedia.org/wiki/Maningrida_Airport,,800,2010-09-11T09:42:40+00:00
+27081,YNAR,medium_airport,Narrandera Airport,-34.70220184,146.5119934,474,OC,AU,AU-NSW,Narrandera,1,YNAR,NRA,,,http://en.wikipedia.org/wiki/Narrandera_Airport,,800,2010-09-02T14:35:00+00:00
+27670,YKBR,small_airport,Kalbarri Airport,-27.692813,114.259169,157,OC,AU,AU-WA,Kalbarri,1,YKBR,KAX,,,http://en.wikipedia.org/wiki/Kalbarri_Airport,,450,2016-02-13T16:31:12+00:00
+27059,YMHU,small_airport,McArthur River Mine Airport,-16.44249916,136.0839996,131,OC,AU,AU-NT,McArthur River Mine,1,YMHU,MCV,,,http://en.wikipedia.org/wiki/McArthur_River_Mine_Airport,,450,2010-09-11T09:43:08+00:00
+27054,YMGB,small_airport,Milingimbi Airport,-12.09440041,134.8939972,53,OC,AU,AU-NT,Milingimbi Island,1,YMGB,MGT,,,http://en.wikipedia.org/wiki/Milingimbi_Airport,,450,2010-09-11T09:43:45+00:00
+27121,YPWR,small_airport,Woomera Airfield,-31.14419937,136.81700134277300,548,OC,AU,AU-SA,Woomera,1,YPWR,UMR,,,http://en.wikipedia.org/wiki/Woomera_Airfield,RAAF,450,2009-02-09T10:43:47+00:00
+26890,YAPH,medium_airport,Alpha Airport,-23.646099,146.584,1255,OC,AU,AU-QLD,Alpha,0,YAPH,ABH,,,https://en.wikipedia.org/wiki/Alpha_Airport,,250,2016-05-31T09:24:14+00:00
+27182,YWWL,medium_airport,West Wyalong Airport,-33.93719864,147.1909943,859,OC,AU,AU-NSW,West Wyalong,0,YWWL,WWY,,,http://en.wikipedia.org/wiki/West_Wyalong_Airport,,250,2013-06-29T10:06:54+00:00
+38213,AU-0014,small_airport,Abrolhos East Wallabi Island Airport,-28.43785,113.7355833,,OC,AU,AU-WA,Abrolhos,0,,,A15,,,,50,2011-07-18T13:58:35+00:00
+38434,YLKN,small_airport,Lake Nash Airport,-20.9807,137.9178,640,OC,AU,AU-NT,Alpurrurulam,0,YLKN,LNH,,,,,50,2013-05-12T23:29:34+00:00
+27344,YATN,small_airport,Atherton Airport,-17.26169968,145.5149994,2450,OC,AU,AU-QLD,Atherton,0,YATN,,,http://athertonairport.com.au/,,,50,2010-08-19T23:16:34+00:00
+30808,AU-BYX,small_airport,Baniyala Airport,-13.19810009,136.227005,20,OC,AU,AU-NT,Baniyala,0,,BYX,,,,,50,2012-09-03T20:41:29+00:00
+32720,YBUU,small_airport,Bungle Bungle Airport,-17.54529953,128.3070068359380,,OC,AU,AU-WA,Bungle Bungle,0,YBUU,,,,,,50,2008-06-13T14:30:04+00:00
+27516,YDLW,small_airport,Daly Waters Airport,-16.26469507,133.383379,700,OC,AU,AU-NT,Daly Waters,0,YDLW,DYW,,,http://en.wikipedia.org/wiki/Daly_Waters_Airfield,"Daly Waters Airfield, RAAF Daly Waters",50,2012-08-16T11:29:15+00:00
+30959,AU-DYM,small_airport,Diamantina Lakes Airport,-23.76169968,141.14500427246100,,OC,AU,AU-QLD,Diamantina Lakes,0,,DYM,,,,,50,2008-06-13T14:30:04+00:00
+27510,YDKI,small_airport,Dunk Island Airport,-17.94169998,146.1399994,6,OC,AU,AU-QLD,Dunk Island,0,YDKI,DKI,,,http://en.wikipedia.org/wiki/Dunk_Island_Airport,,50,2014-08-30T21:10:20+00:00
+38347,YEUA,small_airport,Euroa Aerodrome,-36.74470139,145.5130005,555,OC,AU,AU-VIC,Euroa,0,YEUA,,,http://www.skydivingassoc.com.au/,,,50,2011-04-06T23:42:01+00:00
+27593,YGKL,small_airport,Great Keppel Is Airport,-23.18330002,150.9420013,21,OC,AU,AU-QLD,Great Keppel Island,0,YGKL,GKL,,,,,50,2013-07-20T23:07:47+00:00
+31606,AU-HLV,small_airport,Helenvale Airport,-15.6857996,145.21499633789100,,OC,AU,AU-QLD,Helenvale,0,,HLV,,,,,50,2008-06-13T14:30:04+00:00
+27900,YPSH,small_airport,Penneshaw Airport,-35.75584629,137.9628754,,OC,AU,AU-SA,Ironstone,0,YPSH,PEA,,,,,50,2009-10-12T20:20:13+00:00
+27665,YKAP,small_airport,Kapunda Airport,-34.25,138.91700744628900,1200,OC,AU,AU-SA,Kapunda,0,YKAP,,,,,,50,2008-08-23T10:25:15+00:00
+38407,YKCA,small_airport,Kings Canyon Airport,-24.26000023,131.4900055,2100,OC,AU,AU-NT,Kings Canyon Resort,0,YKCA,KBJ,,,,,50,2014-12-18T01:21:34+00:00
+38211,AU-0012,small_airport,Lake Clifton Airstrip,-32.79093552,115.6708832,11,OC,AU,AU-WA,Lake Clifton,0,,,A13,,,,50,2011-07-18T13:55:29+00:00
+27766,YMEO,small_airport,Merton Airport,-36.967704,145.707616,1101,OC,AU,AU-VIC,Merton,0,YMEO,,,,,,50,2012-01-02T16:45:16+00:00
+31995,AU-MYO,small_airport,Camballin Airport,-18.12470055,124.27200317382800,,OC,AU,AU-WA,Myroodah,0,,MYO,,,,,50,2008-07-14T08:45:08+00:00
+32007,YNHS,small_airport,Nambucca Heads Airport,-30.64999962,153,,OC,AU,AU-NSW,Nambucca Heads,0,YNHS,NBH,,,,,50,2008-06-26T14:52:34+00:00
+27782,YMKT,small_airport,Emkaytee (Unlic) Airport,-12.609664,131.054381,78,OC,AU,AU-NT,Noonamah,0,YMKT,,,http://tefcnt.weebly.com/,https://en.wikipedia.org/wiki/MKT_Airfield,"MKT Airfield, Top End Flying Club",50,2017-01-31T01:43:47+00:00
+32109,AU-OKB,small_airport,Orchid Beach Airport,-24.95940018,153.3150024,71,OC,AU,AU-QLD,Orchid Beach,0,YORC,OKB,YORC,,,,50,2015-07-02T00:56:12+00:00
+38203,AU-0004,small_airport,Langley Park Airstrip,-31.96122932,115.8678665,11,OC,AU,AU-WA,Perth,0,,,A03,,,,50,2011-07-18T13:42:06+00:00
+27156,YTMO,small_airport,The Monument Airport,-21.81110001,139.923996,949,OC,AU,AU-QLD,Phosphate Hill,0,YTMO,PHQ,,,https://en.wikipedia.org/wiki/The_Monument_Airport,Phosphate Hill Airport,50,2016-01-03T09:36:34+00:00
+38209,AU-0010,small_airport,Pinjarra Skydiving Airstrip,-32.6665196,115.8817452,,OC,AU,AU-WA,Pinjarra,0,,,A11,,,,50,2011-07-18T13:50:02+00:00
+38561,YRBE,small_airport,Robe Airport,-37.17536363,139.8052311,65,OC,AU,AU-SA,Robe,0,YRBE,,,http://www.council.robe.sa.gov.au/site/page.cfm?u=272,,,50,2010-09-12T05:09:20+00:00
+27926,YROE,small_airport,Roebourne Airport,-20.76169968,117.1569977,,OC,AU,AU-WA,Roebourne,0,YROE,RBU,,,,,50,2010-03-03T07:56:00+00:00
+27933,YRSY,small_airport,Romsey Airport,-37.391667,144.738333,351,OC,AU,AU-VIC,Romsey,0,YRSY,,,,,,50,2015-03-09T10:41:25+00:00
+32292,YSHG,small_airport,Shay Gap Airport,-20.42469978,120.14099884033200,620,OC,AU,AU-WA,Shay Gap,0,YSHG,SGP,,,,,50,2008-06-26T14:52:34+00:00
+27951,YSGT,small_airport,Singleton Airport,-32.600832,151.193056,46,OC,AU,AU-NSW,Singleton,0,YSGT,SIX,,,,,50,2011-12-12T16:46:02+00:00
+27983,YTFD,small_airport,Tenterfield Airport,-28.99155004,151.9301033,,OC,AU,AU-NSW,Tenterfield,0,YTFD,,,,,,50,2011-06-17T11:11:14+00:00
+32735,YTHI,small_airport,Thistle Island Airport,-35.02470016,136.17999267578100,120,OC,AU,AU-SA,Thistle Island,0,YTHI,,,,,,50,2008-06-26T14:52:34+00:00
+32491,YTMY,small_airport,Tobermorey Airport,-22.25580025,137.9530029296880,,OC,AU,AU-NT,Tobermorey,0,YTMY,TYP,,,,,50,2008-06-26T14:52:34+00:00
+32474,AU-TPR,small_airport,Tom Price Airport,-22.74600029,117.8690033,2300,OC,AU,AU-WA,Tom Price,0,YTMP,TPR,,,http://en.wikipedia.org/wiki/Tom_Price_Airport,,50,2011-09-22T13:36:51+00:00
+28054,YWKW,small_airport,Warkworth Airport,-32.54912838,151.0242462,,OC,AU,AU-NSW,Warkworth,0,YWKW,,,,,,50,2011-12-12T11:06:29+00:00
+28052,YWKH,closed,Wickham Airport,-20.67579239,117.1250725,,OC,AU,AU-WA,Wickham,0,YWKH,,,,,,50,2012-08-26T12:35:18+00:00
+28037,YWDL,small_airport,Wondoola Airport,-18.57500076,140.8919983,58,OC,AU,AU-QLD,Wondoola,0,YWDL,WON,,,,,50,2013-06-30T15:32:27+00:00
+31792,YYTA,small_airport,Yalata Mission Airport,-31.47060013,131.8249969482420,,OC,AU,AU-SA,Yalata Mission,0,YYTA,KYI,,,,,50,2008-06-26T14:52:34+00:00
+35338,YXFV,heliport,Newcastle Westpac Base Heliport,-32.92029953,151.7299957,28,OC,AU,AU-NSW,Newcastle,0,YXFV,,,,,,25,2014-04-24T11:31:09+00:00
+27745,YLVT,closed,"RAAF Williams, Laverton Base",-37.86360168,144.74600219726600,18,OC,AU,AU-VIC,Laverton,0,YLVT,,,,http://en.wikipedia.org/wiki/RAAF_Williams#RAAF_Williams_Laverton_Base,,1,2009-02-09T10:40:40+00:00
+309186,YXBA,heliport,Ballina - Kingsford Smith Park Helipad,-28.8692,153.5713,17,OC,AU,AU-NSW,Ballina,0,YXBA,,YXBA,,,,0,2013-07-23T00:37:08+00:00
+298805,YBAB,small_airport,Baralaba,-24.19357,149.843166,340,OC,AU,AU-QLD,Baralaba,0,YBAB,,,,,,0,2015-02-02T10:56:20+00:00
+322846,YMST,small_airport,Millstream Station Field,-21.623761,117.081299,1043,OC,AU,AU-WA,Chichester National Park,0,YMST,,,,,"Millstream,Chichester,National,Park",0,2017-04-25T12:10:29+00:00
+315620,YCHK,small_airport,Graeme Rowley Aerodrome,-22.3543,119.6426,1462,OC,AU,AU-WA,Christmas Creek Mine,1,YCHK,CKW,,,https://en.wikipedia.org/wiki/Graeme_Rowley_Aerodrome,,0,2015-10-01T18:36:17+00:00
+301103,YFDF,small_airport,Fortescue - Dave Forrest Aerodrome,-22.290754,119.437143,1555,OC,AU,AU-WA,Cloudbreak Village,0,YFDF,KFE,,,,,0,2016-02-24T17:05:35+00:00
+309201,YXDH,heliport,Royal Darwin Hospital Helipad,-12.35284,130.881645,50,OC,AU,AU-NT,Darwin,0,YXDH,,YXDH,,,,0,2013-07-25T12:44:16+00:00
+322022,AU-0114,small_airport,Denman Farm Strip,-32.379816,150.695005,,OC,AU,AU-NSW,Denman,0,,,,,,,0,2017-01-31T00:59:54+00:00
+327139,YDRN,small_airport,Drouin Airport,-38.208972,145.831097,330,OC,AU,AU-VIC,Drouin,0,YDRN,,,,,"Drouin, YDRN",0,2018-04-15T04:50:34+00:00
+316628,AU-0106,small_airport,Valley View,-28.699218,114.911043,800,OC,AU,AU-WA,Geraldton,0,,,,http://www.valleyviewvintage.com.au/,,"valley view, northern gully",0,2016-01-04T03:13:15+00:00
+315737,YXHG,heliport,Gold Coast University Hospital Helipad,-27.9595,153.382,175,OC,AU,AU-QLD,Gold Coast,0,YXHG,,YXHG,,,,0,2015-10-11T13:01:02+00:00
+309612,YSMB,small_airport,Somersby Airstrip,-33.3681,151.3,860,OC,AU,AU-NSW,Gosford,0,YSMB,,YSMB,,,,0,2016-06-14T05:54:31+00:00
+322021,AU-0113,small_airport,Overlander Airport,-26.407707,114.45385,,OC,AU,AU-WA,Hamelin Pool,0,,,,,,,0,2017-01-31T00:32:02+00:00
+45223,AU-0041,small_airport,Maitraya Resort Airstrip,-34.98746434,118.055563,200,OC,AU,AU-WA,http://www.maitraya.com,0,,,,http://www.maitraya.com/howto.php,,Luxury accommodation retreat,0,2009-12-09T08:48:16+00:00
+309474,SLJ,small_airport,Solomon Airport,-22.2554,117.7627,2030,OC,AU,AU-WA,Karijini National Park,0,YSOL,SLJ,,,https://en.wikipedia.org/wiki/Solomon_Airport,,0,2018-05-03T02:11:49+00:00
+45183,AU-0040,small_airport,Kilcoy Airfield,-26.97138889,152.5697222,,OC,AU,AU-QLD,Kilcoy,0,,,,,,,0,2009-11-19T09:39:42+00:00
+327150,AU-0121,medium_airport,YKCY,-26.971197,152.566855,400,OC,AU,AU-QLD,Kilcoy,0,,,,,,,0,2018-04-15T09:13:55+00:00
+309344,YXSG,heliport,St George Hospital Helipad,-33.96807,151.13368,150,OC,AU,AU-NSW,Kogarah,0,YXSG,,YXSG,,,,0,2013-08-14T01:17:56+00:00
+313838,AU-0081,small_airport,Lady Elliot Island Airstrip,-24.1129,152.7156,20,OC,AU,AU-QLD,Lady Elliot Island,0,,LYT,,,,,0,2015-02-13T12:45:25+00:00
+322845,Y06Z,closed,Corunna Downs (WW II),-21.43613,119.790754,856,OC,AU,AU-WA,Marble Bar,0,Y06Z,,,http://www.marblebar.org.au/destination/marble-bar/corunna-downs-airfield/,https://en.wikipedia.org/wiki/Corunna_Downs_Airfield,"Corunna,Downs,World,War,II,2,Marble,Bar,WorldWar,WorldWarII,WorldWar2",0,2017-04-25T11:46:27+00:00
+309527,YXEE,heliport,Moree Hospital Helipad,-29.47089,149.84054,694,OC,AU,AU-NSW,Moree,0,YXEE,,YXEE,,,,0,2013-09-08T13:48:49+00:00
+322023,AU-0115,small_airport,Swan Reach Airport,-34.556053,139.592156,36,OC,AU,AU-SA,Swan Reach,0,YSWR,,,,,,0,2017-01-31T02:07:56+00:00
+315119,YBWW,medium_airport,Toowoomba Wellcamp Airport,-27.558332,151.793335,1509,OC,AU,AU-QLD,Toowoomba,1,YBWW,WTB,,http://www.wellcamp.com.au,https://en.wikipedia.org/wiki/Toowoomba_Wellcamp_Airport,Brisbane West Wellcamp Airport,0,2018-03-11T11:59:02+00:00
+319529,WHL,small_airport,Welshpool Airport,-38.682382,146.445331,35,OC,AU,AU-VIC,Welshpool,0,,WHL,,,,,0,2016-07-16T17:36:16+00:00
+27026,YKOW,medium_airport,Kowanyama Airport,-15.48560047,141.75100708007800,35,OC,AU,AU-QLD,Kowanyama,1,YKOW,KWM,,,http://en.wikipedia.org/wiki/Kowanyama_Airport,,800,2009-08-29T11:12:35+00:00
+27074,YMRB,medium_airport,Moranbah Airport,-22.05780029,148.0769959,770,OC,AU,AU-QLD,Moranbah,1,YMRB,MOV,,,http://en.wikipedia.org/wiki/Moranbah_Airport,,800,2010-09-19T19:45:13+00:00
+35302,AU-HIS,seaplane_base,Hayman Island Resort Seaplane Base,-20.05999947,148.88099670410200,,OC,AU,AU-QLD,Hayman Island,1,,HIS,,,,,625,2008-07-14T08:45:08+00:00
+32037,YDNI,small_airport,Darnley Island Airport,-9.583330154,143.76699829101600,,OC,AU,AU-QLD,Darnley Island,1,YDNI,NLF,,,,,450,2008-06-26T14:52:34+00:00
+27622,YHOO,small_airport,Hooker Creek Airport,-18.33670044,130.6380005,320,OC,AU,AU-NT,Lajamanu,1,YHOO,HOK,,,http://en.wikipedia.org/wiki/Hooker_Creek_Airport,,450,2014-11-16T13:29:25+00:00
+32503,YMAA,small_airport,Mabuiag Island Airport,-9.949999809,142.18299865722700,,OC,AU,AU-QLD,Mabuiag Island,1,YMAA,UBB,,,,,450,2008-06-26T14:52:34+00:00
+27029,YKUB,small_airport,Kubin Airport,-10.22500038,142.2180023,15,OC,AU,AU-QLD,Moa Island,1,YKUB,KUG,,,http://en.wikipedia.org/wiki/Kubin_Island_Airport,,450,2015-02-11T00:51:34+00:00
+31993,YMUI,small_airport,Murray Island Airport,-9.916669846,144.0549927,300,OC,AU,AU-QLD,Murray Island,1,YMAE,MYI,YMUI,,http://en.wikipedia.org/wiki/Murray_Island_Airport,"Mer Island, Maer Island",450,2015-03-18T00:52:18+00:00
+27114,YPMP,small_airport,Pormpuraaw Airport,-14.896451,141.60908,10,OC,AU,AU-QLD,Pormpuraaw,1,YPMP,EDR,,,http://en.wikipedia.org/wiki/Edward_River_Airport,Edward River Airport,450,2016-02-13T15:56:04+00:00
+32252,YSII,small_airport,Saibai Island Airport,-9.378330231,142.625,15,OC,AU,AU-QLD,Saibai Island,1,YSII,SBR,,,http://en.wikipedia.org/wiki/Saibai_Island_Airport,,450,2012-08-23T13:00:24+00:00
+28035,YWBS,small_airport,Warraber Island Airport,-10.20829964,142.8249969482420,3,OC,AU,AU-QLD,Sue Islet,1,YWBS,SYU,,,http://en.wikipedia.org/wiki/Warraber_Island_Airport,,450,2008-06-26T14:52:34+00:00
+32708,YYMI,small_airport,Yam Island Airport,-9.901109695,142.7760009765630,,OC,AU,AU-QLD,Yam Island,1,YYMI,XMY,,,,,450,2008-06-26T14:52:34+00:00
+32111,YYKI,small_airport,Yorke Island Airport,-9.752801,143.405673,10,OC,AU,AU-QLD,Yorke Island,1,YYKI,OKR,,,http://en.wikipedia.org/wiki/Yorke_Island_Airport,Masig Island,450,2016-06-02T08:53:31+00:00
+27351,YAWT,small_airport,Agnes Water Airport,-24.20224,151.8925,60,OC,AU,AU-QLD,Agnes Water,0,YAWT,,,,,,50,2013-10-26T00:16:32+00:00
+30622,AU-AGW,small_airport,Agnew Airport,-12.14560032,142.1490020751950,,OC,AU,AU-QLD,Agnew,0,,AGW,,,,,50,2008-06-13T14:30:04+00:00
+30666,AU-AYD,small_airport,Alroy Downs Airport,-19.29080009,136.07899475097700,,OC,AU,AU-NT,Alroy Downs,0,,AYD,,,,,50,2008-06-13T14:30:04+00:00
+38207,AU-0008,small_airport,Althorpe Lighthouse Airstrip,-35.37070084,136.8609924,1000,OC,AU,AU-SA,Althorpe Islands,0,,,A07,,,,50,2011-07-18T13:48:16+00:00
+27162,YTST,small_airport,Truscott-Mungalalu Airport,-14.08969975,126.3809967,181,OC,AU,AU-WA,Anjo Peninsula,0,YTST,TTX,,,https://en.wikipedia.org/wiki/Mungalalu_Truscott_Airbase,,50,2015-11-22T22:09:54+00:00
+38218,AU-0019,small_airport,Avoca Airport,-41.78170013,147.7194061279300,700,OC,AU,AU-TAS,Avoca,0,,,,,,,50,2008-06-26T14:52:34+00:00
+27375,YBGO,small_airport,Balgo Hill Airport,-20.1483,127.973,1440,OC,AU,AU-WA,Balgo,0,YBGO,BQW,,,https://en.wikipedia.org/wiki/Balgo_Hill_Airport,,50,2016-05-31T09:28:21+00:00
+38238,YBBC,small_airport,Bamboo Creek Airport,-20.94459915,120.16500091552700,,OC,AU,AU-WA,Bamboo Creek Gold Mine,0,YBBC,,,,,,50,2008-08-05T08:08:09+00:00
+27841,YNMN,small_airport,New Moon Airport,-19.2,145.773,1099,OC,AU,AU-QLD,Basalt,0,YNMN,NMP,YNMN,,,,50,2015-03-13T15:58:46+00:00
+38248,YBGB,small_airport,Beagle Bay Airport,-17.0165,122.6464,124,OC,AU,AU-WA,Beagle Bay,0,YBGB,BEE,,,,,50,2014-06-14T02:55:09+00:00
+27370,YBER,closed,Berwick Airport,-38.03977689,145.3360319,,OC,AU,AU-VIC,Berwick,0,YBER,,,,,,50,2010-07-14T11:26:27+00:00
+30680,YBBE,small_airport,Big Bell Airport,-27.32859993,117.6729965,,OC,AU,AU-WA,Big Bell,0,YBBE,BBE,,,,,50,2009-10-24T10:42:41+00:00
+27407,YBOR,small_airport,Bordertown Airport,-36.26499939,140.7120056,265,OC,AU,AU-SA,Bordertown,0,YBOR,,,,,,50,2012-03-20T01:14:27+00:00
+27493,YCUR,small_airport,Cabramurra Airport,-35.92688751,148.39254760742200,,OC,AU,AU-NSW,Cabramurra Township,0,YCUR,,,,,,50,2009-08-14T08:15:49+00:00
+38276,YCAN,small_airport,Cannon Hill Community Airport,-12.3549,132.94495,61,OC,AU,AU-NT,Cannon Hill,0,YCAN,,,,,,50,2014-12-12T03:16:21+00:00
+30814,YCBE,small_airport,Canobie Airport,-19.47940063,140.927002,,OC,AU,AU-QLD,Canobie,0,YCBE,CBY,,,,,50,2009-10-23T18:47:26+00:00
+32721,YCEL,small_airport,Capella Airport,-23.10000038,148.0330047607420,,OC,AU,AU-QLD,Capella,0,YCEL,,,,,,50,2008-06-13T14:30:04+00:00
+30853,AU-CRY,small_airport,Carlton Hill Airport,-15.50189972,128.53399658203100,,OC,AU,AU-WA,Carlton Hill,0,,CRY,,,,,50,2008-06-13T14:30:04+00:00
+27482,YCPN,small_airport,Carpentaria Downs Airport,-18.7166996,144.3170013,1585,OC,AU,AU-QLD,Carpentaria Downs,0,YCPN,CFP,,,,,50,2014-07-14T01:03:25+00:00
+38284,YCHB,small_airport,Cherrabah Airport,-28.4301,152.08895,2228,OC,AU,AU-QLD,Cherrabah Homestead Resort,0,YCHB,CRH,,,,,50,2014-08-02T21:44:10+00:00
+38301,YCRK,small_airport,Christmas Creek Station Airport,-18.8728,125.9338,540,OC,AU,AU-WA,Christmas Creek,0,YCRK,CXQ,,,https://en.wikipedia.org/wiki/Christmas_Creek_Airport,,50,2015-10-01T21:02:39+00:00
+38282,YCFH,small_airport,Clifton Hills Airport,-27.0182991,138.8919983,105,OC,AU,AU-SA,Clifton Hills,0,YCFH,CFH,,,,,50,2014-07-14T00:22:20+00:00
+27499,YCWY,small_airport,Coolawanyah Airport,-21.7946,117.755,1195,OC,AU,AU-WA,Coolawanyah Station,0,YCWY,COY,,,http://en.wikipedia.org/wiki/Coolawanyah_Station_Airport,,50,2014-08-02T18:30:36+00:00
+30841,AU-COB,small_airport,Coolibah Airport,-15.54829979,130.96200561523400,,OC,AU,AU-NT,Coolibah,0,,COB,,,,,50,2008-06-13T14:30:04+00:00
+29801,YCWA,small_airport,Coondewanna Airport,-22.9666996,118.8130035,2300,OC,AU,AU-WA,Coondewanna,0,YCWA,CJF,,,https://en.wikipedia.org/wiki/Coondewanna_Airport,,50,2015-10-01T17:20:13+00:00
+30851,AU-CRJ,small_airport,Coorabie Airport,-31.89439964,132.29600524902300,,OC,AU,AU-SA,Coorabie,0,,CRJ,,,,,50,2008-06-13T14:30:04+00:00
+32085,YCOD,small_airport,Cordillo Downs Airport,-26.74530029,140.63800048828100,125,OC,AU,AU-SA,Cordillo Downs,0,YCOD,ODL,,,,,50,2008-06-26T14:52:34+00:00
+30855,AU-CSD,small_airport,Cresswell Downs Airport,-17.94799995,135.91600036621100,,OC,AU,AU-NT,Cresswell Downs,0,,CSD,,,,,50,2008-06-13T14:30:04+00:00
+32722,YDEK,small_airport,Denmark Airport,-34.94499969,117.39700317382800,230,OC,AU,AU-WA,Denmark,0,YDEK,,,,,,50,2008-06-26T14:52:34+00:00
+27525,YDOR,small_airport,Dorunda Airport,-16.5537,141.8238,58,OC,AU,AU-QLD,Dorunda Outstation,0,YDOR,DRD,,,,,50,2014-09-05T01:02:30+00:00
+30909,YDDF,small_airport,Drumduff Airport,-16.0529995,143.0119934,,OC,AU,AU-QLD,Drumduff,0,YDDF,DFP,,,,,50,2009-10-24T10:13:29+00:00
+30924,YDLK,small_airport,Dulkaninna Airport,-29.01329994,138.4810028076170,,OC,AU,AU-SA,Dulkaninna,0,YDLK,DLK,,,,,50,2008-06-26T14:52:34+00:00
+30996,YEIN,small_airport,Einasleigh Airport,-18.50329971,144.0939941,,OC,AU,AU-QLD,Einasleigh,0,YEIN,EIH,,,,,50,2009-10-24T10:14:29+00:00
+27545,YELL,small_airport,Elliott Airport,-17.52742958,133.52989196777300,,OC,AU,AU-NT,Elliott,0,YELL,,,,,,50,2008-08-01T10:44:40+00:00
+31005,YEEB,small_airport,Eneabba Airport,-29.83250046,115.24600219726600,,OC,AU,AU-WA,Eneabba,0,YEEB,ENB,,,,,50,2008-06-26T14:52:34+00:00
+27551,YENO,heliport,Enoggera Barracks,-27.42352848,152.9834282,145,OC,AU,AU-QLD,Enoggera,0,YENO,,,,,,50,2011-12-29T09:50:59+00:00
+31021,YEDA,small_airport,Etadunna Airport,-28.74080086,138.58900451660200,,OC,AU,AU-SA,Etadunna,0,YEDA,ETD,,,,,50,2008-06-26T14:52:34+00:00
+31025,YEVA,small_airport,Eva Downs Airport,-18.00099945,134.8630066,,OC,AU,AU-NT,Eva Downs,0,YEVA,EVD,,,,,50,2009-10-24T10:05:06+00:00
+31129,YFNE,small_airport,Finke Airport,-25.59469986,134.5829926,,OC,AU,AU-NT,Finke,0,YFNE,FIK,,,,,50,2009-10-23T17:57:26+00:00
+27570,YFSK,small_airport,Fiskville Airport,-37.67811432,144.2207909,,OC,AU,AU-VIC,Fiskville,0,YFSK,,,,,,50,2010-06-25T10:42:45+00:00
+27568,YFRK,small_airport,Frankland Airport,-34.42300034,117.0260009765630,800,OC,AU,AU-WA,Frankland River Grazing co,0,YFRK,,,,,,50,2009-04-19T22:55:13+00:00
+38372,YGSC,small_airport,Gascoyne Junction Airport,-25.0546,115.2026,499,OC,AU,AU-WA,Gascoyne Junction,0,YGSC,GSC,,,,,50,2014-09-28T22:35:57+00:00
+27577,YGAT,closed,Gatton Campus Airport,-27.56040607,152.3404598,,OC,AU,AU-QLD,Gatton,0,YGAT,,,,,,50,2010-01-28T08:39:55+00:00
+28057,YWMD,closed,West Maitland Airport,-32.75669861,151.5299988,,OC,AU,AU-NSW,Gillieston Heights,0,YWMD,,,,,,50,2011-12-12T11:10:38+00:00
+31519,YGDN,small_airport,Gordon Downs Airport,-18.67810059,128.5919952392580,800,OC,AU,AU-WA,Gordon Downs,0,YGDN,GDD,,,,,50,2008-06-26T14:52:34+00:00
+29903,YXGS,heliport,Gosford Hospital Helipad,-33.421626,151.339894,110,OC,AU,AU-NSW,Gosford,0,YXGS,,YXGS,,,,50,2013-09-21T05:50:53+00:00
+38368,YGNF,small_airport,Grenfell Airport,-34,148.1329956,1080,OC,AU,AU-NSW,Grenfell,0,YGNF,GFE,,,,,50,2013-07-20T13:32:08+00:00
+38205,AU-0006,small_airport,Harrismith Airport,-32.94184494,117.865448,900,OC,AU,AU-WA,Harrismith,0,,,A05,,,,50,2011-07-18T13:43:48+00:00
+27618,YHIL,small_airport,Hillside Airport,-21.7244,119.3922,935,OC,AU,AU-WA,Hillside,0,YHIL,HLL,,,,,50,2014-11-16T05:04:54+00:00
+27623,YHOV,small_airport,Hodgeson River Airfield,-15.54594,134.0956,385,OC,AU,AU-NT,Hodgeson River,0,YHOV,,,,,,50,2013-07-25T10:50:31+00:00
+27546,YELN,small_airport,Elliston Airport,-33.63830185,134.89999389648400,20,OC,AU,AU-SA,http://www.elliston.sa.gov.au,0,YELN,,,,http://en.wikipedia.org/wiki/District_Council_of_Elliston,,50,2009-04-28T05:17:44+00:00
+42507,AU-0022,small_airport,Cardabia Station Airstrip,-23.10602379,113.80522918701200,5,OC,AU,AU-WA,Indigenous Land Corporation,0,,,,,,,50,2008-11-29T08:18:58+00:00
+28472,YILW,small_airport,Inglewood Airport,-28.4188,151.0955,840,OC,AU,AU-QLD,Inglewood,0,YILW,,,,,,50,2015-10-12T11:15:05+00:00
+27638,YINJ,small_airport,Injune Airport,-25.851,148.5497,401,OC,AU,AU-QLD,Injune,0,YINJ,INJ,,,,,50,2015-06-28T16:48:38+00:00
+31689,YINW,small_airport,Inverway Airport,-17.84110069,129.6430054,,OC,AU,AU-NT,Inverway,0,YINW,IVW,,,,,50,2009-10-23T18:44:14+00:00
+27698,YKPR,small_airport,Kalpowar Airport,-14.89,144.22,90,OC,AU,AU-QLD,Kalpower,0,YKPR,KPP,,,,,50,2015-02-08T19:23:15+00:00
+27668,YKBL,small_airport,Kambalda Airport,-31.1907,121.5978,1073,OC,AU,AU-WA,Kambalda,0,YKBL,KDB,,,http://en.wikipedia.org/wiki/Kambalda_Airport,,50,2014-12-18T23:05:21+00:00
+31723,AU-KBD,small_airport,Kimberley Downs Airport,-17.39780045,124.3550033569340,,OC,AU,AU-WA,Kimberley Downs,0,,KBD,,,,,50,2008-06-13T14:30:04+00:00
+31722,YKIR,small_airport,Kirkimbie Station Airport,-17.7791996,129.2100067,,OC,AU,AU-NT,Kirkimbie,0,YKIR,KBB,,,,,50,2009-10-23T18:46:03+00:00
+31755,YKLB,small_airport,Koolburra Airport,-15.31890011,143.9550018310550,350,OC,AU,AU-QLD,Koolburra,0,YKLB,KKP,,,,,50,2008-06-26T14:52:34+00:00
+42269,AU-0020,small_airport,Kukerin,-33.17490005,118.08499908447300,850,OC,AU,AU-WA,Kukerin WA,0,,,,,,,50,2008-10-14T10:22:02+00:00
+31745,AU-KGR,small_airport,Kulgera Airport,-25.84280014,133.29200744628900,,OC,AU,AU-NT,Kulgera,0,,KGR,,,,,50,2008-06-13T14:30:04+00:00
+27385,YBIZ,small_airport,Bizant Airport,-14.74027778,144.1194444,65,OC,AU,AU-QLD,Lakefield National Park,0,YBIZ,BZP,,,,,50,2012-08-09T15:27:32+00:00
+27733,YLND,small_airport,Lakeland Airport,-15.83329964,144.8500061,930,OC,AU,AU-QLD,Lakeland Downs,0,YLND,LKD,,,,,50,2015-02-22T14:11:42+00:00
+32727,YLAK,small_airport,Lakeside Airpark,-20.68169975,148.6280059814450,,OC,AU,AU-QLD,Lakeside,0,YLAK,,,,,,50,2008-07-14T08:45:12+00:00
+27711,YLCI,closed,Lancelin Airport,-31.01666667,115.3333333,,OC,AU,AU-WA,Lancelin,0,YLCI,,,,,,50,2010-09-15T10:15:24+00:00
+31820,YLIM,small_airport,Limbunya Airport,-17.23559952,129.8820038,,OC,AU,AU-NT,Limbunya,0,YLIM,LIB,,,,,50,2015-04-08T08:30:29+00:00
+31800,YLIN,small_airport,Lindeman Island Airport,-20.45359993,149.0399933,,OC,AU,AU-QLD,Lindeman Island,0,YLIN,LDC,,,,,50,2009-10-24T10:15:40+00:00
+31840,YLOK,small_airport,Lock Airport,-33.5442009,135.6929931640630,350,OC,AU,AU-SA,Lock,0,YLOK,LOC,,,,,50,2008-06-26T14:52:34+00:00
+31859,YLOV,small_airport,Lotus Vale Airport,-17.04829979,141.3760071,,OC,AU,AU-QLD,Lotus Vale,0,YLOV,LTV,,,,,50,2009-10-24T10:17:16+00:00
+32729,YLOH,small_airport,Louth Airport,-30.54170036,145.10000610351600,,OC,AU,AU-NSW,Louth,0,YLOH,,,,,,50,2008-06-26T14:52:34+00:00
+31858,YLHS,small_airport,Lyndhurst Airport,-19.19580078,144.3710022,,OC,AU,AU-QLD,Lyndhurst,0,YLHS,LTP,,,,,50,2009-10-24T10:18:13+00:00
+31942,YMDI,small_airport,Mandora Airport,-19.73830032,120.8379974,,OC,AU,AU-WA,Mandora,0,YMDI,MQA,,,,,50,2009-10-24T10:43:41+00:00
+27826,YMWX,small_airport,Marion Downs Airport,-23.363702,139.649663,,OC,AU,AU-QLD,Marion Downs,0,YMWX,MXD,,,https://sv.wikipedia.org/wiki/Marion_Downs_Airport,,50,2019-04-27T13:10:26+00:00
+31943,YMQA,small_airport,Marqua Airport,-22.80579948,137.25100708007800,,OC,AU,AU-NT,Marqua,0,YMQA,MQE,,,,,50,2008-06-26T14:52:34+00:00
+27889,YPLE,closed,Plenty Airport,-37.72330093,145.1130066,,OC,AU,AU-VIC,Melbourne,0,YPLE,,,,,,50,2010-06-25T10:40:49+00:00
+38467,YMEU,small_airport,Merluna Airport,-13.0649,142.4536,276,OC,AU,AU-QLD,Merluna,0,YMEU,MLV,,,,,50,2014-12-21T02:04:22+00:00
+38215,AU-0016,small_airport,Middlebrook Station Scone Airstrip,-31.97116852,150.8114777,900,OC,AU,AU-NSW,Middlebrook Station,0,,,A18,,,,50,2011-07-18T14:07:37+00:00
+27447,YCDL,small_airport,Cradle Mountain Airport,-41.58123136,145.9383488,,OC,AU,AU-TAS,Middlesex,0,YCDL,,,,,,50,2009-10-25T12:19:48+00:00
+31980,AU-MWY,small_airport,Miranda Downs Airport,-17.328899,141.886002,,OC,AU,AU-QLD,Miranda Downs,0,YMIR,MWY,,,,,50,2016-05-27T19:20:13+00:00
+31909,YMIP,small_airport,Mitchell Plateau Airport,-14.79139996,125.8239974975590,,OC,AU,AU-WA,Mitchell Plateau,0,YMIP,MIH,,,,,50,2008-06-26T14:52:34+00:00
+27825,YMWT,small_airport,Moolawatana Airport,-29.9069,139.765,265,OC,AU,AU-SA,Moolawatana Station,0,YMWT,MWT,,,,,50,2015-04-04T14:03:20+00:00
+31890,YMOT,small_airport,Moreton Airport,-12.44419956,142.6380005,,OC,AU,AU-QLD,Moreton,0,YMOT,MET,,,,,50,2009-10-24T10:19:51+00:00
+27795,YMOM,small_airport,Moulamein Airport,-35.05838561,144.0213203,233,OC,AU,AU-NSW,Moulamein,0,YMOM,,,,,,50,2012-03-22T01:24:50+00:00
+31551,YMGN,small_airport,Mount Gunson Airport,-31.4597,137.1744433,285,OC,AU,AU-SA,Mount Gunson,0,YMGN,GSN,,,,,50,2019-08-09T21:56:58+00:00
+31970,YMUC,small_airport,Muccan Station Airport,-20.65889931,120.06700134277300,300,OC,AU,AU-WA,Muccan Station,0,YMUC,MUQ,,,,,50,2008-06-26T14:52:34+00:00
+38383,YHEW,small_airport,Hedlow Airport,-23.22310066,150.6049957,,OC,AU,AU-QLD,Mulara,0,YHEW,,,,,,50,2011-12-12T10:53:39+00:00
+31974,YMUK,small_airport,Mulka Airport,-28.3477993,138.64999389648400,,OC,AU,AU-SA,Mulka,0,YMUK,MVK,,,,,50,2008-06-26T14:52:34+00:00
+32730,YMBX,small_airport,Mundrabilla Airport,-31.86720085,127.85399627685500,120,OC,AU,AU-WA,Mundrabilla,0,YMBX,,,,,,50,2008-06-26T14:52:34+00:00
+31925,YMUG,small_airport,Mungeranie Airport,-28.00919914,138.65699768066400,,OC,AU,AU-SA,Mungeranie,0,YMUG,MNE,,,,,50,2008-06-26T14:52:34+00:00
+27732,YLMU,small_airport,Mungo Lodge Airport,-33.74582445,143.0013084,,OC,AU,AU-NSW,Mungo,0,YLMU,,,,,,50,2011-05-30T07:20:12+00:00
+27065,YMMI,small_airport,Murrin Murrin Airport,-28.705299,121.89099,1535,OC,AU,AU-WA,Murrin Murrin,0,YMMI,WUI,,,https://en.wikipedia.org/wiki/Murrin_Murrin_Airport,,50,2018-08-04T21:24:21+00:00
+27771,YMGV,small_airport,Musgrave Airport,-14.7757,143.5047,302,OC,AU,AU-QLD,Musgrave,0,YMGV,MVU,,,,,50,2015-04-04T01:59:18+00:00
+38522,YNUD,small_airport,Nammuldi Mine Airstrip,-22.39186,117.37623,267,OC,AU,AU-WA,Nammuldi Mine,0,YNUD,,,,http://en.wikipedia.org/wiki/Nammuldi_mine,,50,2011-12-29T12:08:58+00:00
+27846,YNPB,small_airport,Napperby Airport,-22.5312,132.7632,2135,OC,AU,AU-NT,Napperby,0,YNPB,NPP,,,,,50,2015-12-19T20:54:42+00:00
+27509,YDIX,small_airport,Dixie Airport,-15.11749443,143.3160496,580,OC,AU,AU-QLD,New Dixie,0,YDIX,DXD,,,,,50,2012-08-16T11:47:43+00:00
+27598,YGLP,small_airport,Gallipolli Airport,-19.14181,137.87412,865,OC,AU,AU-NT,Nicholson,0,YGLP,,,,,,50,2011-05-19T10:18:53+00:00
+38525,YNUT,small_airport,Nutwood Downs Airport,-15.8074,134.1459,500,OC,AU,AU-NT,Nutwood Downs,0,YNUT,UTD,,,,,50,2015-08-16T01:33:56+00:00
+32087,YORV,small_airport,Ord River Airport,-17.34079933,128.91200256347700,390,OC,AU,AU-WA,Ord River,0,YORV,ODR,,,,,50,2008-06-26T14:52:34+00:00
+27875,YPAK,closed,Pakenham Airport,-38.0992059,145.4878235,,OC,AU,AU-VIC,Pakenham,0,YPAK,,,,,,50,2010-07-14T11:22:11+00:00
+32173,YPDO,small_airport,Pardoo Airport,-20.11750031,119.58999633789100,,OC,AU,AU-WA,Pardoo,0,YPDO,PRD,,,,,50,2008-06-26T14:52:34+00:00
+30248,YPTJ,small_airport,Patjarr Airport,-24.6189003,126.3270035,1493,OC,AU,AU-WA,Patjarr,0,YPTJ,,,,,,50,2009-10-24T10:49:04+00:00
+27893,YPNG,small_airport,Penong Airport,-31.91670036,133,78,OC,AU,AU-SA,Penong,0,YPNG,PEY,,,,,50,2016-01-02T22:04:29+00:00
+32152,AU-PEP,small_airport,Peppimenarti Airport,-14.14420033,130.0910034,83,OC,AU,AU-NT,Peppimenarti,0,,PEP,YPEP,,,,50,2013-07-25T12:26:54+00:00
+38208,AU-0009,small_airport,Pinjarra North Airstrip,-32.58039856,115.8850021,,OC,AU,AU-WA,Pinjarra,0,,,A10,,,,50,2011-07-18T13:49:11+00:00
+27637,YING,small_airport,Ingelara Airport,-24.99702703,148.3332825,,OC,AU,AU-QLD,Rewan,0,YING,,,,,,50,2010-07-16T07:44:12+00:00
+32201,AU-RDA,small_airport,Rockhampton Downs Airport,-18.95330048,135.2010040283200,,OC,AU,AU-NT,Rockhampton Downs,0,,RDA,,,,,50,2008-06-13T14:30:04+00:00
+27928,YRRB,small_airport,Roper Bar Airport,-14.734814,134.525485,92,OC,AU,AU-NT,Roper Bar,0,YRRB,RPB,,,,,50,2013-09-06T19:45:59+00:00
+32018,YSAN,small_airport,Sandstone Airport,-27.97999954,119.2969970703130,,OC,AU,AU-WA,Sandstone,0,YSAN,NDS,,,,,50,2008-07-14T08:45:12+00:00
+32401,AU-SWB,small_airport,Shaw River Airport,-21.51029968,119.36199951171900,,OC,AU,AU-WA,Shaw River,0,,SWB,,,,,50,2008-06-13T14:30:04+00:00
+38581,YSIA,small_airport,Siam Airport,-32.55749893,136.70899963378900,,OC,AU,AU-SA,Siam,0,YSIA,,,,,,50,2008-08-16T06:33:06+00:00
+27521,YDOC,small_airport,Dochra Airfield,-32.650002,151.207993,185,OC,AU,AU-NSW,Singleton,0,YDOC,,,,http://en.wikipedia.org/wiki/Dochra_Airfield,military,50,2016-06-14T18:39:15+00:00
+32752,AU-ZVG,small_airport,Springvale Airport,-17.78689957,127.66999816894500,,OC,AU,AU-WA,Springvale,0,,ZVG,,,,,50,2008-06-13T14:30:04+00:00
+27534,YDUN,small_airport,Dunwich Airport,-27.51670074,153.4279938,260,OC,AU,AU-QLD,Stradbroke Island,0,YDUN,SRR,,http://www.stradair.com/,,,50,2016-01-22T06:34:52+00:00
+32733,YSTC,small_airport,Stuart Creek Airport,-29.7166996,137.06300354003900,122,OC,AU,AU-SA,Stuart Creek,0,YSTC,,,,,,50,2008-06-26T14:52:34+00:00
+32384,AU-SSK,small_airport,Sturt Creek Airport,-19.16640091,128.1739959716800,,OC,AU,AU-WA,Sturt Creek,0,,SSK,,,,,50,2008-06-13T14:30:04+00:00
+30467,YTNB,small_airport,Tanbar Airport,-25.8477993,141.9279938,344,OC,AU,AU-QLD,Tanbar Station,0,YTNB,TXR,,,,,50,2015-08-07T16:03:06+00:00
+32421,YTAR,small_airport,Tarcoola Airport,-30.70330048,134.5839996,,OC,AU,AU-SA,Tarcoola,0,YTAR,TAQ,,,,,50,2009-10-24T10:41:39+00:00
+38604,YTHD,small_airport,Theda Station Airport,-14.78810024,126.4960022,700,OC,AU,AU-WA,Theda Station,0,YTHD,TDN,,,,,50,2013-08-24T20:45:15+00:00
+32736,YTLP,small_airport,Tilpa Airport,-30.93330002,144.41700744628900,,OC,AU,AU-NSW,Tilpa,0,YTLP,,,,,,50,2008-06-13T14:30:04+00:00
+32486,AU-TWP,small_airport,Torwood Airport,-17.36330032,143.75,,OC,AU,AU-QLD,Torwood,0,,TWP,,,,,50,2008-06-13T14:30:04+00:00
+27151,YTEE,small_airport,Trepell Airport,-21.83499908,140.8880005,891,OC,AU,AU-QLD,Trepell,0,YTEE,TQP,,,https://en.wikipedia.org/wiki/Trepell_Airport,,50,2015-12-04T01:15:36+00:00
+32457,YTKY,small_airport,Turkey Creek Airport,-17.04080009,128.2059937,,OC,AU,AU-WA,Turkey Creek,0,YTKY,TKY,,,,,50,2011-09-22T13:19:17+00:00
+28015,YUCH,small_airport,Ucharonidge Airport,-17.67240143,134.24090576171900,,OC,AU,AU-NT,Ucharonidge Station,0,YUCH,,,,,,50,2008-08-01T10:47:12+00:00
+32657,YWAL,small_airport,Wallal Airport,-19.77359962,120.6490021,,OC,AU,AU-WA,Wallal,0,YWAL,WLA,,,,,50,2009-10-24T10:50:28+00:00
+28031,YWAX,small_airport,Wanarn Airport,-25.29755211,127.5564193725590,,OC,AU,AU-WA,Wanarn,0,YWAX,,,,,,50,2008-08-01T07:26:17+00:00
+28039,YWDV,small_airport,Mount Full Stop Airport,-19.67,144.8852,1918,OC,AU,AU-QLD,Wando Vale,0,YWDV,MFL,,,,,50,2015-03-04T00:53:38+00:00
+27599,YGLS,small_airport,Giles Airport,-25.04369926,128.29600524902300,579,OC,AU,AU-WA,Warakurna,0,YGLS,,,,,,50,2008-06-26T14:52:34+00:00
+38662,YWRR,small_airport,Warroora Homestead Airport,-23.44609,113.84853,20,OC,AU,AU-WA,Warroora Homestead,0,YWRR,,,,,,50,2013-12-07T19:29:37+00:00
+32738,YWAC,small_airport,Wauchope Airport,-20.64999962,134.2169952392580,,OC,AU,AU-NT,Wauchope,0,YWAC,,,,,,50,2008-06-26T14:52:34+00:00
+26931,YBSG,small_airport,RAAF Scherger,-12.62390041,142.08700561523400,145,OC,AU,AU-QLD,Weipa,0,YBSG,,,,http://en.wikipedia.org/wiki/RAAF_Scherger,,50,2009-02-09T10:23:16+00:00
+28074,YWST,heliport,Westmead Hospital Helipad,-33.80521011,150.98927307128900,30,OC,AU,AU-NSW,Westmead,0,YWST,,,,,,50,2009-09-02T08:17:56+00:00
+32686,YWWI,small_airport,Woodie Woodie Airport,-21.66279984,121.23400115966800,,OC,AU,AU-WA,Woodie Woodie,0,YWWI,WWI,,,,,50,2008-06-26T14:52:34+00:00
+32728,YYAL,small_airport,Yalgoo Airport,-28.3553009,116.6839981,,OC,AU,AU-WA,Yalgoo,0,YYAL,YLG,,,,,50,2009-10-24T10:52:21+00:00
+27602,YGNB,heliport,RAAF Base Glenbrook,-33.761633,150.636255,640,OC,AU,AU-NSW,Glenbrook,0,YGNB,,,,http://en.wikipedia.org/wiki/RAAF_Base_Glenbrook,,25,2013-10-03T06:40:03+00:00
+28102,AU-0001,closed,Hopetoun Airfield,-33.90850067,120.14700317382800,,OC,AU,AU-WA,Hopetoun,0,,,,,,,1,2008-07-14T08:45:08+00:00
+309832,AU-0067,heliport,Adelaide River Heliport,-13.2362,131.10796,185,OC,AU,AU-NT,Adelaide River,0,,,,,,,0,2013-10-25T23:54:41+00:00
+309184,YXAL,heliport,Albury Base Hospital Helipad,-36.079212,146.938565,588,OC,AU,AU-NSW,Albury,0,YXAL,,YXAL,,,,0,2013-07-22T23:43:29+00:00
+314465,RCN,closed,American River Airport,-35.7574,137.7759,389,OC,AU,AU-SA,American River,0,,RCN,,,,,0,2015-05-02T13:57:57+00:00
+309833,AU-0068,heliport,Amity Heliport,-27.4031,153.44,19,OC,AU,AU-QLD,Amity,0,,,AMCO,,,,0,2013-10-26T00:30:22+00:00
+312361,ANZ,small_airport,Angus Downs Airport,-25.0325,132.2748,1724,OC,AU,AU-NT,Angus Downs Station,0,,ANZ,,,,,0,2014-07-03T19:28:13+00:00
+309834,AU-0069,heliport,Appin Colliery Helipad,-34.2098,150.7914,837,OC,AU,AU-NSW,Appin,0,,,APPC,,,,0,2013-10-26T00:45:44+00:00
+311185,AU-0076,heliport,West Cliff Colliery Helipad,-34.234073,150.829822,1195,OC,AU,AU-NSW,Appin,0,,,WTCL,,,,0,2014-03-05T00:27:28+00:00
+314491,AGY,small_airport,Argyle Downs Airport,-16.514,128.9245,407,OC,AU,AU-WA,Argyle Downs,0,,AGY,,,http://en.wikipedia.org/wiki/Argyle_Downs_Airport,,0,2015-05-06T02:28:53+00:00
+309185,YXAH,heliport,Armidale - Lambert Park Helipad,-30.5113,151.6552,3246,OC,AU,AU-NSW,Armidale,0,YXAH,,YXAH,,,,0,2013-07-23T00:05:28+00:00
+309363,YBYL,small_airport,Baryulgil Airstrip,-29.21829,152.61611,422,OC,AU,AU-NSW,Baryulgil,0,YBYL,,,,,,0,2013-08-15T17:42:59+00:00
+310911,AU-0074,heliport,Longford Heliport,-38.21962,147.16922,174,OC,AU,AU-VIC,Bass Straight Oil and Gas industry,0,,,,,,,0,2014-02-06T14:06:12+00:00
+309190,YXBM,heliport,Batemans Bay Helipad,-35.71301,150.1872,3,OC,AU,AU-NSW,Batemans Bay,0,YXBM,,YXBM,,,,0,2013-07-24T08:32:02+00:00
+309215,YXBS,heliport,Beaudesert Hospital Helipad,-27.98571,153.002345,265,OC,AU,AU-QLD,Beaudesert,0,YXBS,,YXBS,,,,0,2013-07-27T03:48:41+00:00
+301872,BCZ,small_airport,Milyakburra Airport,-13.78083333,136.2016667,85,OC,AU,AU-NT,Bickerton Island,0,,BCZ,YBIC,,http://en.wikipedia.org/wiki/Bickerton_Island,,0,2015-01-23T13:52:51+00:00
+309216,YXBI,heliport,Biggenden Hospital Helipad,-25.506941,152.050651,391,OC,AU,AU-QLD,Biggenden,0,YXBI,,YXBI,,,,0,2013-07-27T04:14:43+00:00
+309601,AU-0062,heliport,Blackheath - NPWS Helipad,-33.628062,150.306706,3316,OC,AU,AU-NSW,Blackheath - NPWS,0,,,BHT,,,,0,2013-09-21T06:44:13+00:00
+309217,AU-0059,heliport,Blackwater Hospital Helipad,-23.57128,148.877856,550,OC,AU,AU-QLD,Blackwater,0,,,,,,,0,2013-07-27T05:09:12+00:00
+309961,YXBW,heliport,Bowen Hospital Helipad,-20.00657,148.24026,84,OC,AU,AU-QLD,Bowen,0,YXBW,,YXBW,,,,0,2013-11-14T17:51:22+00:00
+317143,YXOW,heliport,Bowral - Loseby Park Helicopter Landing Site,-34.4867,150.4228,2263,OC,AU,AU-NSW,Bowral,0,YXOW,,YXOW,,,,0,2016-02-28T16:06:30+00:00
+317142,YBOW,heliport,Bowraville Oval Helicopter Landing Site,-30.6477,152.8483,44,OC,AU,AU-NSW,Bowraville,0,YBOW,,YBOW,,,,0,2016-02-28T15:51:31+00:00
+317141,AU-0072,heliport,Braidwood Helicopter Landing Site,-35.448,149.8011,2134,OC,AU,AU-NSW,Braidwood,0,,,,,,,0,2016-02-28T15:31:39+00:00
+309255,YMAT,heliport,Mater Hospital Helipad,-27.48543,153.02839,180,OC,AU,AU-QLD,Brisbane,0,YMAT,,YMAT,,,,0,2013-08-01T02:14:30+00:00
+309309,YPRC,heliport,Prince Charles Hospital Helipad,-27.38761,153.02411,135,OC,AU,AU-QLD,Brisbane,0,YPRC,,YPRC,,,,0,2013-08-08T22:53:11+00:00
+309310,YPRI,heliport,Princess Alexandra Hospital Helipad,-27.50018,153.0338,200,OC,AU,AU-QLD,Brisbane,0,YPRI,,YPRI,,,,0,2013-08-08T23:13:35+00:00
+309317,YRBH,heliport,Royal Brisbane Hospital Helipad Alpha,-27.44705,153.02827,180,OC,AU,AU-QLD,Brisbane,0,YRBH,,YRBH,,,,0,2013-08-09T17:35:59+00:00
+309318,AU-0060,heliport,Royal Brisbane Hospital Helipad Charlie,-27.44993,153.02759,150,OC,AU,AU-QLD,Brisbane,0,YRBH,,YRBH,,,,0,2013-08-09T17:48:30+00:00
+314697,AU-0084,heliport,Brisbane Water Police Helipad,-27.40104,153.16415,5,OC,AU,AU-QLD,Brisbane,0,,,BNWP,,,,0,2015-06-05T02:18:05+00:00
+317137,AU-0055,heliport,Brooklyn Oval Helicopter Landing Site,-33.5473,151.215684,33,OC,AU,AU-NSW,Brooklyn,0,,,,,,,0,2016-02-28T13:34:47+00:00
+317139,AU-0056,heliport,Brooklyn TMC - Olivers Garage Helipad,-33.5562,151.1936,295,OC,AU,AU-NSW,Brooklyn,0,,,,,,,0,2016-02-28T15:15:56+00:00
+309181,AU-0057,heliport,Brooms Head Heliport,-29.6068,153.332,21,OC,AU,AU-NSW,Brooms Head,0,,,BRHD,,,,0,2013-09-21T06:02:01+00:00
+317136,YXUH,heliport,Bulahdelah Helicopter Landing Site,-32.4,152.2,13,OC,AU,AU-NSW,Bulahdelah,0,YXUH,,YXUH,,,,0,2016-02-28T12:54:26+00:00
+309200,YDEA,small_airport,Delara Airfield,-13.66875,134.2911,488,OC,AU,AU-NT,Bulman,0,YDEA,,DELR,,,,0,2013-07-25T10:21:03+00:00
+309962,YXBU,heliport,Bulwer Heliport,-27.07233,153.36748,29,OC,AU,AU-QLD,Bulwer,0,YXBU,,YXBU,,,,0,2013-11-14T18:03:54+00:00
+309221,YXBD,heliport,Bundaberg Base Hospital Helipad,-24.869446,152.335045,60,OC,AU,AU-QLD,Bundaberg,0,YXBD,,YXBD,,,,0,2013-07-27T11:52:05+00:00
+309222,YXLT,heliport,Caboolture Hospital Helipad,-27.07955,152.96293,42,OC,AU,AU-QLD,Caboolture,0,YXLT,,YXLT,,,,0,2013-07-27T12:08:53+00:00
+309182,YXCY,heliport,Calvary - Bruce Oval Helipad,-35.247,149.0927,2031,OC,AU,AU-ACT,Canberra,0,YXCY,,YXCY,,,,0,2013-07-22T00:21:44+00:00
+309183,YXCB,heliport,Canberra Hospital Helipad,-35.343777,149.099953,1953,OC,AU,AU-ACT,Canberra,0,YXCB,,YXCB,,,,0,2013-07-22T00:42:28+00:00
+314694,YXCA,heliport,Carnungra-Moriarity Park HLS,-28.0186,153.1598,312,OC,AU,AU-QLD,Canungra,0,YXCA,,YXCA,,,,0,2015-06-04T23:33:30+00:00
+314862,AU-0086,heliport,Carmila Town Helicopter Landing Site,-21.9092,149.417,62,OC,AU,AU-QLD,Carmila,0,,,CAR,,,,0,2015-06-27T11:39:17+00:00
+315738,YGCL,heliport,Gold Coast Life Saver Base,-28.00345,153.3626,17,OC,AU,AU-QLD,Carrara Gold Coast,0,YGCL,,YGCL,,,,0,2015-10-11T13:24:05+00:00
+317144,YRBN,small_airport,Robertson Airstrip,-34.6449,150.6421,1860,OC,AU,AU-NSW,Carrington Falls,0,YRBN,,YRBN,,,,0,2016-02-28T16:44:00+00:00
+309223,YXCH,heliport,Cherbourg Hospital Helipad,-26.29124,151.95742,1006,OC,AU,AU-QLD,Cherbourg,0,YXCH,,YXCH,,,,0,2013-07-27T12:24:03+00:00
+309224,YXCI,heliport,Chinchilla Hospital Helipad,-26.74066,150.63425,1007,OC,AU,AU-QLD,Chinchilla,0,YXCI,,YXCI,,,,0,2013-07-27T12:37:59+00:00
+46399,AU-0043,small_airport,Chittering Airstrip,-31.52119082,116.1472893,,OC,AU,AU-WA,Chittering,0,,,,,,,0,2010-12-28T14:29:14+00:00
+324769,YZCE,small_airport,Churchable Airstrip,-27.429915,152.378454,,OC,AU,AU-QLD,Churchable,0,YZCE,,,,,,0,2017-08-22T16:03:54+00:00
+314695,AU-0082,heliport,Clairview Heliport,-22.09246,149.51908,41,OC,AU,AU-QLD,Clairview,0,,,CLV,,,,0,2015-06-05T00:03:51+00:00
+317168,YCVA,small_airport,Clare Valley Aerodrome,-33.710837,138.587367,1120,OC,AU,AU-SA,Clare,0,YCVA,,,http://www.clarevalleyaerodrome.com.au,https://en.wikipedia.org/wiki/Clare_Valley_Aerodrome,,0,2016-03-01T09:52:41+00:00
+314696,AU-0083,heliport,Clermont Hospital Helipad,-22.82707,147.63124,874,OC,AU,AU-QLD,Clermont,0,,,XCMT,,,,0,2015-06-05T00:30:10+00:00
+314863,AU-0087,heliport,Redland Hospital Helicopter Landing Site,-27.5346,153.2606,18,OC,AU,AU-QLD,Cleveland,0,,,CVD,,,,0,2015-06-27T12:21:25+00:00
+309704,AU-0065,heliport,Long Reef Helipad,-33.73922,151.31033,30,OC,AU,AU-NSW,Collaroy,0,,,,,,,0,2013-10-04T23:25:12+00:00
+309227,YXCV,heliport,Collinsville Hospital Helipad,-20.546745,147.837734,706,OC,AU,AU-QLD,Collinsville,0,YXCV,,YXCV,,,,0,2013-07-28T23:05:44+00:00
+309195,YXCM,heliport,Cooma Hospital Helipad,-36.242155,149.130147,2656,OC,AU,AU-NSW,Cooma,0,YXCM,,YXCM,,,,0,2013-07-25T00:02:40+00:00
+309196,YCOP,heliport,Copmanhurst Oval Helipad,-29.5892,152.77316,63,OC,AU,AU-NSW,Copmanhurst,0,YCOP,,YCOP,,,,0,2013-07-25T00:46:37+00:00
+314864,AU-0088,heliport,Couran Cove Resort Helipad,-27.8239,153.4092,5,OC,AU,AU-QLD,Couran Cove Resort,0,,,,,,"CCOVE, South Stradbroke Island",0,2015-06-27T12:59:34+00:00
+313368,AU-0080,heliport,Wanda Beach Helipad,-34.040487,151.1635,40,OC,AU,AU-NSW,Cronulla,0,,,WDBP,,,,0,2014-12-11T00:19:34+00:00
+314875,AU-0089,heliport,Crows Nest Helipad,-27.2649,152.0587,1764,OC,AU,AU-QLD,Crows Nest,0,,,CNT,,,,0,2015-06-28T15:06:10+00:00
+314873,YXCU,heliport,Cunningham Gap Helipad,-28.0479,152.4457,1185,OC,AU,AU-QLD,Cunningham Highway,0,YXCU,,YXCU,,,,0,2015-06-28T14:50:03+00:00
+309960,YXDA,heliport,Dalby Hospital Helipad,-27.16713,151.27692,1140,OC,AU,AU-QLD,Dalby,0,YXDA,,YXDA,,,,0,2013-11-14T17:41:05+00:00
+299298,AU-0054,small_airport,Delatite Airstrip,-37.145053,146.159431,1164,OC,AU,AU-VIC,Delatite,0,,,,,,,0,2012-01-02T16:46:40+00:00
+313376,YXDE,heliport,Denman Helicopter Landing Site,-32.3868,150.682,388,OC,AU,AU-NSW,Denman,0,YXDE,,YXDE,,,,0,2014-12-12T04:04:54+00:00
+314877,AU-0090,small_airport,Dingo Airstrip,-23.655,149.338,441,OC,AU,AU-QLD,Dingo,0,,,,,,,0,2015-06-28T15:50:21+00:00
+313377,YXDG,heliport,Dorrigo Helipad,-30.3422,152.7092,2367,OC,AU,AU-NSW,Dorrigo,0,YXDG,,YXDG,,,,0,2014-12-12T04:26:50+00:00
+313378,YDKE,heliport,Drake Oval Helicopter Landing Site,-28.9257,152.3762,1604,OC,AU,AU-NSW,Drake,0,YDKE,,YDKE,,,,0,2014-12-13T14:37:14+00:00
+314880,YDRG,small_airport,Duaringa Airstrip,-23.7372,149.6647,495,OC,AU,AU-QLD,Duaringa,0,YDRG,,YDRG,,,,0,2015-06-28T18:32:32+00:00
+314878,AU-0091,heliport,Dululu Helicopter Landing Site,-23.8479,150.2625,428,OC,AU,AU-QLD,Dululu,0,,,,,,,0,2015-06-28T16:01:51+00:00
+309228,YXDU,heliport,Dunwich Hospital Helipad,-27.49696,153.399233,32,OC,AU,AU-QLD,Dunwich,0,YXDU,,YXDU,,,,0,2013-07-28T23:19:03+00:00
+309229,YXDY,heliport,Dysart Hospital Helipad,-22.582854,148.353544,744,OC,AU,AU-QLD,Dysart,0,YXDY,,YXDY,,,,0,2013-07-28T23:38:10+00:00
+309230,YXEI,heliport,Eidsvold Hospital Helipad,-25.382466,151.125,647,OC,AU,AU-QLD,Eidsvold,0,YXEI,,YXEI,,,,0,2013-07-29T00:01:11+00:00
+318064,YESE,small_airport,Elrose Airport,-20.9764,141.0066,645,OC,AU,AU-QLD,Elrose Mine,0,YESE,ERQ,YESE,,https://en.wikipedia.org/wiki/Elrose_Airport,,0,2016-05-26T21:13:02+00:00
+314879,AU-0092,heliport,Emerald Hospital Helicopter Landing Site,-23.5166,148.1539,593,OC,AU,AU-QLD,Emerald,0,,,,,,,0,2015-06-28T16:25:06+00:00
+309240,YXES,heliport,Esk Hospital Helipad,-27.24086,152.418,395,OC,AU,AU-QLD,Esk,0,YXES,,YXES,,,,0,2013-07-30T01:20:40+00:00
+315745,AU-0103,heliport,Eurong Heliport,-25.505,153.1292,33,OC,AU,AU-QLD,Eurong Ranger's Station,0,,,EUR,,,,0,2015-10-11T15:36:51+00:00
+309693,YFHO,heliport,Fairfield Hospital Helipad,-33.859012,150.905447,154,OC,AU,AU-NSW,Fairfield,0,YFHO,,YFHO,,,,0,2013-10-03T04:58:59+00:00
+312900,YFRV,small_airport,Oombulgurri Airport,-15.1647,127.8401,22,OC,AU,AU-WA,Forrest River Mission,0,YFRV,FVR,YFRV,,,,0,2014-09-18T05:21:43+00:00
+309662,YXFS,heliport,Forster Hospital Helipad,-32.188357,152.51321,18,OC,AU,AU-NSW,Forster / Tuncurry,0,YXFS,,YXFS,,,,0,2013-09-27T23:57:43+00:00
+312943,FSL,small_airport,Fossil Downs Airport,-18.1321,125.7873,414,OC,AU,AU-WA,Fossil Downs Station,0,,FSL,,,,,0,2014-09-26T22:04:02+00:00
+44299,AU-0030,small_airport,Frankland Valley Vineyard,-34.34769821,116.9520034790040,825,OC,AU,AU-WA,Frankland Valley Vineyard or Ferngrove Winery,0,,,,,,,0,2009-04-19T23:02:19+00:00
+314893,YHPY,heliport,Happy Valley Heliport,-25.3363,153.2019,123,OC,AU,AU-QLD,Fraser Island,0,YHPY,,YHPY,,,,0,2015-07-02T00:06:24+00:00
+314894,AU-0093,heliport,Orchid Beach Resort Helipad,-24.96,153.3154,62,OC,AU,AU-QLD,Fraser Island,0,,,ORB,,,,0,2015-07-02T01:39:45+00:00
+314895,AU-0094,small_airport,Toby's Gap Airstrip,-25.5887,153.0646,339,OC,AU,AU-QLD,Fraser Island,0,,,,,,,0,2015-07-02T01:42:56+00:00
+315741,YXGA,heliport,Gatton Showgrounds Helicopter Landing Site,-27.56,152.282,333,OC,AU,AU-QLD,Gatton,0,YXGA,,YXGA,,,,0,2015-10-11T14:44:32+00:00
+309242,YXGI,heliport,Gayndah Hospital Helipad,-25.63202,151.60475,459,OC,AU,AU-QLD,Gayndah,0,YXGI,,YXGI,,,,0,2013-07-30T02:00:58+00:00
+309661,YXGR,heliport,Gilgandra Multi Purpose Service Helipad,-31.7039,148.665225,441,OC,AU,AU-NSW,Gilgandra,0,YXGR,,YXGR,,,,0,2013-09-27T23:28:19+00:00
+319713,YGIA,small_airport,Ginbata Airport,-22.5812,120.03553,1409,OC,AU,AU-WA,Ginbata,0,YGIA,GBW,,,,,0,2016-07-29T19:52:31+00:00
+309208,YGIS,heliport,Gisborne Helipad,-37.484153,144.585626,1373,OC,AU,AU-VIC,Gisborne,0,YGIS,,YGIS,,,,0,2013-07-25T23:51:40+00:00
+315740,AU-0100,heliport,Gladstone Hospital Helipad,-23.8499,151.24855,108,OC,AU,AU-QLD,Gladstone,0,,,,,,,0,2015-10-11T14:23:36+00:00
+315742,AU-0101,heliport,Facing Island Farmers Cove Helicopter Landing Site,-23.7738,151.3269,45,OC,AU,AU-QLD,Gladstone,0,,,,,,,0,2015-10-11T15:05:41+00:00
+309694,YXGE,heliport,Glen Innes - Rugby Park Heliport,-29.7302,151.7364,3455,OC,AU,AU-NSW,Glen Innes,0,YXGE,,YXGE,,,,0,2013-10-03T05:55:53+00:00
+309695,YGLK,heliport,Glenbrook NPWS Heliport,-33.7876,150.6085,590,OC,AU,AU-NSW,Glenbrook National Parks & Wildlife Service,0,YGLK,,YGLK,,,,0,2013-10-03T06:21:30+00:00
+315739,AU-0099,heliport,Glenden Township Heliport,-21.3608,148.1153,1240,OC,AU,AU-QLD,Glenden,0,,,GDD,,,,0,2015-10-11T14:09:50+00:00
+309308,YXPI,heliport,Pindarra Hospital Helipad,-28.008,153.3924,17,OC,AU,AU-QLD,Gold Coast,0,YXPI,,YXPI,,,,0,2013-08-08T22:40:10+00:00
+315735,AU-0098,heliport,Gold Coast Water Police Helicopter Landing Site,-27.97,153.427,10,OC,AU,AU-QLD,Gold Coast,0,,,GCWP,,,,0,2015-10-11T12:19:33+00:00
+315734,AU-0097,heliport,Goomeri Oval Helicopter Landing Site,-26.1795,152.0658,802,OC,AU,AU-QLD,Goomeri,0,,,GMI,,,,0,2015-10-11T12:02:17+00:00
+315746,AU-0104,heliport,Boggabilla Fuel Depot Landing Site,-28.6089,150.352,736,OC,AU,AU-NSW,Goondiwindi,0,,,BGBA,,,,0,2015-10-11T17:15:28+00:00
+315747,AU-0105,small_airport,Boggabilla Airstrip,-28.6172,150.3324,740,OC,AU,AU-NSW,Goondiwindi,0,,,BGAC,,,AIRCAIR,0,2015-10-11T17:23:32+00:00
+309243,YXGO,heliport,Goondiwindi Hospital Helipad,-28.547905,150.30117,717,OC,AU,AU-QLD,Goondiwindi,0,YXGO,,YXGO,,,,0,2013-07-30T02:19:10+00:00
+309609,YXGH,heliport,Goulburn Hospital Helipad,-34.74803,149.71235,2158,OC,AU,AU-NSW,Goulburn,0,YXGH,,YXGH,,,,0,2013-09-20T23:23:31+00:00
+309600,YXGP,heliport,Grafton Hospital Helipad,-29.67357,152.94074,21,OC,AU,AU-NSW,Grafton,0,YXGP,,YXGP,,,,0,2013-09-19T01:01:51+00:00
+309599,YXGU,heliport,Gunnedah Hospital Helipad,-30.98283,150.25223,914,OC,AU,AU-NSW,Gunnedah,0,YXGU,,YXGU,,,,0,2013-09-19T00:52:15+00:00
+314885,YXGY,heliport,Archery Park Helipad,-26.1886,152.6527,176,OC,AU,AU-QLD,Gympie,0,YXGY,,YXGY,,,,0,2015-06-30T00:23:45+00:00
+315732,YHYN,heliport,Hayman Island Heliport,-20.0599,148.8834,8,OC,AU,AU-QLD,Hayman Island Resort,0,YHYN,,YHYN,,,,0,2015-10-11T10:44:29+00:00
+313252,HRN,heliport,Heron Island Helipad,-23.441765,151.911416,8,OC,AU,AU-QLD,Heron Island,0,YHRN,,YHRN,,,HRN,0,2015-10-11T09:29:08+00:00
+309248,YXHE,heliport,Hervey Bay Hospital Helipad,-25.299416,152.820239,85,OC,AU,AU-QLD,Hervery Bay,0,YXHE,,YXHE,,,,0,2013-07-31T00:12:51+00:00
+315730,AU-0095,heliport,Hook Island Helipad,-20.1574,148.9481,10,OC,AU,AU-QLD,Hook Island,0,,,HKI,,,,0,2015-10-11T09:55:38+00:00
+313242,YHPV,small_airport,Hope Vale Airport,-15.2923,145.1035,228,OC,AU,AU-QLD,Hope Vale,0,YHPV,HPE,YHPV,,,,0,2014-11-18T00:35:19+00:00
+310912,AU-0075,closed,Horse Hair Plain Aerodrome,-37.0331,147.3055,4555,OC,AU,AU-VIC,Hotham,0,,,,,,,0,2014-02-06T17:42:43+00:00
+309249,YXIW,heliport,Inglewood Hospital Helipad,-28.41819,151.061255,932,OC,AU,AU-QLD,Inglewood,0,YXIW,,YXIW,,,,0,2013-07-31T00:25:41+00:00
+309561,AU-0061,heliport,Inverell Hospital Helipad,-29.771624,151.13098,2014,OC,AU,AU-NSW,Inverell,0,,,IVLH,,,,0,2013-09-12T13:13:24+00:00
+309250,YXJN,heliport,Jandowae Hospital Heliport,-26.7814,151.10473,1180,OC,AU,AU-QLD,Jandowae,0,YXJN,,YXJN,,,,0,2013-07-31T00:45:14+00:00
+313370,YPSR,heliport,Perisher Valley Medical Centre Helipad,-36.40515,148.41471,5689,OC,AU,AU-NSW,Jindabyne,0,YPSR,,YPSR,,,,0,2014-12-11T01:30:11+00:00
+313408,KDS,small_airport,Kamaran Downs Airport,-24.3388,139.2785,322,OC,AU,AU-QLD,Kamaran Downs,0,,KDS,,,,,0,2014-12-19T01:10:30+00:00
+316610,YPDA,small_airport,Parndana Airport,-35.807,137.264,545,OC,AU,AU-SA,Kangaroo Island,0,YPDA,PDN,YPDA,,,,0,2015-12-31T22:49:06+00:00
+309559,YXKM,heliport,Blue Mountains Hospital Helipad,-33.705262,150.322369,3333,OC,AU,AU-NSW,Katoomba,0,YXKM,,YXKM,,,,0,2013-09-12T12:40:23+00:00
+309696,YXKE,closed,Kempsey Hospital Helicopter Landing Site,-31.067128,152.821257,68,OC,AU,AU-NSW,Kempsey,0,YXKE,,YXKE,,,,0,2013-10-03T07:04:45+00:00
+46541,AU-0048,small_airport,Kulin Bush Races Strip,-32.66444444,118.3108333,950,OC,AU,AU-WA,Kulin,0,,,,http://www.kulin.wa.gov.au/tourism_and_local_events/kulin_bush_races/,,,0,2010-12-28T15:07:26+00:00
+309549,YXKU,heliport,Kurri Hospital Helipad,-32.82569,151.46279,211,OC,AU,AU-NSW,Kurri Kurri,0,YXKU,,YXKU,,,,0,2013-09-11T00:50:52+00:00
+313808,YKUR,small_airport,Kurundi Airport,-20.51,134.6706,1340,OC,AU,AU-NT,Kurundi Station,0,YKUR,KRD,YKUR,,,,0,2015-02-08T23:48:07+00:00
+309548,YXKO,heliport,Kyogle Hospital Helipad,-28.62822,153.00193,237,OC,AU,AU-NSW,Kyogle,0,YXKO,,YXKO,,,,0,2013-09-11T00:37:49+00:00
+309251,YXLA,heliport,Laidley Hospital Helipad,-27.63258,152.39924,356,OC,AU,AU-QLD,Laidley,0,YXLA,,YXLA,,,,0,2013-08-01T09:13:41+00:00
+313896,LGE,small_airport,Mulan Airport,-20.1089,127.619,978,OC,AU,AU-WA,Lake Gregory,0,,LGE,YUAN,,,Paruku,0,2015-02-20T13:16:52+00:00
+313857,LDW,small_airport,Lansdowne Airport,-17.6128,126.743,1190,OC,AU,AU-WA,Lansdowne Station,0,,LDW,,,,,0,2015-02-15T16:23:41+00:00
+298786,LTB,closed,Latrobe Airport,-41.23518803,146.3961697,12,OC,AU,AU-TAS,Latrobe,0,,LTB,,,,,0,2013-08-15T03:14:11+00:00
+309698,YXLE,heliport,Leeton Showground Heliport,-34.56,146.405,451,OC,AU,AU-NSW,Leeton,0,YXLE,,YXLE,,,,0,2013-10-03T22:43:20+00:00
+309699,AU-0063,heliport,Lismore - Mortimer Oval Helicopter Landing Site,-28.808344,153.284455,31,OC,AU,AU-NSW,Lismore,0,,,LMO,,,,0,2013-10-03T23:16:41+00:00
+309700,AU-0064,heliport,Lismore Helibase,-28.801211,153.288242,32,OC,AU,AU-NSW,Lismore,0,,,LIH,,,,0,2013-10-03T23:34:26+00:00
+313919,LLL,small_airport,Lissadell Airport,-16.661,128.594,374,OC,AU,AU-WA,Lissadell Station,0,,LLL,,,,,0,2015-02-22T17:39:40+00:00
+309547,YXLG,heliport,Lithgow Hospital Helipad,-33.49942,150.1287,3105,OC,AU,AU-NSW,Lithgow,0,YXLG,,YXLG,,,,0,2013-09-11T00:16:30+00:00
+309835,AU-0070,heliport,Baal Bone Colliery Helipad,-33.26958,150.05846,2840,OC,AU,AU-NSW,Lithgow,0,,,,,,,0,2013-10-26T01:11:59+00:00
+309701,YXLL,heliport,Liverpool Hospital Helipad Alpha,-33.9204,150.9312,130,OC,AU,AU-NSW,Liverpool,0,YXLL,,YXLL,,,,0,2013-10-04T00:33:38+00:00
+314889,YHPB,heliport,Happy Bay Helipad,-20.3358,148.8525,13,OC,AU,AU-QLD,Long Island,0,YHPB,,YHPB,,,,0,2015-06-30T23:46:08+00:00
+309254,YMHP,heliport,Mackay Base Hospital Helipad,-21.14543,149.15445,34,OC,AU,AU-QLD,Mackay,0,YMHP,,YMHP,,,,0,2013-08-01T01:43:14+00:00
+309705,YXMK,heliport,Macksville Park Helicopter Landing Site,-30.7104,152.9213,9,OC,AU,AU-NSW,Macksville,0,YXMK,,YXMK,,,,0,2013-10-05T00:14:35+00:00
+309546,YXMA,heliport,Maclean Hospital Helipad,-29.45373,153.20143,20,OC,AU,AU-NSW,Maclean,0,YXMA,,YXMA,,,,0,2013-09-10T23:56:43+00:00
+310016,MIZ,small_airport,Mainoru Airstrip,-14.0533,134.0942,365,OC,AU,AU-NT,Mainoru,0,,MIZ,,,,,0,2013-11-23T22:14:01+00:00
+309207,YAFD,heliport,Alfred Hospital Helipad,-37.84526,144.9813,80,OC,AU,AU-SA,Melbourne,0,YAFD,,YAFD,,,,0,2013-07-25T23:32:25+00:00
+309209,YRHO,heliport,Royal Childrens Hospital Helipad,-37.794058,144.951309,126,OC,AU,AU-VIC,Melbourne,0,YRHO,,YRHO,,,,0,2013-07-26T00:03:51+00:00
+309210,YRMH,heliport,Royal Melbourne Hospital Helipad,-37.799243,144.95593,221,OC,AU,AU-VIC,Melbourne,0,YRMH,,YRMH,,,,0,2013-07-26T00:17:30+00:00
+309533,YXMW,heliport,Merriwa Hospital Helipad,-32.14338,150.3609,895,OC,AU,AU-NSW,Merriwa,0,YXMW,,YXMW,,,,0,2013-09-10T00:12:37+00:00
+309343,YXSU,heliport,Sutherland Hospital Helipad,-34.038783,151.1156,119,OC,AU,AU-NSW,Miranda,0,YXSU,,YXSU,,,,0,2013-08-14T00:51:22+00:00
+309532,YXMV,heliport,Mona Vale Hospital Helipad,-33.68512,151.30824,47,OC,AU,AU-NSW,Mona Vale,0,YXMV,,YXMV,,,,0,2013-09-10T00:02:11+00:00
+331085,MRT,small_airport,Moroak Airport,-14.818133,133.700594,227,OC,AU,AU-NT,Moroak,0,,MRT,,,,,0,2019-04-28T12:43:37+00:00
+298432,AU-0050,small_airport,Huntfield Airfield,-35.17254545,138.4936094,,OC,AU,AU-SA,Morphett Vale,0,,,5HUN,,,,0,2011-05-30T07:11:11+00:00
+309526,YXMY,heliport,Moruya Hospital Helipad,-35.90397,150.06946,22,OC,AU,AU-NSW,Moruya,0,YXMY,,YXMY,,,,0,2013-09-08T13:39:51+00:00
+309512,YXMD,heliport,Mount Druitt Hospital Heliport,-33.766232,150.830663,220,OC,AU,AU-NSW,Mount Druitt,0,YXMD,,YXMD,,,,0,2013-09-05T23:26:21+00:00
+309003,YGON,small_airport,Mount Gordon Airport,-19.77265,139.40425,900,OC,AU,AU-QLD,Mount Gordon Mine,0,YGON,GPD,,,http://en.wikipedia.org/wiki/Mount_Gordon_Airport,,0,2013-07-11T01:06:35+00:00
+309511,YXMH,heliport,Mudgee Hospital Helipad,-32.602546,149.588067,1562,OC,AU,AU-NSW,Mudgee,0,YXMH,,YXMH,,,,0,2013-09-05T23:00:11+00:00
+309510,YXMU,heliport,Mullumbimby Hospital Helipad,-28.559347,153.49219,36,OC,AU,AU-NSW,Mullumbimby,0,YXMU,,YXMU,,,,0,2013-09-05T12:38:17+00:00
+309256,YXDR,heliport,Munduberra Hospital Helipad,-25.58815,151.29319,470,OC,AU,AU-QLD,Munduberra,0,YXDR,,YXDR,,,,0,2013-08-01T02:56:33+00:00
+316783,AU-0110,small_airport,Murgenella Airstrip,-11.5494,132.9142,67,OC,AU,AU-NT,Murganella,0,,,,,,Wauk,0,2016-01-23T08:17:01+00:00
+309266,YXMG,heliport,Murgon Hospital Helipad,-26.23842,151.95095,1095,OC,AU,AU-QLD,Murgon,0,YXMG,,YXMG,,,,0,2013-08-02T23:07:20+00:00
+46373,AU-0042,closed,Hutt River Airstrip,-28.07122297,114.4773674,,OC,AU,AU-WA,Nain,0,,,,,,,0,2010-07-18T05:38:10+00:00
+309267,YXNA,heliport,Nambour Hospital Helipad,-26.62053,152.95095,230,OC,AU,AU-QLD,Nambour,0,YXNA,,YXNA,,,,0,2013-08-02T23:22:41+00:00
+309268,YXNN,heliport,Nanango Hospital Helipad,-26.6659,152.00757,1309,OC,AU,AU-QLD,Nanango,0,YXNN,,YXNN,,,,0,2013-08-03T00:18:01+00:00
+315733,AU-0096,heliport,Hail Creek Mine Heliport,-21.4888,148.3585,986,OC,AU,AU-QLD,Nebo,0,,,HCM,,,,0,2015-10-11T11:23:07+00:00
+311764,YXNY,heliport,Nelson Bay Heliport,-32.7167,152.1548,62,OC,AU,AU-NSW,Nelson Bay,0,YXNY,,YXNY,,,,0,2014-04-24T10:39:01+00:00
+44990,AU-0036,small_airport,New Norcia airstrip,-30.96663,116.21547,,OC,AU,AU-WA,New Norcia,0,,,,http://www.newnorcia.wa.edu.au/,,,0,2009-09-04T21:38:05+00:00
+309560,YXJH,heliport,John Hunter Hospital Helipad,-32.924048,151.693415,310,OC,AU,AU-NSW,Newcastle,0,YXJH,,YXJH,,,,0,2013-09-12T12:53:45+00:00
+311765,YNRH,heliport,Newcastle Regional Heliport,-32.87909,151.72803,20,OC,AU,AU-NSW,Newcastle,0,YNRH,,YNRH,,,,0,2014-04-24T11:17:30+00:00
+316557,NRY,small_airport,Newry Airport,-16.0442,129.2638,304,OC,AU,AU-NT,Newry,0,,NRY,,,,,0,2015-12-20T00:12:46+00:00
+309279,YXNO,heliport,Noosa Hospital Helipad,-26.40259,153.04569,37,OC,AU,AU-QLD,Noosa,0,YXNO,,YXNO,,,,0,2013-08-04T00:20:34+00:00
+309280,YXNW,heliport,Nowra Hospital Helipad,-34.86978,150.59553,92,OC,AU,AU-QLD,Nowra,0,YXNW,,YXNW,,,,0,2013-08-04T00:41:40+00:00
+311767,YOBE,heliport,Oberon Heliport,-33.7007,149.856,3612,OC,AU,AU-NSW,Oberon,0,YOBE,,YOBE,,,,0,2014-04-24T11:50:15+00:00
+319592,AU-0111,heliport,Olinda (DSE) Helibase,-37.8594,145.3766,1852,OC,AU,AU-VIC,Olinda / Mt Dandenong,0,,,,,,,0,2018-09-04T13:38:32+00:00
+309396,YXOG,heliport,Orange Hospital Helipad,-33.316724,149.092652,3033,OC,AU,AU-NSW,Orange,0,YXOG,,YXOG,,,,0,2013-08-21T02:12:56+00:00
+312273,YXCF,heliport,Orange - Careflight Base Heliport,-33.30368,149.12098,2964,OC,AU,AU-NSW,Orange,0,YXCF,,YXCF,,,,0,2014-06-23T00:50:32+00:00
+316827,OXO,small_airport,Orientos Airport,-28.0598,141.5361,375,OC,AU,AU-QLD,Orientos,0,,OXO,,,,,0,2016-01-24T17:41:30+00:00
+316690,YPMH,small_airport,Prominent Hill Airport,-29.716,135.5244,745,OC,AU,AU-SA,OZ Minerals Prominent Hill Mine,1,YPMH,PXH,,,https://en.wikipedia.org/wiki/Prominent_Hill_Airport,,0,2016-01-14T23:55:35+00:00
+309395,YXPK,heliport,Parkes Hospital Helipad,-33.12703,148.16999,1189,OC,AU,AU-NSW,Parkes,0,YXPK,,YXPK,,,,0,2013-08-21T02:00:08+00:00
+309394,YXPH,heliport,Peak Hill Hospital Helipad,-32.7362,148.19978,957,OC,AU,AU-NSW,Peak Hill,0,YXPH,,YXPH,,,,0,2013-08-21T01:37:22+00:00
+309278,YXNE,heliport,Nepean Hospital Helipad,-33.76038,150.71154,187,OC,AU,AU-QLD,Penrith,0,YXNE,,YXNE,,,,0,2013-08-04T00:02:14+00:00
+315731,YTEK,heliport,Sikorsky Helitech Heliport,-27.433,153.115,20,OC,AU,AU-QLD,Pinkenba - Brisbane,0,YTEK,,YTEK,,,,0,2015-10-11T10:26:44+00:00
+309376,YXPM,heliport,Port Macquarie Hospital Helipad,-31.452683,152.88076,32,OC,AU,AU-NSW,Port Macquarie,0,YXPM,,YXPM,,,,0,2013-08-17T01:13:36+00:00
+309316,YXPN,heliport,Proserpine Hospital Helipad,-20.39912,148.5855,44,OC,AU,AU-QLD,Proserpine,0,YXPN,,YXPN,,,,0,2013-08-09T17:03:51+00:00
+298808,YBEB,small_airport,Bellburn Airstrip,-17.545,128.305,810,OC,AU,AU-WA,Pumululu National Park,0,YBEB,BXF,,,,Bungle Bungles,0,2014-06-29T12:26:21+00:00
+309375,YXQU,heliport,Quirindi Hospital Helipad,-31.50107,150.676606,1365,OC,AU,AU-NSW,Quirindi,0,YXQU,,YXQU,,,,0,2013-08-17T00:33:05+00:00
+315743,AU-0102,heliport,Facing Island - Gatcomb Head Helipad,-23.8758,151.3718,73,OC,AU,AU-QLD,Rockhampton,0,,,,,,,0,2015-10-11T15:17:23+00:00
+314489,RKY,small_airport,Rokeby Airport,-13.6434,142.641,362,OC,AU,AU-QLD,Rokeby,0,,RKY,,,,,0,2015-05-05T23:51:24+00:00
+314516,RPV,small_airport,Roper Valley Airport,-14.9215,134.05,237,OC,AU,AU-NT,Roper Valley,0,,RPV,,,,,0,2015-05-09T21:59:13+00:00
+314508,RLP,small_airport,Rosella Plains Airport,-18.4253,144.4587,1855,OC,AU,AU-QLD,Rosella Plains,0,,RLP,,,,,0,2015-05-08T12:38:50+00:00
+309374,YXRN,heliport,Rylstone Hospital Helipad,-32.803975,149.975076,1971,OC,AU,AU-NSW,Rylstone,0,YXRN,,YXRN,,,,0,2013-08-17T00:10:06+00:00
+314728,SRM,small_airport,Sandringham Airport,-24.0568,139.0821,313,OC,AU,AU-QLD,Sandringham Station,0,,SRM,,,,,0,2015-06-09T01:11:00+00:00
+309353,YXSC,heliport,Scone Hospital Helipad,-32.050268,150.877663,782,OC,AU,AU-NSW,Scone,0,YXSC,,YXSC,,,,0,2013-08-15T01:35:55+00:00
+309831,AU-0066,heliport,Seventeen Seventy Heliport,-24.1828,151.8826,33,OC,AU,AU-QLD,Seventeen Seventy,0,,,1770,,,,0,2013-10-25T23:45:04+00:00
+309352,YXSH,heliport,Shellharbour Hospital Helipad,-34.55989,150.84173,99,OC,AU,AU-NSW,Shellharbour,0,YXSH,,YXSH,,,,0,2013-08-15T01:21:46+00:00
+309946,AU-0071,small_airport,Sherlock Ultralight Airfield,-35.32027778,139.7925222,58,OC,AU,AU-SA,Sherlock,0,,,,,,,0,2013-11-13T01:25:25+00:00
+44906,AU-0034,heliport,Royal Prince Alfred Hospital Helipad,-33.88933182,151.18368530273400,,OC,AU,AU-NSW,Sidney,0,,,,,,,0,2009-09-01T16:03:56+00:00
+44907,AU-0035,heliport,Royal North Shore Hospital Helipad,-33.82225037,151.18963623046900,,OC,AU,AU-NSW,Sidney,0,,,,,,,0,2009-09-01T16:52:53+00:00
+314919,YSVP,small_airport,Silver Plains Airport,-13.9754,143.5537,48,OC,AU,AU-QLD,Silver Plains,0,YSVP,SSP,YSVP,,,,0,2015-07-04T21:28:27+00:00
+309351,YXSI,heliport,Singleton Hospital Helipad,-32.56708,151.186865,151,OC,AU,AU-NSW,Singleton,0,YXSI,,YXSI,,,,0,2013-08-15T01:07:21+00:00
+314633,SOI,heliport,South Molle Island Helipad,-20.2622,148.8399,15,OC,AU,AU-QLD,South Molle Island Resort,0,,SOI,,,,,0,2015-05-28T01:25:26+00:00
+309722,YSWK,small_airport,South West Rocks Airport,-30.9246,153.0276,7,OC,AU,AU-NSW,South West Rocks,0,YSWK,,YSWK,,,SWRK,0,2013-10-06T16:01:02+00:00
+314925,YSTI,seaplane_base,Stephens Island Seaplane Base,-9.51,143.55,0,OC,AU,AU-QLD,Stephens Island,0,YSTI,STF,YSTI,,,"Ugar Island, Hogar Island",0,2015-07-05T13:57:43+00:00
+310099,YCVB,heliport,St Vincents - Victoria Barracks Helipad,-33.88525,151.22343,197,OC,AU,AU-NSW,Sydney,0,YCVB,,,,,,0,2016-02-17T08:32:37+00:00
+314542,RSE,seaplane_base,Rose Bay Seaplane Base,-33.869,151.262,0,OC,AU,AU-NSW,Sydney,0,,RSE,,,,,0,2015-05-14T23:25:08+00:00
+313852,LBH,seaplane_base,Palm Beach Seaplane Base,-33.5871,151.3234,0,OC,AU,AU-VIC,Sydney,1,,LBH,,,http://en.wikipedia.org/wiki/Palm_Beach_Water_Airport,,0,2015-02-14T23:40:01+00:00
+309334,YXTW,heliport,Tamworth Hospital Helipad,-31.07457,150.92641,1356,OC,AU,AU-NSW,Tamworth,0,YXTW,,YXTW,,,,0,2013-08-12T00:42:50+00:00
+310101,YXTR,heliport,Taree - Wrigley Park Helipad,-31.9064,152.4508,39,OC,AU,AU-NSW,Taree,0,YXTR,,YXTR,,,,0,2013-12-07T16:56:38+00:00
+310102,YXTE,heliport,Tenterfield - Federation Park Heliport,-29.048,152.0164,2762,OC,AU,AU-NSW,Tenterfield,0,YXTE,,YXTE,,,,0,2013-12-07T17:17:49+00:00
+316782,YPCM,small_airport,Pickertaramoor Airstrip,-11.7622,130.8809,325,OC,AU,AU-NT,Tiwi College,0,YPCM,,YPCM,,,,0,2016-01-23T03:13:40+00:00
+313356,YXTN,heliport,Trundle Hospital Helicopter Landing Site,-32.9217,147.7067,822,OC,AU,AU-NSW,Trundle,0,YXTN,,YXTN,,,,0,2014-12-09T00:15:55+00:00
+313357,AU-0078,heliport,Tucabia Oval Helicopter Landing Site,-29.66,153.1056,25,OC,AU,AU-NSW,Tucabia,0,,,TCBA,,,,0,2014-12-09T00:57:50+00:00
+318044,AU-0032,small_airport,Tumbarumba Airport,-35.7626038,147.886885,1993,OC,AU,AU-NSW,Tumbarumba,0,YTBM,,,,,,0,2016-05-24T17:51:37+00:00
+309333,YXTT,heliport,Tumut Hospital Helipad,-35.308,148.2191,1052,OC,AU,AU-NSW,Tumut,0,YXTT,,YXTT,,,,0,2013-08-11T23:41:45+00:00
+309332,YTWH,heliport,The Tweed Hospital Helipad,-28.17769,153.5466,10,OC,AU,AU-NSW,Tweed Heads,0,YTWH,,YTWH,,,,0,2013-08-11T23:23:39+00:00
+309366,YBWO,small_airport,Bowen Downs Airport,-22.4641,144.99785,768,OC,AU,AU-QLD,Upper Cornish Creek,0,YBWO,,,,,,0,2013-08-15T20:51:51+00:00
+313367,AU-0079,heliport,Urbenville Helipad,-28.46907,152.55133,1210,OC,AU,AU-NSW,Urbenville,0,,,URBH,,,,0,2014-12-10T23:41:06+00:00
+310103,YXWG,heliport,Wagga - Duke of Kent Oval Helipad,-35.11434,147.3541,588,OC,AU,AU-NSW,Wagga,0,YXWG,,YXWG,,,,0,2013-12-07T17:47:19+00:00
+309342,YXSA,heliport,Sydney Adventist Hospital Helipad,-33.733386,151.100006,584,OC,AU,AU-NSW,Wahroonga,0,YXSA,,YXSA,,,,0,2013-08-14T00:37:12+00:00
+310105,AU-0073,small_airport,Warroora Station Airstrip,-23.47487,113.79925,35,OC,AU,AU-WA,Warroora Station,0,,,,,,,0,2013-12-07T19:43:10+00:00
+328221,YDFD,small_airport,Dexfield Park,-31.42166667,152.7583333,30,OC,AU,AU-NSW,Wauchope,0,YDFD,,,http://www.dexfieldpark.com,,,0,2018-06-07T01:52:22+00:00
+316465,WAN,small_airport,Waverney Airport,-25.3563,141.9254,570,OC,AU,AU-QLD,Waverney,0,,WAN,,,,,0,2015-12-04T12:43:14+00:00
+310104,YXWW,heliport,Wee Waa Hospital Helipad,-30.225,149.4483,632,OC,AU,AU-NSW,Wee Waa,0,YXWW,,YXWW,,,,0,2013-12-07T18:06:25+00:00
+311184,YXWT,heliport,Wellington-Rygate Park Heliport,-32.5487,148.9497,1005,OC,AU,AU-NSW,Wellington,0,YXWT,,YXWT,,,,0,2014-03-05T00:13:45+00:00
+309197,AU-0058,heliport,Cowal Gold Mine Helipad,-33.6553,147.40036,705,OC,AU,AU-NSW,West Wyalong,0,,,,,,,0,2013-07-25T00:57:24+00:00
+311186,YWNT,heliport,Westmead NETS Base Hospital Heliport,-33.802749,150.990223,120,OC,AU,AU-NSW,Westmead,0,YWNT,,YWNT,,,,0,2014-03-05T00:55:27+00:00
+314876,YDDI,heliport,Daydream Island Helipad,-20.2603,148.8136,8,OC,AU,AU-QLD,Whitsundays,0,YDDI,,YDDI,,,,0,2015-06-28T15:31:46+00:00
+327562,YWDG,small_airport,Windarling Airport,-30.031667,119.39,1502,OC,AU,AU-WA,Windarling Mine,0,YWDG,WRN,,,https://en.wikipedia.org/wiki/Windarling_Airport,,0,2018-05-03T08:52:31+00:00
+309598,YXHA,heliport,Hawkesbury Hospital Helipad,-33.61058,150.8215,48,OC,AU,AU-NSW,Windsor,0,YXHA,,YXHA,,,,0,2013-09-19T00:37:33+00:00
+309327,YXWL,heliport,Wollongong Hospital Helipad,-34.42419,150.8822,160,OC,AU,AU-NSW,Wollongong,0,YXWL,,YXWL,,,,0,2013-08-11T11:46:16+00:00
+309202,YWKD,small_airport,Woodycupaldiya Airfield,-13.8665,129.988,100,OC,AU,AU-NT,Woodycupaldiya,0,YWKD,,YWKD,,,,0,2013-07-25T13:57:17+00:00
+309326,YXWY,heliport,Wyong Hospital Helipad,-33.26025,151.48069,94,OC,AU,AU-NSW,Wyong,0,YXWY,,YXWY,,,,0,2013-08-11T11:32:31+00:00
+309325,YXYO,heliport,Young Hospital Helipad,-34.32094,148.28798,1523,OC,AU,AU-NSW,Young,0,YXYO,,YXYO,,,,0,2013-08-11T11:21:52+00:00

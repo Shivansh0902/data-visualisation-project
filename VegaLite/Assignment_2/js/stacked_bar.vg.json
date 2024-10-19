@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Total Delays and Cancellations by Airline",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/routes.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "Month_selection",
+        "value": "All Months",
+        "bind": {
+          "input": "select",
+          "options": [
+            "All Months", "Jan-20", "Feb-20", "Mar-20", "Apr-20", "May-20", "Jun-20", "Jul-20", "Aug-20", "Sep-20", "Oct-20", "Nov-20", "Dec-20"
+          ],
+          "labels": ["All Months", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          "name": "Select a Month: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "datum['Airline'] != 'All Airlines' && (Month_selection === 'All Months' || datum['Month'] === Month_selection)"
+      },
+      {
+        "aggregate": [
+          {"op": "sum", "field": "Cancellations", "as": "TotalCancellations"},
+          {"op": "sum", "field": "DeparturesDelayed", "as": "TotalDeparturesDelayed"},
+          {"op": "sum", "field": "ArrivalsDelayed", "as": "TotalArrivalsDelayed"}
+        ],
+        "groupby": ["Airline"]
+      },
+      {
+        "fold": ["TotalCancellations", "TotalDeparturesDelayed", "TotalArrivalsDelayed"],
+        "as": ["DelayType", "Value"]
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Airline",
+        "type": "nominal",
+        "title": "Airline",
+        "axis": {"labelAngle": -45}
+      },
+      "y": {
+        "aggregate": "sum",
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Total Delays and Cancellations"
+      },
+      "color": {
+        "field": "DelayType",
+        "type": "nominal",
+        "scale": {
+          "domain": ["TotalCancellations", "TotalDeparturesDelayed", "TotalArrivalsDelayed"],
+          "range": ["#FF6347", "#4682B4", "#3CB371"]
+        },
+        "legend": {"title": "Delay Type"}
+      },
+      "tooltip": [
+        {"field": "Airline", "type": "nominal", "title": "Airline"},
+        {"field": "DelayType", "type": "nominal", "title": "Delay Type"},
+        {"field": "Value", "type": "quantitative", "title": "Total"}
+      ]
+    },
+    "config": {
+      "view": {"stroke": "transparent"},
+      "axis": {"domainWidth": 1}
+    }
+}
+  

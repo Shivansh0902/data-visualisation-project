@@ -1,21 +1,168 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Australian Airports and Routes by Aircraft Trips",
-  "width": 800,
-  "height": 500,
-  "config": {
-    "background": "#a6cee3"
+  "title": "Airports in Australia (All States and Territories)",
+  "width": 900,
+  "height": 600,
+  "params": [
+    {
+      "name": "State_selection",
+      "value": "AU-VIC",
+      "bind": {
+        "input": "select",
+        "options": [
+          "AU-VIC", "AU-NSW", "AU-NT", "AU-QLD", 
+          "AU-SA", "AU-WA", "AU-TAS", "AU-ACT"
+        ],
+        "labels": [
+          "Victoria", "New South Wales", "Northern Territory", "Queensland",
+          "South Australia", "Western Australia", "Tasmania", "Australian Capital Territory"
+        ],
+        "name": "Select a State: "
+      }
+    },
+    {
+      "name": "zoom_level",
+      "expr": "State_selection === 'AU-VIC' ? 5000 : (State_selection === 'AU-NSW' ? 5000 : (State_selection === 'AU-NT' ? 2000 : 3000))",
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 5000,
+        "step": 500,
+        "name": "Zoom Level: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator",
+    "center": {
+      "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : (State_selection === 'AU-NSW' ? [147.0, -33.9] : (State_selection === 'AU-NT' ? [133.5, -19.0] : (State_selection === 'AU-SA' ? [135, -30.0] : (State_selection === 'AU-WA' ? [121.5, -27.0] : (State_selection === 'AU-TAS' ? [146.0, -42.0] : [149.1, -35.3])))))"
+    },
+    "scale": {"expr": "zoom_level"},
+    "translate": [450, 300], 
+    "interactive": true
   },
-  "data": {
-    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne_50m_admin_1_states_provinces.topojson",
-    "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
-  },
-  "projection": {"type": "mercator"},
   "layer": [
     {
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-VIC'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/victoria.topojson",
+        "format": {"type": "topojson", "feature": "victoria"}
+      },
+      "mark": {"type": "geoshape", "fill": "silver", "stroke": "white"},
       "encoding": {
-        "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Victoria Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-NSW'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/unsw.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_10m_admin_1_states_provinces"
+        }
+      },
+      "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "New South Wales Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-NT'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/nt.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "orchid", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Northern Territory Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-QLD'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/qld.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "maroon", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Queensland Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-SA'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/sa.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "green", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "South Australia Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-WA'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/wa.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightyellow", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Western Australia Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-TAS'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/tas.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "darkolivegreen", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "Tasmania Region"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "State_selection === 'AU-ACT'"
+        }
+      ],
+      "data": {
+        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/act.topojson",
+        "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+      },
+      "mark": {"type": "geoshape", "fill": "purple", "stroke": "white"},
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal", "title": "ACT Region"}
       }
     },
     {
@@ -25,26 +172,10 @@
       },
       "transform": [
         {
-          "filter": "datum.iso_region && datum.iso_region !== ''"
+          "filter": "datum.iso_region === State_selection"
         }
       ],
-      "selection": {
-        "StateFilter": {
-          "type": "single", 
-          "fields": ["iso_region"],
-          "bind": {
-            "input": "select",
-            "options": [
-              "", 
-              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
-              "AU-NT", "AU-ACT"
-            ],
-            "name": "Select a State"
-          },
-          "empty": "all"
-        }
-      },
-      "mark": "circle",
+      "mark": {"type": "point"},
       "encoding": {
         "longitude": {"field": "longitude_deg", "type": "quantitative"},
         "latitude": {"field": "latitude_deg", "type": "quantitative"},
@@ -52,76 +183,45 @@
           "field": "score",
           "type": "quantitative",
           "scale": {
-            "type": "log",  
-            "domain": [1, 1000000],  
-            "range": [10, 100]  
+            "type": "log",
+            "domain": [1, 1027975],
+            "range": [10, 150]
+          },
+          "legend": {
+            "title": "Airport Score",
+            "orient": "right",
+            "labelFontSize": 12
           }
         },
-        "color": {"value": "steelblue"}, 
+        "shape": {
+          "field": "type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["large_airport", "medium_airport", "small_airport"],
+            "range": ["circle", "square", "triangle"]
+          },
+          "legend": {
+            "title": "Airport Type"
+          }
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["large_airport", "medium_airport", "small_airport"],
+            "range": ["#00008B", "#ff7f0e", "#013220"]
+          },
+          "legend": {
+            "title": "Airport Type",
+            "orient": "right"
+          }
+        },
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Airport Name"},
           {"field": "municipality", "type": "nominal", "title": "City"},
-          {"field": "iso_region", "type": "nominal", "title": "State"},
-          {"field": "indent", "type": "nominal", "title": "IATA Code"}
-        ]
-      },
-      "transform": [
-        {
-          "filter": {
-            "selection": "StateFilter"
-          }
-        }
-      ]
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
-        "format": {"type": "csv"}
-      },
-      "transform": [
-        {
-          "lookup": "city1",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "indent",
-            "fields": ["latitude_deg", "longitude_deg"]
-          }
-        },
-        {
-          "lookup": "city2",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/alter_routes.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "indent",
-            "fields": ["latitude_deg", "longitude_deg"]
-          },
-          "as": ["lat2", "lon2"]
-        }
-      ],
-      "mark": {
-        "type": "rule",
-        "color": "black",
-        "opacity": 0.35
-      },
-      "encoding": {
-        "longitude": {"field": "longitude_deg"},
-        "latitude": {"field": "latitude_deg"},
-        "longitude2": {"field": "lon2"},
-        "latitude2": {"field": "lat2"},
-        "size": {
-          "field": "Aircraft_Trips",
-          "type": "quantitative",
-          "scale": {"range": [1, 10]}
-        },
-        "tooltip": [
-          {"field": "city1", "title": "From"},
-          {"field": "city2", "title": "To"},
-          {"field": "Aircraft_Trips", "title": "Aircraft Trips"}
+          {"field": "iata_code", "type": "nominal", "title": "IATA Code"},
+          {"field": "score", "type": "quantitative", "title": "Score"},
+          {"field": "type", "type": "nominal", "title": "Airport Type"}
         ]
       }
     }
