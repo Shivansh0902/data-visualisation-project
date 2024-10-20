@@ -1,77 +1,159 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Australian Airports by State",
-  "width": 800,
+  "title": "Aircraft Trips vs. Passenger Load Factor (Filtered City Routes)",
+  "width": 700,
   "height": 500,
-  "config": {
-    "background": "#a6cee3"
-  },
+  "background": "#F0F4F8",
   "data": {
-    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/js/ne.topojson",
-    "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/alter_routes.csv",
+    "format": {"type": "csv"}
   },
-  "projection": {"type": "mercator"},
-  "layer": [
+  "params": [
     {
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
-      "encoding": {
-        "tooltip": {"field": "properties.name", "type": "nominal", "title": "State"}
+      "name": "cityFilter",
+      "value": "SYDNEY",
+      "bind": {
+        "input": "select",
+        "options": [
+          "SYDNEY",
+          "MELBOURNE",
+          "BRISBANE",
+          "ADELAIDE",
+          "PERTH",
+          "CAIRNS"
+        ],
+        "labels": [
+          "Sydney",
+          "Melbourne",
+          "Brisbane",
+          "Adelaide",
+          "Perth",
+          "Cairns"
+        ],
+        "name": "Select Departure City: "
       }
     },
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/3_choropleth_map_1/data/filter.csv",
-        "format": {"type": "csv"}
-      },
-      "transform": [
-        {
-          "filter": "datum.iso_region && datum.iso_region !== ''"
-        }
-      ],
-      "selection": {
-        "StateFilter": {
-          "type": "single", 
-          "fields": ["iso_region"],
-          "bind": {
-            "input": "select",
-            "options": [
-              "", 
-              "AU-VIC", "AU-NSW", "AU-QLD", "AU-SA", "AU-WA", "AU-TAS", 
-              "AU-NT", "AU-ACT"
-            ],
-            "name": "Select a State"
-          },
-          "empty": "all"
-        }
-      },
-      "mark": "circle",
-      "encoding": {
-        "longitude": {"field": "longitude_deg", "type": "quantitative"},
-        "latitude": {"field": "latitude_deg", "type": "quantitative"},
-        "size": {
-          "field": "score",
-          "type": "quantitative",
-          "scale": {
-            "type": "log",  
-            "domain": [1, 1000000],  
-            "range": [10, 100]  
-          }
-        },
-        "color": {"value": "steelblue"}, 
-        "tooltip": [
-          {"field": "name", "type": "nominal", "title": "Airport Name"},
-          {"field": "municipality", "type": "nominal", "title": "City"},
-          {"field": "iso_region", "type": "nominal", "title": "State"},
-          {"field": "iata_code", "type": "nominal", "title": "IATA Code"}
-        ]
-      },
-      "transform": [
-        {
-          "filter": {
-            "selection": "StateFilter"
-          }
-        }
-      ]
+      "name": "yearFilter",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 1984,
+        "max": 2020,
+        "step": 1,
+        "name": "Select Year: "
+      }
+    },
+    {
+      "name": "minPassengerTrips",
+      "value": 100,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "name": "Minimum Passenger Volume (x1000): "
+      }
     }
-  ]
+  ],
+  "transform": [
+    {
+      "filter": "(datum.Year == yearFilter) && datum.Passenger_Trips > minPassengerTrips && lower(datum.City1) == lower(cityFilter)"
+    },
+    {
+      "calculate": "datum.Passenger_Trips / 1000",
+      "as": "Normalized_Passenger_Trips"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "opacity": 0.8,
+        "filled": true,
+        "stroke": "black",
+        "strokeWidth": 0.5,
+        "shape": {"expr": "datum.Passenger_Load_Factor > 80 ? 'triangle' : 'circle'"}
+      },
+      "encoding": {
+        "x": {
+          "field": "Aircraft_Trips",
+          "type": "quantitative",
+          "title": "Aircraft Trips",
+          "scale": {"domainMin": 0}
+        },
+        "y": {
+          "field": "Passenger_Load_Factor",
+          "type": "quantitative",
+          "title": "Passenger Load Factor (%)",
+          "scale": {"domain": [0, 120]}
+        },
+        "color": {
+          "field": "City2",
+          "type": "nominal",
+          "legend": {"title": "Destination City"}
+        },
+        "size": {
+          "value": 150
+        },
+        "tooltip": [
+          {"field": "City1", "type": "nominal", "title": "From"},
+          {"field": "City2", "type": "nominal", "title": "To"},
+          {"field": "Year", "type": "quantitative", "title": "Year"},
+          {"field": "Aircraft_Trips", "type": "quantitative", "title": "Aircraft Trips"},
+          {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
+          {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Volume"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "gray",
+        "strokeWidth": 2,
+        "strokeDash": [5, 5]
+      },
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "Passenger_Load_Factor",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "dx": -10,
+        "dy": -10,
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "Aircraft_Trips",
+          "type": "quantitative"
+        },
+        "y": {
+          "aggregate": "mean",
+          "field": "Passenger_Load_Factor",
+          "type": "quantitative"
+        },
+        "text": {"value": "Average Load Factor Across Routes"}
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
 }

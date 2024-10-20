@@ -1,0 +1,216 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Aircraft Trips vs. Passenger Load Factor (Filtered City Routes)",
+    "width": 500,
+    "height": 500,
+    "background": "#F0F4F8",
+    "data": {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/alter_routes.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "cityFilter",
+        "value": "SYDNEY",
+        "bind": {
+          "input": "select",
+          "options": [
+            "SYDNEY",
+            "MELBOURNE",
+            "BRISBANE",
+            "ADELAIDE",
+            "PERTH",
+            "CAIRNS"
+          ],
+          "name": "Select Departure City: "
+        }
+      },
+      {
+        "name": "yearFilter",
+        "value": 2000,
+        "bind": {
+          "input": "range",
+          "min": 1984,
+          "max": 2020,
+          "step": 1,
+          "name": "Select Year: "
+        }
+      },
+      {
+        "name": "minPassengerTrips",
+        "value": 100,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 500,
+          "step": 10,
+          "name": "Minimum Passenger Volume (x1000): "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "(datum.Year == yearFilter) && datum.Passenger_Trips > minPassengerTrips && lower(datum.City1) == lower(cityFilter)"
+      },
+      {
+        "calculate": "datum.Passenger_Trips / 1000",
+        "as": "Normalized_Passenger_Trips"
+      },
+      {
+        "window": [{"op": "max", "field": "Passenger_Load_Factor", "as": "Max_Load_Factor"}],
+        "frame": [null, null]
+      },
+      {
+        "window": [{"op": "min", "field": "Passenger_Load_Factor", "as": "Min_Load_Factor"}],
+        "frame": [null, null]
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "point",
+          "opacity": 0.8,
+          "filled": true,
+          "stroke": "black",
+          "strokeWidth": 0.5,
+          "shape": {"expr": "datum.Passenger_Load_Factor > 80 ? 'triangle' : 'circle'"}
+        },
+        "encoding": {
+          "x": {
+            "field": "Aircraft_Trips",
+            "type": "quantitative",
+            "title": "Aircraft Trips",
+            "scale": {"domainMin": 0}
+          },
+          "y": {
+            "field": "Passenger_Load_Factor",
+            "type": "quantitative",
+            "title": "Passenger Load Factor (%)",
+            "scale": {"domain": [0, 120]}
+          },
+          "color": {
+            "field": "City2",
+            "type": "nominal",
+            "legend": {"title": "Destination City"}
+          },
+          "size": {
+            "value": 150
+          },
+          "tooltip": [
+            {"field": "City1", "type": "nominal", "title": "From"},
+            {"field": "City2", "type": "nominal", "title": "To"},
+            {"field": "Year", "type": "quantitative", "title": "Year"},
+            {"field": "Aircraft_Trips", "type": "quantitative", "title": "Aircraft Trips"},
+            {"field": "Passenger_Load_Factor", "type": "quantitative", "title": "Load Factor (%)"},
+            {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Volume"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "color": "gray",
+          "strokeWidth": 2,
+          "strokeDash": [5, 5]
+        },
+        "encoding": {
+          "y": {
+            "aggregate": "mean",
+            "field": "Passenger_Load_Factor",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "dx": -10,
+          "dy": -10,
+          "color": "black"
+        },
+        "encoding": {
+          "x": {
+            "aggregate": "max",
+            "field": "Aircraft_Trips",
+            "type": "quantitative"
+          },
+          "y": {
+            "aggregate": "mean",
+            "field": "Passenger_Load_Factor",
+            "type": "quantitative"
+          },
+          "text": {"value": "Average Load Factor Across Routes"}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "dy": -5,
+          "dx": 5,
+          "color": "black"
+        },
+        "encoding": {
+          "x": {
+            "field": "Aircraft_Trips",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Passenger_Load_Factor",
+            "type": "quantitative"
+          },
+          "text": {
+            "condition": {
+              "test": "(datum.Passenger_Load_Factor == datum.Max_Load_Factor)",
+              "value": "Highest Load Factor!"
+            },
+            "value": ""
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "dy": -5,
+          "dx": 5,
+          "color": "red"
+        },
+        "encoding": {
+          "x": {
+            "field": "Aircraft_Trips",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Passenger_Load_Factor",
+            "type": "quantitative"
+          },
+          "text": {
+            "condition": {
+              "test": "(datum.Passenger_Load_Factor == datum.Min_Load_Factor)",
+              "value": "Lowest Load Factor"
+            },
+            "value": ""
+          }
+        }
+      }
+    ],
+    "config": {
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      },
+      "legend": {
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      }
+    }
+  }
+  

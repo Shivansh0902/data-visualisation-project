@@ -5,7 +5,7 @@
     "height": 600,
     "padding": 50,
     "autosize": { "type": "none", "contains": "padding" },
-    "background": "#E9F7E9",
+    "background": "#F0F4F8",
     "config": { "font": "Cabin" },
     "legends": [
       {

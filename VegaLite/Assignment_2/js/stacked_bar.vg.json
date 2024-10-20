@@ -1,75 +1,180 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Total Delays and Cancellations by Airline",
-    "width": 800,
-    "height": 400,
-    "data": {
-      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/routes.csv",
-      "format": {"type": "csv"}
-    },
-    "params": [
-      {
-        "name": "Month_selection",
-        "value": "All Months",
-        "bind": {
-          "input": "select",
-          "options": [
-            "All Months", "Jan-20", "Feb-20", "Mar-20", "Apr-20", "May-20", "Jun-20", "Jul-20", "Aug-20", "Sep-20", "Oct-20", "Nov-20", "Dec-20"
-          ],
-          "labels": ["All Months", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-          "name": "Select a Month: "
-        }
-      }
-    ],
-    "transform": [
-      {
-        "filter": "datum['Airline'] != 'All Airlines' && (Month_selection === 'All Months' || datum['Month'] === Month_selection)"
-      },
-      {
-        "aggregate": [
-          {"op": "sum", "field": "Cancellations", "as": "TotalCancellations"},
-          {"op": "sum", "field": "DeparturesDelayed", "as": "TotalDeparturesDelayed"},
-          {"op": "sum", "field": "ArrivalsDelayed", "as": "TotalArrivalsDelayed"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Total Delays and Cancellations by Airline",
+    "fontSize": 16,
+    "font": "Arial",
+    "anchor": "middle",
+    "color": "#4C4C4C"
+  },
+  "width": 600,
+  "height": 600,
+  "background": "#F0F4F8",
+  "data": {
+    "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/routes.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "Month_selection",
+      "value": "All Months",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All Months", "Jan-20", "Feb-20", "Mar-20", "Apr-20", "May-20", "Jun-20", "Jul-20", "Aug-20", "Sep-20", "Oct-20", "Nov-20", "Dec-20"
         ],
-        "groupby": ["Airline"]
-      },
-      {
-        "fold": ["TotalCancellations", "TotalDeparturesDelayed", "TotalArrivalsDelayed"],
-        "as": ["DelayType", "Value"]
+        "name": "Select a Month: "
       }
-    ],
-    "mark": "bar",
-    "encoding": {
-      "x": {
-        "field": "Airline",
-        "type": "nominal",
-        "title": "Airline",
-        "axis": {"labelAngle": -45}
-      },
-      "y": {
-        "aggregate": "sum",
-        "field": "Value",
-        "type": "quantitative",
-        "title": "Total Delays and Cancellations"
-      },
-      "color": {
-        "field": "DelayType",
-        "type": "nominal",
-        "scale": {
-          "domain": ["TotalCancellations", "TotalDeparturesDelayed", "TotalArrivalsDelayed"],
-          "range": ["#FF6347", "#4682B4", "#3CB371"]
-        },
-        "legend": {"title": "Delay Type"}
-      },
-      "tooltip": [
-        {"field": "Airline", "type": "nominal", "title": "Airline"},
-        {"field": "DelayType", "type": "nominal", "title": "Delay Type"},
-        {"field": "Value", "type": "quantitative", "title": "Total"}
-      ]
-    },
-    "config": {
-      "view": {"stroke": "transparent"},
-      "axis": {"domainWidth": 1}
     }
+  ],
+  "transform": [
+    {
+      "filter": "datum['Airline'] != 'All Airlines' && (Month_selection === 'All Months' || datum['Month'] === Month_selection)"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "Cancellations", "as": "TotalCancellations"},
+        {"op": "sum", "field": "DeparturesDelayed", "as": "TotalDeparturesDelayed"},
+        {"op": "sum", "field": "ArrivalsDelayed", "as": "TotalArrivalsDelayed"}
+      ],
+      "groupby": ["Airline"]
+    },
+    {
+      "fold": ["TotalCancellations", "TotalDeparturesDelayed", "TotalArrivalsDelayed"],
+      "as": ["DelayType", "Value"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 10, 
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Airline",
+          "type": "nominal",
+          "title": "Airline",
+          "axis": {
+            "labelAngle": -45,
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "titlePadding": 10
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Value",
+          "type": "quantitative",
+          "title": "Total Delays and Cancellations",
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "titlePadding": 10
+          }
+        },
+        "color": {
+          "field": "DelayType",
+          "type": "nominal",
+          "scale": {
+            "domain": ["TotalCancellations", "TotalDeparturesDelayed", "TotalArrivalsDelayed"],
+            "range": ["#FF6347", "#4682B4", "#3CB371"]
+          },
+          "legend": {
+            "title": "Delay Type",
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "symbolSize": 100
+          }
+        },
+        "tooltip": [
+          {"field": "Airline", "type": "nominal", "title": "Airline"},
+          {"field": "DelayType", "type": "nominal", "title": "Delay Type"},
+          {"field": "Value", "type": "quantitative", "title": "Total", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -5,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Airline", "type": "nominal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "text": {
+          "aggregate": "sum",
+          "field": "Value",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -15,
+        "fontSize": 11,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {"field": "Airline", "type": "nominal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "(datum.Airline == 'Qantas' || datum.Airline == 'Virgin Australia') && Month_selection !== 'All Months'",
+            "value": "High delays!"
+          },
+          "value": ""
+        },
+        "color": {"value": "red"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -15,
+        "fontSize": 11,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {"field": "Airline", "type": "nominal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "(datum.Airline == 'Regional Express' || datum.Airline == 'Virgin Australia Regional Airlines') && Month_selection !== 'All Months'",
+            "value": "Low delays!"
+          },
+          "value": ""
+        },
+        "color": {"value": "green"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1},
+    "style": {
+      "cell": {"stroke": "transparent"}
+    }
+  }
 }
-  

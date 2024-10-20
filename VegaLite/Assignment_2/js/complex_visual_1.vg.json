@@ -3,6 +3,7 @@
   "title": "Interactive Airport Routes in Australia",
   "width": 600,
   "height": 600,
+  "background": "#F0F4F8",
   "projection": {"type": "mercator"},
   "layer": [
     {

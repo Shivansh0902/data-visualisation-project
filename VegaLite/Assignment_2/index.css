@@ -194,11 +194,15 @@ input[type=range] {
     height: 400px; /* Modify as per your requirement */
 }
 
-#vis6 {
+#vis6, #vis7 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 600px; /* Adjust based on your layout */
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f0f4f8; /* Slightly off-white for contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Tooltip styles */
@@ -217,5 +221,8 @@ input[type=range] {
     }
     .chart-block {
         margin-bottom: 15px; /* Reduce spacing */
+    }
+    .vis-container, #vis6, #vis7 {
+        height: 300px; /* Smaller height for charts on small screens */
     }
 }

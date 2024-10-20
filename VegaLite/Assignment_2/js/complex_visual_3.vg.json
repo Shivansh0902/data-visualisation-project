@@ -3,14 +3,15 @@
   "title": "Airports in Australia (Victoria, New South Wales, NT, Queensland, WA, TAS, SA)",
   "width": 600,
   "height": 600,
+  "background": "#F0F4F8",
   "params": [
     {
       "name": "State_selection",
       "value": "AU-VIC",
       "bind": {
         "input": "select",
-        "options": ["AU-VIC", "AU-NSW", "AU-NT", "AU-QLD", "AU-WA", "AU-TAS", "AU-SA", "AU-ACT"],
-        "labels": ["Victoria", "New South Wales", "Northern Territory", "Queensland", "Western Australia", "Tasmania", "South Australia", "Australian Capital Territory"],
+        "options": ["AU-VIC", "AU-NSW", "AU-NT", "AU-QLD", "AU-WA", "AU-TAS", "AU-SA"],
+        "labels": ["Victoria", "New South Wales", "Northern Territory", "Queensland", "Western Australia", "Tasmania", "South Australia"],
         "name": "Select a State: "
       }
     }
@@ -20,7 +21,7 @@
     "center": {
       "expr": "State_selection === 'AU-VIC' ? [145, -37.95] : (State_selection === 'AU-NSW' ? [147.0, -33.9] : (State_selection === 'AU-NT' ? [133.5, -19.0] : (State_selection === 'AU-WA' ? [121.5, -27.0] : (State_selection === 'AU-TAS' ? [146.7, -42.0] : (State_selection === 'AU-SA' ? [134.0, -30.0] : [145.5, -20.0])))))"
     },
-    "scale": {"expr": "State_selection === 'AU-VIC' ? 3000 : (State_selection === 'AU-NSW' ? 2000 : (State_selection === 'AU-NT' ? 2000 : (State_selection === 'AU-WA' ? 1200 : (State_selection === 'AU-TAS' ? 4000 : (State_selection === 'AU-SA' ? 2000 : (State_selection === 'AU-ACT' ? 5000 : 2000))))))"},
+    "scale": {"expr": "State_selection === 'AU-VIC' ? 3000 : (State_selection === 'AU-NSW' ? 2000 : (State_selection === 'AU-NT' ? 2000 : (State_selection === 'AU-WA' ? 1200 : (State_selection === 'AU-TAS' ? 4000 : (State_selection === 'AU-SA' ? 2000 : 2000)))))"},
     "translate": [300, 300]
   },
   "selection": {
@@ -61,21 +62,6 @@
         "mark": {"type": "geoshape", "fill": "lightblue", "stroke": "black"},
         "encoding": {
           "tooltip": {"field": "properties.name", "type": "nominal", "title": "New South Wales Region"}
-        }
-      },
-      {
-        "transform": [
-          {
-            "filter": "State_selection === 'AU-ACT'"
-          }
-        ],
-        "data": {
-          "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/js/act.topojson",
-          "format": {"type": "topojson", "feature": "act"}
-        },
-        "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "black"},
-        "encoding": {
-          "tooltip": {"field": "properties.name", "type": "nominal", "title": "Australian Capital Territory"}
         }
       },
       {
@@ -159,10 +145,10 @@
           {"name": "Victoria", "code": "AU-VIC", "longitude": 145, "latitude": -37.95},
           {"name": "New South Wales", "code": "AU-NSW", "longitude": 147, "latitude": -33.9},
           {"name": "Northern Territory", "code": "AU-NT", "longitude": 133.5, "latitude": -19.0},
-          {"name": "Queensland", "code": "AU-QLD", "longitude": 145.5, "latitude": -20.0},
-          {"name": "Western Australia", "code": "AU-WA", "longitude": 121.5, "latitude": -27.0},
-          {"name": "Tasmania", "code": "AU-TAS", "longitude": 146.7, "latitude": -42.0},
-          {"name": "South Australia", "code": "AU-SA", "longitude": 134.0, "latitude": -30.0}
+          {"name": "Queensland", "code": "AU-QLD", "longitude": 145.5, "latitude": -17.0},
+          {"name": "Western Australia", "code": "AU-WA", "longitude": 121.5, "latitude": -30.0},
+          {"name": "Tasmania", "code": "AU-TAS", "longitude": 146.7, "latitude": -41.0},
+          {"name": "South Australia", "code": "AU-SA", "longitude": 134.0, "latitude": -32.0}
         ]
       },
       "transform": [
