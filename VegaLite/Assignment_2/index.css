@@ -170,12 +170,12 @@ footer {
 }
 
 .viz-btn {
-    background-color: #3C763D; /* Dark Green */
+    background-color: #005f73; /* Dark Green */
     font-size: 15px; /* Smaller font */
 }
 
 .viz-btn:hover {
-    background-color: #336634; /* Darker Green on hover */
+    background-color: #005f73; /* Darker Green on hover */
 }
 
 .label {

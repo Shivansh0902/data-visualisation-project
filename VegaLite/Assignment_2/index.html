@@ -58,6 +58,7 @@
               <li><button class="section-btn" onclick="window.location.href='#comparative-analysis'">Performance Comparison</button></li>
               <li><button class="viz-btn" onclick="window.location.href='#cancellation-rates'">Flight Cancellation Statistics</button></li>
               <li><button class="section-btn" onclick="window.location.href='#airport-rankings'">Airport Efficiency Rankings</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#additional-visuals'">Additional Insights</button></li>
             </ul>
           </div>
         </div>
@@ -69,12 +70,12 @@
       <!--Chart 1-->
       <div class="chart-block">
         <h2 class="chart-title" id="flight-delays">
-          Analyzing Flight Delays by Airport
+          Interactive Visual Exploration of Australian Airports and Flight Routes
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              Examine the flight delay metrics across various airports in Australia. This interactive visualization facilitates detailed comparisons.
+              This interactive map of Australia illustrates the network of major airport routes across the country. Each airport is represented as a circle, with the size of the circle indicating the number of routes departing from that airport. The larger circles represent major hubs, showcasing their significance in air travel. The connecting lines reveal the routes between airports, highlighting the density and reach of the travel connections. This visualisation allows for an in-depth understanding of airport connectivity, offering insights into the busiest air travel nodes across Australia. Hover over any circle to view specific details such as the city's name, IATA code, and the number of routes available from that airport.
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -147,6 +148,63 @@
         </div>
       </div>
 
+      <div class="section-title" id="additional-visuals">
+        <h2>Additional Insights</h2>
+      </div>
+      <!--Chart 5-->
+      <div class="chart-block">
+        <h2 class="chart-title">
+          Comparative Flight Routes
+        </h2>
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <div class="description">
+              Compare the top flight routes between major airports in Australia.
+            </div>
+          </div>
+          <div class="pure-u-2-3">
+            <div class="chart-content">
+              <div id="vis5" class="vis-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Chart 6-->
+      <div class="chart-block">
+        <h2 class="chart-title">
+          Airline Route Density Analysis
+        </h2>
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <div class="description">
+              An analysis of airline route density to understand travel frequency between key destinations.
+            </div>
+          </div>
+          <div class="pure-u-2-3">
+            <div class="chart-content">
+              <div id="vis6" class="vis-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Chart 7-->
+      <div class="chart-block">
+        <h2 class="chart-title">
+          Seasonal Passenger Trends
+        </h2>
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <div class="description">
+              Examine how passenger numbers fluctuate seasonally across different airports in Australia.
+            </div>
+          </div>
+          <div class="pure-u-2-3">
+            <div class="chart-content">
+              <div id="vis7" class="vis-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <footer>
@@ -160,14 +218,20 @@
     </p>
   </footer>
   <script type="text/javascript">
-    var spec1 = "Charts/flight-delays.json";
-    vegaEmbed('#vis1', spec1, { "js/complex_visual_1.vg.json": false }).then(function (result) { }).catch(console.error);
-    var spec2 = "Charts/complex_visual_2.vg.json.json";
+    var spec1 = "js/complex_visual_1.vg.json";
+    vegaEmbed('#vis1', spec1, { "actions": false }).then(function (result) { }).catch(console.error);
+    var spec2 = "js/complex_visual_2.vg.json";
     vegaEmbed('#vis2', spec2, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec3 = "Charts/complex_visual_3.vg.json";
+    var spec3 = "js/complex_visual_3.vg.json";
     vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec4 = "Charts/rounded_barchart.vg.json";
+    var spec4 = "js/bubble_chart.vg.json";
     vegaEmbed('#vis4', spec4, { "actions": false }).then(function (result) { }).catch(console.error);
+    var spec5 = "js/flight_routes_chart.vg.json";
+    vegaEmbed('#vis5', spec5, { "actions": false }).then(function (result) { }).catch(console.error);
+    var spec6 = "js/route_density_chart.vg.json";
+    vegaEmbed('#vis6', spec6, { "actions": false }).then(function (result) { }).catch(console.error);
+    var spec7 = "js/seasonal_trends_chart.vg.json";
+    vegaEmbed('#vis7', spec7, { "actions": false }).then(function (result) { }).catch(console.error);
   </script>
 </body>
 
