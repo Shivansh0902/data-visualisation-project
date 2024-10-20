@@ -1,9 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Aircraft Trips vs. Passenger Load Factor (City Routes)",
-  "width": 600,
+  "width": 700,
   "height": 600,
   "background": "#F0F4F8",
+  "autosize": {"type": "fit", "contains": "padding"},
   "data": {
     "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/alter_routes.csv",
     "format": {"type": "csv"}
@@ -87,7 +88,7 @@
           "field": "Normalized_Passenger_Trips",
           "type": "quantitative",
           "scale": {"domain": [0, 569.803], "range": [50, 1000]},
-          "legend": {"title": "Normalized Passenger Volume (x1000)"}
+          "legend": {"title": "Normalised Passenger Volume"}
         },
         "color": {
           "field": "City2",

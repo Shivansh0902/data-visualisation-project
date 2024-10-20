@@ -1,182 +1,181 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "title": "Filtered Airline Performance Radar Chart (Metrics < 20%)",
-    "width": 800,
-    "height": 600,
-    "padding": 50,
-    "autosize": { "type": "none", "contains": "padding" },
-    "background": "#F0F4F8",
-    "config": { "font": "Cabin" },
-    "legends": [
-      {
-        "fill": "color",
-        "labelFont": "Cabin",
-        "titleFont": "Cabin",
-        "labelFontSize": 16,
-        "titleFontSize": 18,
-        "orient": "right",
-        "offset": -230,
-        "padding": 5,
-        "title": "Airline",
-        "encode": {
-          "symbols": {
-            "update": {
-              "shape": { "value": "circle" },
-              "size": { "value": 100 }
-            }
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": "Airline Performance Radar Chart (Metrics < 50%)",
+  "width": 700,
+  "height": 600,
+  "padding": 50,
+  "autosize": { "type": "none", "contains": "padding" },
+  "background": "#F0F4F8",
+  "config": { "font": "Cabin" },
+  "legends": [
+    {
+      "fill": "color",
+      "labelFont": "Cabin",
+      "titleFont": "Cabin",
+      "labelFontSize": 16,
+      "titleFontSize": 18,
+      "orient": "right",
+      "offset": -400,  
+      "padding": 10,   
+      "title": "Airline",
+      "encode": {
+        "symbols": {
+          "update": {
+            "shape": { "value": "circle" },
+            "size": { "value": 100 }
           }
         }
       }
-    ],
-    "signals": [
-      {
-        "name": "airlineFilter",
-        "value": "Qantas",
-        "bind": {
-          "input": "select",
-          "options": ["Qantas", "Jetstar", "Virgin Australia"],
-          "name": "Select Airline: "
+    }
+  ],
+  "signals": [
+    {
+      "name": "airlineFilter",
+      "value": "Qantas",
+      "bind": {
+        "input": "select",
+        "options": ["Qantas", "Jetstar", "Virgin Australia"],
+        "name": "Select Airline: "
+      }
+    }
+  ],
+  "data": [
+    {
+      "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/routes.csv",
+      "name": "data",
+      "format": { "type": "csv" },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.Airline == airlineFilter && (datum['OnTimeDepartures(%)'] < 40 || datum['OnTimeArrivals(%)'] < 40)"
+        },
+        {
+          "type": "fold",
+          "fields": ["OnTimeDepartures(%)", "OnTimeArrivals(%)", "DeparturesDelayed", "ArrivalsDelayed", "Cancellations(%)"],
+          "as": ["Metric", "Value"]
+        },
+        {
+          "type": "formula",
+          "as": "Value",
+          "expr": "toNumber(datum.Value)"
         }
-      }
-    ],
-    "data": [
-      {
-        "url": "https://raw.githubusercontent.com/scha0241/FIT3179/main/VegaLite/Assignment_2/data/routes.csv",
-        "name": "data",
-        "format": { "type": "csv" },
-        "transform": [
-          {
-            "type": "filter",
-            "expr": "datum.Airline == airlineFilter && (datum['OnTimeDepartures(%)'] < 40 || datum['OnTimeArrivals(%)'] < 40)"
-          },
-          {
-            "type": "fold",
-            "fields": ["OnTimeDepartures(%)", "OnTimeArrivals(%)", "DeparturesDelayed", "ArrivalsDelayed", "Cancellations(%)"],
-            "as": ["Metric", "Value"]
-          },
-          {
-            "type": "formula",
-            "as": "Value",
-            "expr": "toNumber(datum.Value)"
-          }
-        ]
-      }
-    ],
-    "scales": [
-      {
-        "name": "angular",
-        "type": "point",
-        "range": { "signal": "[PI/2, 5*PI/2]" },
-        "padding": 0.5,
-        "domain": { "data": "data", "field": "Metric" }
-      },
-      {
-        "name": "radial",
-        "type": "linear",
-        "range": { "signal": "[0, width/2]" },
-        "zero": true,
-        "nice": false,
-        "domain": { "data": "data", "field": "Value" },
-        "domainMin": 0,
-        "domainMax": 100
-      },
-      {
-        "name": "color",
-        "type": "ordinal",
-        "domain": ["Qantas", "Jetstar", "Virgin Australia"],
-        "range": ["#4DAF4A", "#377EB8", "#FF0000"]
-      }
-    ],
-    "encode": {
-      "enter": {
-        "x": { "signal": "width / 2" },
-        "y": { "signal": "height / 2" }
-      }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": { "signal": "[PI/2, 5*PI/2]" },
+      "padding": 0.5,
+      "domain": { "data": "data", "field": "Metric" }
     },
-    "marks": [
-      {
-        "type": "group",
-        "name": "categories",
-        "zindex": 1,
-        "from": {
-          "facet": {
-            "data": "data",
-            "name": "facet",
-            "groupby": ["Airline"]
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": { "signal": "[0, width/2]" },
+      "zero": true,
+      "nice": false,
+      "domain": { "data": "data", "field": "Value" },
+      "domainMin": 0,
+      "domainMax": 100
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Qantas", "Jetstar", "Virgin Australia"],
+      "range": ["#4DAF4A", "#377EB8", "#FF0000"]
+    }
+  ],
+  "encode": {
+    "enter": {
+      "x": { "signal": "width / 2" },
+      "y": { "signal": "height / 2" }
+    }
+  },
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {
+          "data": "data",
+          "name": "facet",
+          "groupby": ["Airline"]
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": { "data": "facet" },
+          "encode": {
+            "enter": {
+              "interpolate": { "value": "linear-closed" },
+              "x": { "signal": "scale('radial', datum.Value) * cos(scale('angular', datum.Metric))" },
+              "y": { "signal": "scale('radial', datum.Value) * sin(scale('angular', datum.Metric))" },
+              "stroke": { "scale": "color", "field": "Airline" },
+              "strokeWidth": { "value": 4 },
+              "strokeOpacity": { "value": 0.6 }
+            }
           }
         },
-        "marks": [
-          {
-            "type": "line",
-            "name": "category-line",
-            "from": { "data": "facet" },
-            "encode": {
-              "enter": {
-                "interpolate": { "value": "linear-closed" },
-                "x": { "signal": "scale('radial', datum.Value) * cos(scale('angular', datum.Metric))" },
-                "y": { "signal": "scale('radial', datum.Value) * sin(scale('angular', datum.Metric))" },
-                "stroke": { "scale": "color", "field": "Airline" },
-                "strokeWidth": { "value": 4 },
-                "strokeOpacity": { "value": 0.6 }
+        {
+          "type": "symbol",
+          "from": { "data": "facet" },
+          "name": "data-points",
+          "zindex": 2,
+          "encode": {
+            "enter": {
+              "x": { "signal": "scale('radial', datum.Value) * cos(scale('angular', datum.Metric))" },
+              "y": { "signal": "scale('radial', datum.Value) * sin(scale('angular', datum.Metric))" },
+              "fill": { "scale": "color", "field": "Airline" },
+              "size": { "value": 150 },
+              "strokeWidth": { "value": 3 }
+            },
+            "update": {
+              "tooltip": {
+                "signal": "{'Airline': datum.Airline, 'Metric': datum.Metric, 'Value': format(datum.Value, ',.2f')}"
               }
             }
-          },
-          {
-            "type": "symbol",
-            "from": { "data": "facet" },
-            "name": "data-points",
-            "zindex": 2,
-            "encode": {
-              "enter": {
-                "x": { "signal": "scale('radial', datum.Value) * cos(scale('angular', datum.Metric))" },
-                "y": { "signal": "scale('radial', datum.Value) * sin(scale('angular', datum.Metric))" },
-                "fill": { "scale": "color", "field": "Airline" },
-                "size": { "value": 150 },
-                "strokeWidth": { "value": 3 }
-              },
-              "update": {
-                "tooltip": {
-                  "signal": "{'Airline': datum.Airline, 'Metric': datum.Metric, 'Value': format(datum.Value, ',.2f')}"
-                }
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "rule",
-        "name": "radial-grid",
-        "from": { "data": "data" },
-        "zindex": 0,
-        "encode": {
-          "enter": {
-            "x": { "value": 0 },
-            "y": { "value": 0 },
-            "x2": { "signal": "width/2 * cos(scale('angular', datum.Metric))" },
-            "y2": { "signal": "height/2 * sin(scale('angular', datum.Metric))" },
-            "stroke": { "value": "lightgray" },
-            "strokeWidth": { "value": 2 }
           }
         }
-      },
-      {
-        "type": "text",
-        "name": "key-label",
-        "from": { "data": "data" },
-        "zindex": 1,
-        "encode": {
-          "enter": {
-            "x": { "signal": "(width / 2 + 10) * cos(scale('angular', datum.Metric))" },
-            "y": { "signal": "(height / 2 + 10) * sin(scale('angular', datum.Metric))" },
-            "text": { "field": "Metric" },
-            "align": { "value": "center" },
-            "baseline": { "value": "middle" },
-            "fontWeight": { "value": "bold" },
-            "fontSize": { "value": 14 },
-            "font": { "value": "Cabin" }
-          }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": { "data": "data" },
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": { "value": 0 },
+          "y": { "value": 0 },
+          "x2": { "signal": "width/2 * cos(scale('angular', datum.Metric))" },
+          "y2": { "signal": "height/2 * sin(scale('angular', datum.Metric))" },
+          "stroke": { "value": "lightgray" },
+          "strokeWidth": { "value": 2 }
         }
       }
-    ]
-  }
-  
+    },
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": { "data": "data" },
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": { "signal": "(width / 2 + 10) * cos(scale('angular', datum.Metric))" },
+          "y": { "signal": "(height / 2 + 10) * sin(scale('angular', datum.Metric))" },
+          "text": { "field": "Metric" },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fontWeight": { "value": "bold" },
+          "fontSize": { "value": 14 },
+          "font": { "value": "Cabin" }
+        }
+      }
+    }
+  ]
+}

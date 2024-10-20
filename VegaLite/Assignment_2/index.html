@@ -15,7 +15,7 @@
   <!-- Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="index.css" media="all">
 </head>
@@ -25,65 +25,56 @@
     <div class="page">
       <!--Title-->
       <div class="pure-g" id="title-block">
-        <div class="pure-u-3-4">
+        <div class="pure-u-3-4 title-text">
           <h1>Discovering Australian Airports</h1>
           <h3>A Comprehensive View of Airport Statistics</h3>
         </div>
-        <div class="pure-u-1-4">
-          <img src="VegaLite/Assignment_2/index.html" alt="Airport Image" id="airport-img">
+        <div class="pure-u-1-4 title-img">
+          <img src="airport.png" alt="Airport Image" id="airport-img">
         </div>
       </div>
+
       <!--Contents-->
       <div class="pure-g" id="desc-contents-block">
         <div class="pure-u-2-5">
           <div class="overview-box">
-            <h3>Project Overview</h3>
-            <p>Join us on a visual journey through Australia's airport landscape, examining essential metrics and trends related to airport operations.</p>
-
-            <p><strong>Airport Operations</strong> showcases passenger and cargo statistics, providing valuable insights into air travel's importance in Australia.</p>
-
-            <p>Furthermore, the <strong>Performance Analysis</strong> section reveals critical trends in metrics like delays and cancellations, enhancing our understanding of the aviation sector.</p>
-
-            <p>Lastly, in the <strong>Rankings Section</strong>, we evaluate various airports based on their operational effectiveness, identifying the leaders in key performance indicators.</p>
+            <p><strong>Project Overview:</strong> Explore Australia's aviation landscape through a comprehensive and interactive visualisation. This project offers a deep dive into various aspects of airport and airline operations, including route connectivity, airport types by state, flight delays, cancellations, and passenger load factors. </p>
+            <p><strong>Key Highlights:</strong> Through engaging visuals, we highlight both the efficiency and challenges faced by airlines and airports in Australia, providing insights into their operational dynamics. Whether you are interested in individual airport performance, flight route density, or airline punctuality, this exploration offers valuable perspectives into Australia's aviation network.</p>
           </div>
         </div>
+
         <div class="pure-u-3-5">
           <div class="contents-box">
             <h3>Explore the Contents</h3>
-            <p> Navigate through the sections using the buttons below: </p>
             <ul>
-              <li><button class="section-btn" onclick="window.location.href='#airport-activity'">Overview of Airport Operations</button></li>
-              <li><button class="viz-btn" onclick="window.location.href='#flight-delays'">Analysis of Flight Delays</button></li>
-              <li><button class="viz-btn" onclick="window.location.href='#passenger-traffic'">Passenger Traffic Overview</button></li>
-              <li><button class="section-btn" onclick="window.location.href='#comparative-analysis'">Performance Comparison</button></li>
-              <li><button class="viz-btn" onclick="window.location.href='#cancellation-rates'">Flight Cancellation Statistics</button></li>
-              <li><button class="section-btn" onclick="window.location.href='#airport-rankings'">Airport Efficiency Rankings</button></li>
-              <li><button class="viz-btn" onclick="window.location.href='#additional-visuals'">Additional Insights</button></li>
+              <li><button class="section-btn" onclick="window.location.href='#airport-activity'">Interactive Overview of Airport Routes in Australia</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#flight-routes'">Interactive Airport Routes in Australia.</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#passenger-traffic'">Airports in Australia by State</button></li>
+              <li><button class="section-btn" onclick="window.location.href='#cancellation-rates'">Total Delays and Cancellations by Airline</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#airport-matrix'">Airline Performance Radar Chart Overview</button></li>
+              <li><button class="section-btn" onclick="window.location.href='#airport-load'">Aircraft Trips vs. Passenger Load Factor Analysis</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#airport-analysis'">Additional Insights</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#airport-passenger'">Additional Insights</button></li>
             </ul>
           </div>
         </div>
       </div>
 
+      <!-- Airport Operations -->
       <div class="section-title" id="airport-activity">
         <h2>Airport Operations Overview</h2>
       </div>
+
       <!--Chart 1-->
       <div class="chart-block">
-        <h2 class="chart-title" id="flight-delays">
+        <h2 class="chart-title" id="flight-routes">
           Interactive Visual Exploration of Australian Airports and Flight Routes
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              <p>This interactive map of Australia illustrates the network of major airport routes across the country.</p>
-
-              <p><strong>Airport Representation</strong>: Each airport is represented as a circle, with the size indicating the number of routes departing from that airport. The larger circles represent major hubs, showcasing their significance in air travel.</p>
-
-              <p><strong>Connecting Routes</strong>: The connecting lines reveal the routes between airports, highlighting the density and reach of the travel connections.</p>
-
-              <p><strong>Understanding Connectivity</strong>: This visualisation allows for an in-depth understanding of airport connectivity, offering insights into the busiest air travel nodes across Australia.</p>
-
-              <p><strong>Interactive Features</strong>: Hover over any circle to view specific details such as the city's name, IATA code, and the number of routes available from that airport.</p>
+              <p><strong>Visual Overview:</strong> The visualisation provides an interactive overview of the connectivity of major airports across Australia. Each airport is represented by a circle, with larger circles indicating a greater number of routes, highlighting key hubs like Sydney, Melbourne, and Brisbane.</p> 
+              <p><strong>Key Insights:</strong> Major hubs such as Sydney and Melbourne serve as primary gateways, supporting high passenger flow and extensive connectivity within Australia’s air travel network. Regional airports, although smaller, play an essential role in connecting remote areas, thus enhancing national accessibility. The chart emphasises the disparity in connectivity between larger hubs and regional airports, showcasing the significant role that major airports play in linking urban centres with less populated areas. The interactive feature allows viewers to hover over each airport to discover details like city name, IATA code, and number of routes, offering a deeper understanding of the Australian aviation landscape.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -93,6 +84,7 @@
           </div>
         </div>
       </div>
+
       <!--Chart 2-->
       <div class="chart-block">
         <h2 class="chart-title" id="passenger-traffic">
@@ -102,13 +94,11 @@
           <div class="pure-u-1-3">
             <div class="description">
               <p>This interactive visualisation provides a detailed overview of airports across Australia's major states and territories, including Victoria, New South Wales, Queensland, and more.</p>
-
-                <p><strong>State Selection</strong>: Users can explore airports by selecting different states, with each airport visually represented by its type and traffic volume.</p>
-
-                <p><strong>Traffic Indicators</strong>: Larger circles denote airports with higher traffic, while different colours indicate airport types: <strong>red</strong> for large airports, <strong>orange</strong> for medium airports, and <strong>blue</strong> for small airports.</p>
-
-                <p><strong>Interactive Exploration</strong>: Use the dropdown to explore various regions and uncover the nuances of Australia’s aviation network.</p>
-              </div>
+              <p><strong>State Selection</strong>: Users can explore airports by selecting different states, with each airport visually represented by its type and traffic volume.</p>
+              <p><strong>Traffic Indicators</strong>: Larger circles denote airports with higher traffic, while different colours indicate airport types: <strong>red</strong> for large airports, <strong>orange</strong> for medium airports, and <strong>blue</strong> for small airports.</p>
+              <p><strong>Insights and Connectivity</strong>: The insights gained from this visualisation help to understand the distribution and connectivity of airports, particularly in key hubs like Sydney and Melbourne.</p>
+              <p><strong>Interactive Exploration</strong>: Use the dropdown to explore various regions and uncover the nuances of Australia’s aviation network.</p>
+            </div>
           </div>
           <div class="pure-u-2-3">
             <div class="chart-content">
@@ -118,18 +108,21 @@
         </div>
       </div>
 
-      <div class="section-title" id="comparative-analysis">
-        <h2>Performance Comparison</h2>
-      </div>
       <!--Chart 3-->
       <div class="chart-block">
         <h2 class="chart-title" id="cancellation-rates">
-          Flight Cancellation Rates Analysis
+          Total Delays and Cancellations by Airline
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              Explore the cancellation rates of flights at various airports, highlighting operational efficiencies and customer experiences.
+              <p><strong>Visual Overview:</strong> The visualisation titled "Total Delays and Cancellations by Airline" provides a comparative analysis of the operational challenges faced by different airlines, focusing on flight cancellations and delays.</p>
+
+              <p><strong>Chart Elements:</strong> The stacked bar chart illustrates the cumulative count of <em>Total Cancellations</em>, <em>Total Departures Delayed</em>, and <em>Total Arrivals Delayed</em> for each airline. This enables a holistic view of each airline's operational disruptions.</p>
+
+              <p><strong>Key Insights:</strong> Virgin Australia emerges as the airline with the highest number of disruptions, while Regional Express and Virgin Australia Regional Airlines show fewer incidents, reflecting greater operational efficiency. Annotations are used to emphasise airlines with significantly high or low delays, helping to underline notable performance trends.</p>
+
+              <p><strong>Interactive Features:</strong> The month-wise filter allows viewers to explore seasonal variations in airline punctuality, providing an additional layer of insight into how external factors may impact flight schedules.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -139,19 +132,16 @@
           </div>
         </div>
       </div>
-      
-      <div class="section-title" id="airport-rankings">
-        <h2>Airport Efficiency Rankings</h2>
-      </div>
+
       <!--Chart 4-->
       <div class="chart-block">
-        <h2 class="chart-title">
-          Leading Airports by Operational Metrics
+        <h2 class="chart-title" id="airport-matrix">
+          Airline Performance Radar Chart Analysis
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              A detailed overview of the top-performing airports in Australia based on various key metrics.
+              <p><strong>Airline Performance Radar Chart</strong> provides a comparative overview of Qantas, Jetstar, and Virgin Australia based on key operational metrics such as on-time departures, arrivals, cancellations, and delays. The chart highlights performance discrepancies, with each airline's metrics mapped as a distinct line, making it easy for viewers to visually assess differences.</p> <p><strong>Key Insights:</strong> Virgin Australia demonstrates a significant increase in cancellations and delayed departures, suggesting higher operational challenges. Jetstar and Qantas have relatively balanced metrics, with Qantas standing out for its consistent on-time performance and lower rate of cancellations, indicating more effective operations overall.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -162,18 +152,15 @@
         </div>
       </div>
 
-      <div class="section-title" id="additional-visuals">
-        <h2>Additional Insights</h2>
-      </div>
       <!--Chart 5-->
       <div class="chart-block">
-        <h2 class="chart-title">
-          Comparative Flight Routes
+        <h2 class="chart-title" id="airport-load">
+          Aircraft Trips vs. Passenger Load Factor (City Routes)
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              Compare the top flight routes between major airports in Australia.
+              <p><strong>Visual Overview:</strong> The scatter plot visualises the relationship between aircraft trips and passenger load factor across various city routes for the years 1984 to 2020. Each point represents a route, with the circle size indicating the normalised passenger volume, providing a comparative view of demand throughout the years. The colours differentiate destination cities, making it easier to discern the performance of each route over time.</p> <p><strong>Key Insights:</strong> Across the time span, Sydney consistently displays a high load factor, highlighting its sustained demand and strong connectivity. Perth maintains a steady volume throughout, indicative of consistent flight frequency and balanced passenger numbers over the years. The use of annotations helps emphasise these key trends, enabling a quick understanding of how various routes perform in terms of both demand and efficiency from 1984 to 2020.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -183,15 +170,16 @@
           </div>
         </div>
       </div>
+
       <!--Chart 6-->
       <div class="chart-block">
-        <h2 class="chart-title">
-          Airline Route Density Analysis
+        <h2 class="chart-title" id="airport-analysis">
+          Total Passenger Volume by Departure City (Yearly Overview)
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              An analysis of airline route density to understand travel frequency between key destinations.
+              <p><strong>Visual Overview:</strong> The bar chart represents the total passenger volume by departure city for the selected year, highlighting the variation in air travel demand across major Australian cities. The data is filtered by year, providing insights into the changing dynamics of passenger volumes over time.</p> <p><strong>Key Insights:</strong> Melbourne consistently emerges as the "Top City" in terms of passenger volume, indicating its role as a major hub throughout the years. In contrast, Albury shows the "Lowest Volume," reflecting lower air traffic activity compared to larger cities. The ability to filter by year helps uncover trends and changes in passenger volumes, making it possible to assess the growth or decline in demand for specific cities over time.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -201,15 +189,16 @@
           </div>
         </div>
       </div>
+
       <!--Chart 7-->
       <div class="chart-block">
-        <h2 class="chart-title">
-          Seasonal Passenger Trends
+        <h2 class="chart-title" id="airport-passenger">
+          Aircraft Trips vs. Passenger Load Factor (Filtered by Year and City)
         </h2>
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              Examine how passenger numbers fluctuate seasonally across different airports in Australia.
+              <p><strong>Visual Overview:</strong> The scatter plot illustrates the relationship between the number of aircraft trips and the passenger load factor for specific routes departing from selected cities. The filtered data for each year and a minimum threshold of passenger volume provide an insight into operational efficiency across routes.</p> <p><strong>Key Insights:</strong> The chart reveals distinct contrasts in load factor performance across destinations. Sydney has routes demonstrating the highest load factor, notably marked on the graph, suggesting these are well-utilised routes. In contrast, other destinations, like Wagga Wagga, consistently display lower load factors, indicating underutilisation. The average load factor across all routes is also marked, providing a reference for evaluating route efficiency in the selected year. This visual effectively captures the operational performance, indicating which routes require optimisation or have potential growth opportunities.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -219,34 +208,36 @@
           </div>
         </div>
       </div>
+
+
+      <!-- Additional sections, following similar structure as above -->
+      <!-- Add other chart blocks here -->
+
+      <footer>
+        <p>Shivansh Chadda <br>
+          Thanks for austrlian govtq for providing the data <br>
+          Data sourced from various aviation statistics: <a href="https://tinyurl.com/4fa7mpwk" target="_blank">www.dataset.com</a>
+          <br>
+          Dataset 2 sourced from various aviation statistics: <a href="https://shorturl.at/o3TvD" target="_blank">www.dataset_2.com</a>
+          <br>
+          Dataset 3 sourced from govt buearu statistics: <a href="https://shorturl.at/4Ed48" target="_blank">www.dataset_3.com</a>
+          <br>
+          Image used sourced frokm : <a href="https://www.vecteezy.com/free-vector/airport-icon" target="_blank">www.dataset_4.com</a>
+        </p>
+      </footer>
+
+      <!-- Vega Embedding -->
+      <script type="text/javascript">
+        vegaEmbed('#vis1', "js/complex_visual_1.vg.json", { "actions": false }).catch(console.error);
+        vegaEmbed('#vis2', "js/complex_visual_3.vg.json", { "actions": false }).catch(console.error);
+        vegaEmbed('#vis3', "js/stacked_bar.vg.json", { "actions": false }).catch(console.error);
+        vegaEmbed('#vis4', "js/complex_visual_2.vg.json", { "actions": false }).catch(console.error);
+        vegaEmbed('#vis5', "js/bubble_chart.vg.json", { "actions": false }).catch(console.error);
+        vegaEmbed('#vis6', "js/rounded_barchart.vg.json", { "actions": false }).catch(console.error);
+        vegaEmbed('#vis7', "js/scatter_plot.vg.json", { "actions": false }).catch(console.error);
+      </script>
     </div>
   </div>
-  <footer>
-    <p style="text-align: center; font-size: 0.8em; margin: 20px 0; color: #555;">
-      Designed by Your Name<br>
-      GNU General Public License<br>
-      Data sourced from various aviation statistics:<br>
-      <a href="https://www.example.com" target="_blank">www.example.com</a><br>
-      Image credits:<br>
-      <a href="https://www.example.com" target="_blank">www.example.com</a><br>
-    </p>
-  </footer>
-  <script type="text/javascript">
-    var spec1 = "js/complex_visual_1.vg.json";
-    vegaEmbed('#vis1', spec1, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec2 = "js/complex_visual_3.vg.json";
-    vegaEmbed('#vis2', spec2, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec3 = "js/stacked_bar.vg.json";
-    vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec4 = "js/complex_visual_2.vg.json";
-    vegaEmbed('#vis4', spec4, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec5 = "js/bubble_chart.vg.json";
-    vegaEmbed('#vis5', spec5, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec6 = "js/rounded_barchart.vg.json";
-    vegaEmbed('#vis6', spec6, { "actions": false }).then(function (result) { }).catch(console.error);
-    var spec7 = "js/scatter_plot.vg.json";
-    vegaEmbed('#vis7', spec7, { "actions": false }).then(function (result) { }).catch(console.error);
-  </script>
 </body>
 
 </html>
