@@ -4,7 +4,6 @@ This visualisation explores Australia’s aviation industry, focusing on domesti
 Instructions to View the Visualisation
 You can explore the visualisation at:
 https://scha0241.github.io/FIT3179/VegaLite/Assignment_2/index.html
-(Replace with actual link once available)
 
 How It Works
 The visualisation is created using Vega-Lite, a powerful grammar for interactive visualisation. Vega-Lite allows for complex data visualisations with simple specifications, which are then compiled into Vega and rendered using HTML, SVG, and Canvas.
