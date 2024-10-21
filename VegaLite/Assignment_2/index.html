@@ -15,8 +15,7 @@
   <!-- Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css" media="all">
 </head>
 
@@ -38,9 +37,18 @@
       <div class="pure-g" id="desc-contents-block">
         <div class="pure-u-2-5">
           <div class="overview-box">
-            <p><strong>Project Overview:</strong> Explore Australia's aviation landscape through a comprehensive and interactive visualisation. This project offers a deep dive into various aspects of airport and airline operations, including route connectivity, airport types by state, flight delays, cancellations, and passenger load factors. </p>
-            <p><strong>Key Highlights:</strong> Through engaging visuals, we highlight both the efficiency and challenges faced by airlines and airports in Australia, providing insights into their operational dynamics. Whether you are interested in individual airport performance, flight route density, or airline punctuality, this exploration offers valuable perspectives into Australia's aviation network.</p>
-          </div>
+            <p><strong>Project Overview:</strong> Explore Australia's aviation landscape through a comprehensive and interactive visualisation. This project offers a deep dive into various aspects of airport and airline operations, from understanding how Australia's major and regional airports connect to exploring key performance metrics across the aviation network.</p>
+    
+            <p>The project covers aspects such as:</p>
+            <ul>
+                <li><strong>Route Connectivity:</strong> Illustrating the network of routes that connect airports across Australia, highlighting major hubs and regional links.</li>
+                <li><strong>Airport Operations by State:</strong> An overview of how airports function across different states, reflecting traffic volume, types of airports, and regional characteristics.</li>
+                <li><strong>Flight Delays and Cancellations:</strong> Insights into the operational efficiency of airlines, comparing their performance in terms of delays, cancellations, and on-time departures.</li>
+                <li><strong>Passenger Load Factors and Efficiency:</strong> A closer look at the factors affecting passenger volume, the frequency of flights, and how efficiently routes are managed, especially in top-performing cities.</li>
+            </ul>
+            
+            <p>This comprehensive visualisation helps stakeholders—such as airport authorities, airlines, and passengers—understand the operational dynamics of the aviation industry in Australia. It’s particularly valuable for those interested in studying trends, evaluating the performance of airlines, or identifying potential areas for improvement in connectivity and service quality.</p>
+        </div>
         </div>
 
         <div class="pure-u-3-5">
@@ -53,8 +61,8 @@
               <li><button class="section-btn" onclick="window.location.href='#cancellation-rates'">Total Delays and Cancellations by Airline</button></li>
               <li><button class="viz-btn" onclick="window.location.href='#airport-matrix'">Airline Performance Radar Chart Overview</button></li>
               <li><button class="section-btn" onclick="window.location.href='#airport-load'">Aircraft Trips vs. Passenger Load Factor Analysis</button></li>
-              <li><button class="viz-btn" onclick="window.location.href='#airport-analysis'">Additional Insights</button></li>
-              <li><button class="viz-btn" onclick="window.location.href='#airport-passenger'">Additional Insights</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#airport-analysis'">Yearly Passenger Volume Analysis</button></li>
+              <li><button class="viz-btn" onclick="window.location.href='#airport-passenger'"> Route Load Factor and Efficiency Overview </button></li>
             </ul>
           </div>
         </div>
@@ -73,8 +81,13 @@
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              <p><strong>Visual Overview:</strong> The visualisation provides an interactive overview of the connectivity of major airports across Australia. Each airport is represented by a circle, with larger circles indicating a greater number of routes, highlighting key hubs like Sydney, Melbourne, and Brisbane.</p> 
-              <p><strong>Key Insights:</strong> Major hubs such as Sydney and Melbourne serve as primary gateways, supporting high passenger flow and extensive connectivity within Australia’s air travel network. Regional airports, although smaller, play an essential role in connecting remote areas, thus enhancing national accessibility. The chart emphasises the disparity in connectivity between larger hubs and regional airports, showcasing the significant role that major airports play in linking urban centres with less populated areas. The interactive feature allows viewers to hover over each airport to discover details like city name, IATA code, and number of routes, offering a deeper understanding of the Australian aviation landscape.</p>
+              <p><strong>Visual Overview:</strong> The visualisation provides an interactive overview of the connectivity of major airports across Australia. Each airport is represented by a circle, with larger circles indicating a greater number of routes, highlighting key hubs such as Sydney, Melbourne, and Brisbane.</p>
+
+                <p><strong>Key Insights:</strong> Major hubs such as Sydney and Melbourne serve as primary gateways, supporting high passenger flow and extensive connectivity within Australia's air travel network. Regional airports, although smaller, play a crucial role in connecting remote areas, thereby enhancing national accessibility. The chart underscores the disparity in connectivity between major hubs and regional airports, showcasing the significant part played by the larger airports in linking urban centres with less populated regions.</p>
+
+                <p>The interactive feature allows users to hover over each airport to uncover essential details such as the city name, IATA code, and number of routes, offering a deeper insight into the Australian aviation landscape. By exploring these connections, users can gain an understanding of the spatial distribution of airport operations and the importance of both major and regional hubs in facilitating domestic and international travel.</p>
+                
+                <p>Notably, Sydney emerges as the airport with the most connections, reinforcing its role as a major international gateway, while Melbourne is also prominent, acting as a central hub for both domestic and international routes. Regional airports, such as those in Western Australia and Queensland, are equally important for providing access to remote communities, thereby supporting regional economic growth and ensuring the mobility of residents in sparsely populated areas.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -93,11 +106,10 @@
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              <p>This interactive visualisation provides a detailed overview of airports across Australia's major states and territories, including Victoria, New South Wales, Queensland, and more.</p>
-              <p><strong>State Selection</strong>: Users can explore airports by selecting different states, with each airport visually represented by its type and traffic volume.</p>
-              <p><strong>Traffic Indicators</strong>: Larger circles denote airports with higher traffic, while different colours indicate airport types: <strong>red</strong> for large airports, <strong>orange</strong> for medium airports, and <strong>blue</strong> for small airports.</p>
-              <p><strong>Insights and Connectivity</strong>: The insights gained from this visualisation help to understand the distribution and connectivity of airports, particularly in key hubs like Sydney and Melbourne.</p>
-              <p><strong>Interactive Exploration</strong>: Use the dropdown to explore various regions and uncover the nuances of Australia’s aviation network.</p>
+              <p><strong>Visual Overview:</strong> This interactive visualisation offers a comprehensive view of airports across Australia's major states and territories, including Victoria, New South Wales, Queensland, Northern Territory, Western Australia, Tasmania, and South Australia. Each state is explored in detail, showcasing the distribution of airports and their traffic volumes.</p>
+              <p><strong>State Selection:</strong> Users can easily navigate through different states using the dropdown menu to explore airports. Each airport is visually represented by symbols based on its type and traffic volume, offering an intuitive understanding of the distribution of air traffic across the country.</p>
+              <p><strong>Traffic Indicators:</strong> Larger circles denote airports with higher traffic volumes, providing a clear indication of the busiest airports. Airport types are colour-coded for easy identification: <span style="color: red;">red</span> for large airports, <span style="color: orange;">orange</span> for medium-sized airports, and <span style="color: blue;">blue</span> for smaller regional airports. This colour coding helps users quickly distinguish between different airport categories and their relative importance.</p>
+              <p><strong>Insights and Connectivity:</strong> This visualisation highlights the varied distribution of airports across Australia's states and territories, revealing key insights into regional and urban connectivity. Major airports in cities like Sydney and Melbourne serve as central hubs with high passenger volumes, while smaller airports play a significant role in providing accessibility to remote regions, particularly in states like Northern Territory and Western Australia.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -116,13 +128,10 @@
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              <p><strong>Visual Overview:</strong> The visualisation titled "Total Delays and Cancellations by Airline" provides a comparative analysis of the operational challenges faced by different airlines, focusing on flight cancellations and delays.</p>
-
-              <p><strong>Chart Elements:</strong> The stacked bar chart illustrates the cumulative count of <em>Total Cancellations</em>, <em>Total Departures Delayed</em>, and <em>Total Arrivals Delayed</em> for each airline. This enables a holistic view of each airline's operational disruptions.</p>
-
-              <p><strong>Key Insights:</strong> Virgin Australia emerges as the airline with the highest number of disruptions, while Regional Express and Virgin Australia Regional Airlines show fewer incidents, reflecting greater operational efficiency. Annotations are used to emphasise airlines with significantly high or low delays, helping to underline notable performance trends.</p>
-
-              <p><strong>Interactive Features:</strong> The month-wise filter allows viewers to explore seasonal variations in airline punctuality, providing an additional layer of insight into how external factors may impact flight schedules.</p>
+              <p><strong>Visual Overview:</strong> This visualisation, titled "Total Delays and Cancellations by Airline," presents a comparative analysis of operational challenges faced by various airlines, focusing on flight cancellations and delays.</p>
+                <p><strong>Chart Elements:</strong> The stacked bar chart displays the cumulative totals of <em>Total Cancellations</em>, <em>Total Departures Delayed</em>, and <em>Total Arrivals Delayed</em> for each airline, offering a comprehensive view of disruptions across different airlines.</p>
+                <p><strong>Key Insights:</strong> Virgin Australia records the highest number of disruptions, whereas Regional Express and Virgin Australia Regional Airlines show significantly fewer incidents, demonstrating better operational efficiency. Annotations highlight airlines with notably high or low delays, helping to underscore key performance trends.</p>
+                <p><strong>Interactive Features:</strong> The month-wise filter enables viewers to explore seasonal variations in airline punctuality, offering further insight into how external factors influence flight schedules throughout the year.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -141,7 +150,11 @@
         <div class="pure-g">
           <div class="pure-u-1-3">
             <div class="description">
-              <p><strong>Airline Performance Radar Chart</strong> provides a comparative overview of Qantas, Jetstar, and Virgin Australia based on key operational metrics such as on-time departures, arrivals, cancellations, and delays. The chart highlights performance discrepancies, with each airline's metrics mapped as a distinct line, making it easy for viewers to visually assess differences.</p> <p><strong>Key Insights:</strong> Virgin Australia demonstrates a significant increase in cancellations and delayed departures, suggesting higher operational challenges. Jetstar and Qantas have relatively balanced metrics, with Qantas standing out for its consistent on-time performance and lower rate of cancellations, indicating more effective operations overall.</p>
+              <p><strong>Overview:</strong> The Airline Performance Radar Chart provides a comprehensive comparative analysis of Qantas, Jetstar, and Virgin Australia, focusing on key operational metrics such as on-time departures, arrivals, cancellations, and delays. The chart presents each airline’s performance as distinct lines, allowing for a clear visual assessment of operational strengths and weaknesses.</p>
+
+              <p><strong>Performance Highlights:</strong> Virgin Australia shows a noticeable spike in cancellations and delayed departures, suggesting ongoing operational challenges. In contrast, Qantas exhibits consistency in both on-time departures and arrivals, standing out as the most reliable airline in this comparison. Jetstar, while performing fairly well in most metrics, still lags slightly behind Qantas in terms of punctuality and operational consistency.</p>
+
+              <p><strong>Key Insights:</strong> The visual analysis helps identify specific areas where airlines excel or require improvement. For instance, Qantas consistently leads in punctuality, underscoring its efficient management, while Virgin Australia's elevated delays indicate potential process inefficiencies that need addressing. This comparison provides a valuable overview of each airline’s operational health, highlighting opportunities for enhancing service quality and efficiency.</p>
             </div>
           </div>
           <div class="pure-u-2-3">
@@ -214,8 +227,8 @@
       <!-- Add other chart blocks here -->
 
       <footer>
-        <p>Shivansh Chadda <br>
-          Thanks for austrlian govtq for providing the data <br>
+        <p> Copyright © 2024 Shivansh Chadda <br>
+          Here the data has been sourced from Australian Government and grateful for providing the data <br>
           Data sourced from various aviation statistics: <a href="https://tinyurl.com/4fa7mpwk" target="_blank">www.dataset.com</a>
           <br>
           Dataset 2 sourced from various aviation statistics: <a href="https://shorturl.at/o3TvD" target="_blank">www.dataset_2.com</a>

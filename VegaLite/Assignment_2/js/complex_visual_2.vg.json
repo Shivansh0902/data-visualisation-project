@@ -1,12 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "title": "Airline Performance Radar Chart (Metrics < 50%)",
-  "width": 700,
-  "height": 600,
+  "title": "Airline Performance Radar Chart (Metrics < 40%)",
+  "width": 620,
+  "height": 620,
   "padding": 50,
   "autosize": { "type": "none", "contains": "padding" },
   "background": "#F0F4F8",
-  "config": { "font": "Cabin" },
+  "config": { "font": "Roboto" },
+  "labelFont": "Roboto",
+  "titleFont": "Roboto",
   "legends": [
     {
       "fill": "color",
@@ -84,7 +86,7 @@
       "name": "color",
       "type": "ordinal",
       "domain": ["Qantas", "Jetstar", "Virgin Australia"],
-      "range": ["#4DAF4A", "#377EB8", "#FF0000"]
+      "range": ["#FF6347", "#4682B4", "#FFD700"]
     }
   ],
   "encode": {
