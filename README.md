@@ -5,7 +5,7 @@ This visualisation explores Australia’s aviation industry, focusing on domesti
 ## Instructions to View the Visualisation
 
 You can explore the visualisation at:  
-[https://scha0241.github.io/FIT3179/VegaLite/Assignment_2/index.html]
+[https://shivansh0902.github.io/data-visualisation-project/VegaLite/Assignment_2/index.html]
 
 
 ## How It Works
